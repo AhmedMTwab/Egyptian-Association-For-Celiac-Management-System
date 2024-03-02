@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Egyptian association of cieliac patients", "Egyptian association of cieliac patients.csproj", "{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACCAE63D-E2F9-4CB0-B1B6-CD5D9744C832}
+	EndGlobalSection
+EndGlobal

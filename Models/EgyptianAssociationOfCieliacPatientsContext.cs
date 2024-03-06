@@ -36,6 +36,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
     public virtual DbSet<ClinicInsuranceDiscount> ClinicInsuranceDiscounts { get; set; }
 
     public virtual DbSet<ClinicPhone> ClinicPhones { get; set; }
+    public virtual DbSet<ClinicAddress> ClinicAddresses { get; set; }
 
     public virtual DbSet<Dise> Dises { get; set; }
 
@@ -51,7 +52,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
     public virtual DbSet<DoctorPhone> DoctorPhones { get; set; }
 
-    public virtual DbSet<DoctorRegestraion> DoctorRegestraions { get; set; }
+    public virtual DbSet<DoctorRegistration> DoctorRegestraions { get; set; }
 
     public virtual DbSet<HealthInsurance> HealthInsurances { get; set; }
 
@@ -69,7 +70,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
     public virtual DbSet<MedicaladminClinicControl> MedicaladminClinicControls { get; set; }
 
-    public virtual DbSet<MedicaladminRegesteration> MedicaladminRegesterations { get; set; }
+    public virtual DbSet<MedicalAdminRegistration> MedicaladminRegesterations { get; set; }
 
     public virtual DbSet<Patient> Patients { get; set; }
 
@@ -85,7 +86,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
     public virtual DbSet<PatientRawmaterialVeiw> PatientRawmaterialVeiws { get; set; }
 
-    public virtual DbSet<PatientRegistrition> PatientRegistritions { get; set; }
+    public virtual DbSet<PatientRegistration> PatientRegistritions { get; set; }
 
     public virtual DbSet<Payment> Payments { get; set; }
 
@@ -105,7 +106,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
     public virtual DbSet<StoreadminProductControl> StoreadminProductControls { get; set; }
 
-    public virtual DbSet<StoreadminRegestriation> StoreadminRegestriations { get; set; }
+    public virtual DbSet<StoreAdminRegistration> StoreadminRegestriations { get; set; }
 
     public virtual DbSet<UserAdmin> UserAdmins { get; set; }
 
@@ -118,10 +119,33 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
     public virtual DbSet<UseradminPatientControl> UseradminPatientControls { get; set; }
 
     public virtual DbSet<UseradminStoreadminControl> UseradminStoreadminControls { get; set; }
+    public virtual DbSet<Lab> Labs { get; set; }
+    public virtual DbSet<LabPhone> LabPhones { get; set; }
+    public virtual DbSet<LabAddress> LabAddresses { get; set; }
+    public virtual DbSet<LabType> LabTypes { get; set; }
+    public virtual DbSet<LabAssociationDiscount> LabAssociationDiscounts { get; set; }
+    public virtual DbSet<MedicalAdminLabControl> MedicalAdminLabControls { get; set; }
+    public virtual DbSet<LabInsuranceDiscount> LabInsuranceDiscounts { get; set; }
+    public virtual DbSet<Pharmacy> Pharmacies { get; set; }
+    public virtual DbSet<PharmacyPhone> PharmacyPhones { get; set; }
+    public virtual DbSet<PharmacyAddress> PharmacyAddresses { get; set; }
+    public virtual DbSet<PharmacyAssociationDiscount> PharmacyAssociationDiscounts { get; set; }
+    public virtual DbSet<MedicalAdminPharmacyControl> MedicalAdminPharmacyControls { get; set; }
+    public virtual DbSet<PharmacyInsuranceDiscount> PharmacyInsuranceDiscounts { get; set; }
+    public virtual DbSet<Hospital> Hospitals { get; set; }
+    public virtual DbSet<HospitalPhone> HospitalPhones { get; set; }
+    public virtual DbSet<HospitalAddress> HospitalAddresses { get; set; }
+    public virtual DbSet<HospitalType> HospitalTypes { get; set; }
+    public virtual DbSet<MedicalAdminHospitalControl> MedicalAdminHospitalControls { get; set; }
+    public virtual DbSet<HospitalInsuranceDiscount> HospitalInsuranceDiscounts { get; set; }
+    public virtual DbSet<UserAdminDoctorRegistrationApprove> UserAdminDoctorRegistrationApproves { get; set; }
+    public virtual DbSet<UserAdminPatientRegistrationApprove> UserAdminPatientRegistrationApproves { get; set; }
+    public virtual DbSet<UserAdminMedicalAdminRegistrationApprove> UserAdminMedicalAdminRegistrationApproves { get; set; }
+    public virtual DbSet<UserAdminStoreAdminRegistrationApprove> UserAdminStoreAdminRegistrationApproves { get; set; }
 
-//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-//        => optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Egyptian association of cieliac patients;Trusted_Connection=True;TrustServerCertificate=True;");
+    //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+    //        => optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Egyptian association of cieliac patients;Trusted_Connection=True;TrustServerCertificate=True;");
 
     //protected override void OnModelCreating(ModelBuilder modelBuilder)
     //{

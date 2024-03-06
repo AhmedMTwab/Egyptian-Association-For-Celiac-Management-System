@@ -4206,25 +4206,26 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Microsoft.EntityFrameworkCore >= 8.0.2",
       "Microsoft.EntityFrameworkCore.Proxies >= 8.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ahmed\\.nuget\\packages\\": {}
+    "C:\\Users\\Ahmed Badawy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Egyptian association of cieliac patients.csproj",
+      "projectUniqueName": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\MVC\\Egyptian-association-of-cieliac-patients\\Egyptian association of cieliac patients.csproj",
       "projectName": "Egyptian association of cieliac patients",
-      "projectPath": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Egyptian association of cieliac patients.csproj",
-      "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-      "outputPath": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\obj\\",
+      "projectPath": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\MVC\\Egyptian-association-of-cieliac-patients\\Egyptian association of cieliac patients.csproj",
+      "packagesPath": "C:\\Users\\Ahmed Badawy\\.nuget\\packages\\",
+      "outputPath": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\MVC\\Egyptian-association-of-cieliac-patients\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ahmed Badawy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4244,17 +4245,16 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[8.0.2, )"
+          },
           "Microsoft.EntityFrameworkCore.Proxies": {
             "target": "Package",
             "version": "[8.0.2, )"
@@ -4289,7 +4289,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

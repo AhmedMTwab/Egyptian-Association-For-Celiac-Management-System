@@ -7,23 +7,25 @@ using Microsoft.EntityFrameworkCore;
 namespace Egyptian_association_of_cieliac_patients.Models;
 
 [Keyless]
-[Table("storeadmin_regestriation")]
-public partial class StoreadminRegestriation
+[Table("doctor_registration")]
+public partial class DoctorRegistration
 {
     [Column("username")]
     [StringLength(50)]
     [Unicode(false)]
     public string Username { get; set; } = null!;
 
-    [Column("admin_id")]
-    public int AdminId { get; set; }
+    [Column("doctor_id")]
+    public int DoctorId { get; set; }
 
     [Column("password")]
-    public int Password { get; set; }
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Password { get; set; } = null!;
 
     [Column("date")]
     public DateOnly Date { get; set; }
 
-    [ForeignKey("AdminId")]
-    public virtual StoreAdmin Admin { get; set; } = null!;
+    [ForeignKey("DoctorId")]
+    public virtual Doctor Doctor { get; set; } = null!;
 }

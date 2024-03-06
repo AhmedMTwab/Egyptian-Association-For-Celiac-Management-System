@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Egyptian_association_of_cieliac_patients.Migrations
 {
     /// <inheritdoc />
-    public partial class start : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,8 +15,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "assosiation_branch",
                 columns: table => new
                 {
-                    assosiation_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    assosiation_id = table.Column<int>(type: "int", nullable: false),
                     open_time = table.Column<TimeOnly>(type: "time", nullable: false),
                     close_time = table.Column<TimeOnly>(type: "time", nullable: false),
                     address = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
@@ -30,8 +29,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "clinic",
                 columns: table => new
                 {
-                    clinic_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    clinic_id = table.Column<int>(type: "int", nullable: false),
                     name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     open_time = table.Column<TimeOnly>(type: "time", nullable: false),
                     close_time = table.Column<TimeOnly>(type: "time", nullable: false)
@@ -45,8 +43,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "dises",
                 columns: table => new
                 {
-                    dises_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    dises_id = table.Column<int>(type: "int", nullable: false),
                     name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -58,8 +55,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "doctor",
                 columns: table => new
                 {
-                    doctor_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    doctor_id = table.Column<int>(type: "int", nullable: false),
                     name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     major = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     arrive_time = table.Column<TimeOnly>(type: "time", nullable: false),
@@ -74,8 +70,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "health_insurance",
                 columns: table => new
                 {
-                    insurance_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    insurance_id = table.Column<int>(type: "int", nullable: false),
                     name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     LicenseCode = table.Column<int>(type: "int", nullable: false)
                 },
@@ -85,11 +80,38 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "hospital",
+                columns: table => new
+                {
+                    hospital_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_hospital", x => x.hospital_id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "lab",
+                columns: table => new
+                {
+                    lab_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    open_time = table.Column<TimeOnly>(type: "time", nullable: false),
+                    close_time = table.Column<TimeOnly>(type: "time", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_lab", x => x.lab_id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "medical_record",
                 columns: table => new
                 {
-                    record_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    record_id = table.Column<int>(type: "int", nullable: false),
                     date = table.Column<DateOnly>(type: "date", nullable: false),
                     patient_id = table.Column<int>(type: "int", nullable: true),
                     dises_id = table.Column<int>(type: "int", nullable: true)
@@ -100,26 +122,12 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "medicaladmin_regesteration",
-                columns: table => new
-                {
-                    admin_id = table.Column<int>(type: "int", nullable: false),
-                    username = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    password = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    date = table.Column<DateOnly>(type: "date", nullable: false)
-                },
-                constraints: table =>
-                {
-                });
-
-            migrationBuilder.CreateTable(
                 name: "patient",
                 columns: table => new
                 {
-                    patient_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    patient_id = table.Column<int>(type: "int", nullable: false),
                     patient_name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    patient_bloodtype = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    patient_bloodtype = table.Column<string>(type: "nchar(10)", fixedLength: true, maxLength: 10, nullable: false),
                     DOB = table.Column<DateOnly>(type: "date", nullable: false),
                     SSN = table.Column<int>(type: "int", nullable: false)
                 },
@@ -132,9 +140,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "payment",
                 columns: table => new
                 {
-                    payment_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    payment_type = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    payment_id = table.Column<int>(type: "int", nullable: false),
+                    payment_type = table.Column<string>(type: "nchar(10)", fixedLength: true, maxLength: 10, nullable: false),
                     total_paid = table.Column<decimal>(type: "money", nullable: false)
                 },
                 constraints: table =>
@@ -143,11 +150,25 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "pharmacy",
+                columns: table => new
+                {
+                    pharmacy_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    open_time = table.Column<TimeOnly>(type: "time", nullable: false),
+                    close_time = table.Column<TimeOnly>(type: "time", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_pharmacy", x => x.pharmacy_id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "product",
                 columns: table => new
                 {
-                    product_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    product_id = table.Column<int>(type: "int", nullable: false),
                     name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     details = table.Column<string>(type: "text", nullable: false),
                     price = table.Column<decimal>(type: "money", nullable: false)
@@ -161,8 +182,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "raw_material",
                 columns: table => new
                 {
-                    material_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    material_id = table.Column<int>(type: "int", nullable: false),
                     name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     details = table.Column<string>(type: "text", nullable: false),
                     price = table.Column<decimal>(type: "money", nullable: false)
@@ -173,31 +193,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "reservation",
-                columns: table => new
-                {
-                    reservation_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    reservation_date = table.Column<DateOnly>(type: "date", nullable: false),
-                    status = table.Column<string>(type: "text", nullable: false),
-                    reservation_time = table.Column<TimeOnly>(type: "time", nullable: false),
-                    appointment_type = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    book_date = table.Column<DateOnly>(type: "date", nullable: false),
-                    book_time = table.Column<TimeOnly>(type: "time", nullable: false),
-                    patient_id = table.Column<int>(type: "int", nullable: false),
-                    clinic_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_reservation", x => x.reservation_id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "store_admin",
                 columns: table => new
                 {
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    admin_id = table.Column<int>(type: "int", nullable: false),
                     name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     email = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     password = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
@@ -212,8 +211,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "user_admin",
                 columns: table => new
                 {
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    admin_id = table.Column<int>(type: "int", nullable: false),
                     admin_name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     admin_email = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     admin_password = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
@@ -221,7 +219,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_user_admin", x => x.admin_id);
+                    table.PrimaryKey("PK_ADMIN_table", x => x.admin_id);
                 });
 
             migrationBuilder.CreateTable(
@@ -234,19 +232,17 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_assosiation_branch_phone_assosiation_branch_assosiation_id",
+                        name: "FK_assosiation_branch_phone_assosiation_branch",
                         column: x => x.assosiation_id,
                         principalTable: "assosiation_branch",
-                        principalColumn: "assosiation_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "assosiation_id");
                 });
 
             migrationBuilder.CreateTable(
                 name: "medical_admin",
                 columns: table => new
                 {
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    admin_id = table.Column<int>(type: "int", nullable: false),
                     name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     email = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     password = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
@@ -256,10 +252,26 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 {
                     table.PrimaryKey("PK_medical_admin", x => x.admin_id);
                     table.ForeignKey(
-                        name: "FK_medical_admin_assosiation_branch_assosiation_id",
+                        name: "FK_medical_admin_assosiation_branch",
                         column: x => x.assosiation_id,
                         principalTable: "assosiation_branch",
-                        principalColumn: "assosiation_id",
+                        principalColumn: "assosiation_id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "clinic_address",
+                columns: table => new
+                {
+                    clinic_address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    clinic_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_clinic_address_clinic_clinic_id",
+                        column: x => x.clinic_id,
+                        principalTable: "clinic",
+                        principalColumn: "clinic_id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -274,17 +286,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_clinic_assosiation_discount_assosiation_branch_assosiation_id",
+                        name: "FK_clinic_assosiation_discount_assosiation_branch",
                         column: x => x.assosiation_id,
                         principalTable: "assosiation_branch",
-                        principalColumn: "assosiation_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "assosiation_id");
                     table.ForeignKey(
-                        name: "FK_clinic_assosiation_discount_clinic_clinic_id",
+                        name: "FK_clinic_assosiation_discount_clinic",
                         column: x => x.clinic_id,
                         principalTable: "clinic",
-                        principalColumn: "clinic_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "clinic_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -297,11 +307,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_clinic_phone_clinic_clinic_id",
+                        name: "FK_clinic_phone_clinic",
                         column: x => x.clinic_id,
                         principalTable: "clinic",
-                        principalColumn: "clinic_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "clinic_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -314,17 +323,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_assosiation_dises_follow_assosiation_branch_assosiation_id",
-                        column: x => x.assosiation_id,
-                        principalTable: "assosiation_branch",
-                        principalColumn: "assosiation_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_assosiation_dises_follow_dises_dises_id",
+                        name: "FK_assosiation_dises__dises",
                         column: x => x.dises_id,
                         principalTable: "dises",
-                        principalColumn: "dises_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "dises_id");
+                    table.ForeignKey(
+                        name: "FK_assosiation_dises_follow_assosiation_branch",
+                        column: x => x.assosiation_id,
+                        principalTable: "assosiation_branch",
+                        principalColumn: "assosiation_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -337,17 +344,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_doctor_clinic_work_clinic_clinic_id",
+                        name: "FK_doctor_clinic_work_clinic",
                         column: x => x.clinic_id,
                         principalTable: "clinic",
-                        principalColumn: "clinic_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "clinic_id");
                     table.ForeignKey(
-                        name: "FK_doctor_clinic_work_doctor_doctor_id",
+                        name: "FK_doctor_clinic_work_doctor",
                         column: x => x.doctor_id,
                         principalTable: "doctor",
-                        principalColumn: "doctor_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "doctor_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -360,30 +365,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_doctor_phone_doctor_doctor_id",
+                        name: "FK_doctor_phone_doctor",
                         column: x => x.doctor_id,
                         principalTable: "doctor",
-                        principalColumn: "doctor_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "doctor_regestraion",
-                columns: table => new
-                {
-                    username = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    doctor_id = table.Column<int>(type: "int", nullable: false),
-                    password = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    date = table.Column<DateOnly>(type: "date", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.ForeignKey(
-                        name: "FK_doctor_regestraion_doctor_doctor_id",
-                        column: x => x.doctor_id,
-                        principalTable: "doctor",
-                        principalColumn: "doctor_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "doctor_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -398,17 +383,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_assosiation_insurance_provide_assosiation_branch_assosiation_id",
+                        name: "FK_assosiation_assosiation_branch",
                         column: x => x.assosiation_id,
                         principalTable: "assosiation_branch",
-                        principalColumn: "assosiation_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "assosiation_id");
                     table.ForeignKey(
-                        name: "FK_assosiation_insurance_provide_health_insurance_insurance_id",
+                        name: "FK_assosiation_health_insurance",
                         column: x => x.insurance_id,
                         principalTable: "health_insurance",
-                        principalColumn: "insurance_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "insurance_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -422,17 +405,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_clinic_insurance_discount_clinic_clinic_id",
+                        name: "FK_clinic_insurance_discount_clinic",
                         column: x => x.clinic_id,
                         principalTable: "clinic",
-                        principalColumn: "clinic_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "clinic_id");
                     table.ForeignKey(
-                        name: "FK_clinic_insurance_discount_health_insurance_insurance_id",
+                        name: "FK_clinic_insurance_discount_health_insurance",
                         column: x => x.insurance_id,
                         principalTable: "health_insurance",
-                        principalColumn: "insurance_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "insurance_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -445,11 +426,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_insurance_address_health_insurance_insurance_id",
+                        name: "FK_insurance_address_health_insurance",
                         column: x => x.insurance_id,
                         principalTable: "health_insurance",
-                        principalColumn: "insurance_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "insurance_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -462,10 +442,185 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_insurance_phone_health_insurance_insurance_id",
+                        name: "FK_insurance_phone_health_insurance",
+                        column: x => x.insurance_id,
+                        principalTable: "health_insurance",
+                        principalColumn: "insurance_id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "hospital_address",
+                columns: table => new
+                {
+                    hospital_address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    hospital_id = table.Column<int>(type: "int", nullable: false),
+                    hospitalId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_hospital_address_hospital_hospitalId",
+                        column: x => x.hospitalId,
+                        principalTable: "hospital",
+                        principalColumn: "hospital_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "hospital_insurance_discount",
+                columns: table => new
+                {
+                    hospital_id = table.Column<int>(type: "int", nullable: false),
+                    insurance_id = table.Column<int>(type: "int", nullable: false),
+                    discount_precentage = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_hospital_insurance_discount_health_insurance_insurance_id",
                         column: x => x.insurance_id,
                         principalTable: "health_insurance",
                         principalColumn: "insurance_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_hospital_insurance_discount_hospital_hospital_id",
+                        column: x => x.hospital_id,
+                        principalTable: "hospital",
+                        principalColumn: "hospital_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "hospital_phone",
+                columns: table => new
+                {
+                    phone_number = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
+                    hospital_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_hospital_phone_hospital_hospital_id",
+                        column: x => x.hospital_id,
+                        principalTable: "hospital",
+                        principalColumn: "hospital_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "hospital_type",
+                columns: table => new
+                {
+                    hospital_type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    hospital_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_hospital_type_hospital_hospital_id",
+                        column: x => x.hospital_id,
+                        principalTable: "hospital",
+                        principalColumn: "hospital_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "lab_address",
+                columns: table => new
+                {
+                    lab_address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    lab_id = table.Column<int>(type: "int", nullable: false),
+                    labId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_lab_address_lab_labId",
+                        column: x => x.labId,
+                        principalTable: "lab",
+                        principalColumn: "lab_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "lab_assosiation_discount",
+                columns: table => new
+                {
+                    lab_id = table.Column<int>(type: "int", nullable: false),
+                    assosiation_id = table.Column<int>(type: "int", nullable: false),
+                    discount_precentage = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_lab_assosiation_discount_assosiation_branch_assosiation_id",
+                        column: x => x.assosiation_id,
+                        principalTable: "assosiation_branch",
+                        principalColumn: "assosiation_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_lab_assosiation_discount_lab_lab_id",
+                        column: x => x.lab_id,
+                        principalTable: "lab",
+                        principalColumn: "lab_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "lab_insurance_discount",
+                columns: table => new
+                {
+                    lab_id = table.Column<int>(type: "int", nullable: false),
+                    insurance_id = table.Column<int>(type: "int", nullable: false),
+                    discount_precentage = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_lab_insurance_discount_health_insurance_insurance_id",
+                        column: x => x.insurance_id,
+                        principalTable: "health_insurance",
+                        principalColumn: "insurance_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_lab_insurance_discount_lab_lab_id",
+                        column: x => x.lab_id,
+                        principalTable: "lab",
+                        principalColumn: "lab_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "lab_phone",
+                columns: table => new
+                {
+                    phone_number = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
+                    lab_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_lab_phone_lab_lab_id",
+                        column: x => x.lab_id,
+                        principalTable: "lab",
+                        principalColumn: "lab_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "lab_type",
+                columns: table => new
+                {
+                    lab_type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    lab_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_lab_type_lab_lab_id",
+                        column: x => x.lab_id,
+                        principalTable: "lab",
+                        principalColumn: "lab_id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -479,17 +634,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_doctor_medicalrecord_veiw_doctor_doctor_id",
+                        name: "FK_doctor_medicalrecord_veiw_doctor",
                         column: x => x.doctor_id,
                         principalTable: "doctor",
-                        principalColumn: "doctor_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "doctor_id");
                     table.ForeignKey(
-                        name: "FK_doctor_medicalrecord_veiw_medical_record_record_id",
+                        name: "FK_doctor_medicalrecord_veiw_medical_record",
                         column: x => x.record_id,
                         principalTable: "medical_record",
-                        principalColumn: "record_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "record_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -502,11 +655,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_medical_record-drug_medical_record_record_id",
+                        name: "FK_medical_record-drug_medical_record",
                         column: x => x.record_id,
                         principalTable: "medical_record",
-                        principalColumn: "record_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "record_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -519,37 +671,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_medical_record-test_medical_record_record_id",
+                        name: "FK_medical_record-test_medical_record",
                         column: x => x.record_id,
                         principalTable: "medical_record",
-                        principalColumn: "record_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "cart",
-                columns: table => new
-                {
-                    order_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    order_date = table.Column<DateOnly>(type: "date", nullable: false),
-                    order_details = table.Column<string>(type: "text", nullable: false),
-                    total_cost = table.Column<decimal>(type: "money", nullable: false),
-                    shipment_location = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    shipment_time = table.Column<TimeOnly>(type: "time", nullable: false),
-                    shipment_phone = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
-                    patient_id = table.Column<int>(type: "int", nullable: false),
-                    payment_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_cart", x => x.order_id);
-                    table.ForeignKey(
-                        name: "FK_cart_patient_patient_id",
-                        column: x => x.patient_id,
-                        principalTable: "patient",
-                        principalColumn: "patient_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "record_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -562,11 +687,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_patient_address_patient_patient_id",
+                        name: "FK_patient_address_patient",
                         column: x => x.patient_id,
                         principalTable: "patient",
-                        principalColumn: "patient_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "patient_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -581,17 +705,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_patient_assosiation_particpate_assosiation_branch_assosiation_id",
+                        name: "FK_patient_assosiation_particpate_assosiation_branch",
                         column: x => x.assosiation_id,
                         principalTable: "assosiation_branch",
-                        principalColumn: "assosiation_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "assosiation_id");
                     table.ForeignKey(
-                        name: "FK_patient_assosiation_particpate_patient_patient_id",
+                        name: "FK_patient_assosiation_particpate_patient",
                         column: x => x.patient_id,
                         principalTable: "patient",
-                        principalColumn: "patient_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "patient_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -604,17 +726,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_patient_dises-have_dises_dises_id",
+                        name: "FK_patient_dises-have_dises",
                         column: x => x.dises_id,
                         principalTable: "dises",
-                        principalColumn: "dises_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "dises_id");
                     table.ForeignKey(
-                        name: "FK_patient_dises-have_patient_patient_id",
+                        name: "FK_patient_dises-have_patient",
                         column: x => x.patient_id,
                         principalTable: "patient",
-                        principalColumn: "patient_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "patient_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -627,28 +747,152 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_patient_phone_patient_patient_id",
+                        name: "FK_patient_phone_patient",
                         column: x => x.patient_id,
                         principalTable: "patient",
                         principalColumn: "patient_id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "patient_registrition",
+                name: "reservation",
                 columns: table => new
                 {
-                    username = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    reservation_id = table.Column<int>(type: "int", nullable: false),
+                    reservation_date = table.Column<DateOnly>(type: "date", nullable: false),
+                    status = table.Column<string>(type: "text", nullable: false),
+                    reservation_time = table.Column<TimeOnly>(type: "time", nullable: false),
+                    appointment_type = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    book_date = table.Column<DateOnly>(type: "date", nullable: false),
+                    book_time = table.Column<TimeOnly>(type: "time", nullable: false),
                     patient_id = table.Column<int>(type: "int", nullable: false),
-                    password = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    date = table.Column<DateOnly>(type: "date", nullable: false)
+                    clinic_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_reservation", x => x.reservation_id);
+                    table.ForeignKey(
+                        name: "FK_reservation_clinic_clinic_id",
+                        column: x => x.clinic_id,
+                        principalTable: "clinic",
+                        principalColumn: "clinic_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_reservation_patient_patient_id",
+                        column: x => x.patient_id,
+                        principalTable: "patient",
+                        principalColumn: "patient_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "cart",
+                columns: table => new
+                {
+                    order_id = table.Column<int>(type: "int", nullable: false),
+                    order_date = table.Column<DateOnly>(type: "date", nullable: false),
+                    order_details = table.Column<string>(type: "text", nullable: false),
+                    total_cost = table.Column<decimal>(type: "money", nullable: false),
+                    shipment_location = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    shipment_time = table.Column<TimeOnly>(type: "time", nullable: false),
+                    shipment_phone = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
+                    patient_id = table.Column<int>(type: "int", nullable: false),
+                    payment_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_cart", x => x.order_id);
+                    table.ForeignKey(
+                        name: "FK_cart_patient",
+                        column: x => x.patient_id,
+                        principalTable: "patient",
+                        principalColumn: "patient_id");
+                    table.ForeignKey(
+                        name: "FK_cart_payment_payment_id",
+                        column: x => x.payment_id,
+                        principalTable: "payment",
+                        principalColumn: "payment_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "pharmacy_address",
+                columns: table => new
+                {
+                    pharmacy_address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    pharmacy_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_patient_registrition_patient_patient_id",
-                        column: x => x.patient_id,
-                        principalTable: "patient",
-                        principalColumn: "patient_id",
+                        name: "FK_pharmacy_address_pharmacy_pharmacy_id",
+                        column: x => x.pharmacy_id,
+                        principalTable: "pharmacy",
+                        principalColumn: "pharmacy_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "pharmacy_assosiation_discount",
+                columns: table => new
+                {
+                    pharmacy_id = table.Column<int>(type: "int", nullable: false),
+                    assosiation_id = table.Column<int>(type: "int", nullable: false),
+                    discount_precentage = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_pharmacy_assosiation_discount_assosiation_branch_assosiation_id",
+                        column: x => x.assosiation_id,
+                        principalTable: "assosiation_branch",
+                        principalColumn: "assosiation_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_pharmacy_assosiation_discount_pharmacy_pharmacy_id",
+                        column: x => x.pharmacy_id,
+                        principalTable: "pharmacy",
+                        principalColumn: "pharmacy_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "pharmacy_insurance_discount",
+                columns: table => new
+                {
+                    Pharmacy_id = table.Column<int>(type: "int", nullable: false),
+                    insurance_id = table.Column<int>(type: "int", nullable: false),
+                    discount_precentage = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_pharmacy_insurance_discount_health_insurance_insurance_id",
+                        column: x => x.insurance_id,
+                        principalTable: "health_insurance",
+                        principalColumn: "insurance_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_pharmacy_insurance_discount_pharmacy_Pharmacy_id",
+                        column: x => x.Pharmacy_id,
+                        principalTable: "pharmacy",
+                        principalColumn: "pharmacy_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "pharmacy_phone",
+                columns: table => new
+                {
+                    phone_number = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
+                    pharmacy_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_pharmacy_phone_pharmacy_pharmacy_id",
+                        column: x => x.pharmacy_id,
+                        principalTable: "pharmacy",
+                        principalColumn: "pharmacy_id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -663,17 +907,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_dises_product_catogrize_dises_dises_id",
+                        name: "FK_dises_product_catogrize_dises",
                         column: x => x.dises_id,
                         principalTable: "dises",
-                        principalColumn: "dises_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "dises_id");
                     table.ForeignKey(
-                        name: "FK_dises_product_catogrize_product_product_id",
+                        name: "FK_dises_product_catogrize_product",
                         column: x => x.product_id,
                         principalTable: "product",
-                        principalColumn: "product_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "product_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -686,12 +928,12 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_patient_product_view_patient_patient_id",
+                        name: "FK_patient_product_view_patient",
                         column: x => x.patient_id,
                         principalTable: "patient",
                         principalColumn: "patient_id");
                     table.ForeignKey(
-                        name: "FK_patient_product_view_product_product_id",
+                        name: "FK_patient_product_view_product",
                         column: x => x.product_id,
                         principalTable: "product",
                         principalColumn: "product_id");
@@ -707,11 +949,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_product_image_product_product_id",
+                        name: "FK_product_image_product",
                         column: x => x.product_id,
                         principalTable: "product",
-                        principalColumn: "product_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "product_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -725,17 +966,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_dises_material_catogrize_dises_dises_id",
+                        name: "FK_raw_material_dises_catogrize_dises",
                         column: x => x.dises_id,
                         principalTable: "dises",
-                        principalColumn: "dises_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "dises_id");
                     table.ForeignKey(
-                        name: "FK_dises_material_catogrize_raw_material_material_id",
+                        name: "FK_raw_material_dises_catogrize_raw_material",
                         column: x => x.material_id,
                         principalTable: "raw_material",
-                        principalColumn: "material_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "material_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -748,17 +987,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_patient_rawmaterial_veiw_patient_patient_id",
+                        name: "FK_patient_rawmaterial_veiw_patient",
                         column: x => x.patient_id,
                         principalTable: "patient",
-                        principalColumn: "patient_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "patient_id");
                     table.ForeignKey(
-                        name: "FK_patient_rawmaterial_veiw_raw_material_material_id",
+                        name: "FK_patient_rawmaterial_veiw_raw_material",
                         column: x => x.material_id,
                         principalTable: "raw_material",
-                        principalColumn: "material_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "material_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -771,11 +1008,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_rawmaterial_image_raw_material_material_id",
+                        name: "FK_rawmaterial_image_raw_material",
                         column: x => x.material_id,
                         principalTable: "raw_material",
-                        principalColumn: "material_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "material_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -788,17 +1024,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_storeadmin_material_control_raw_material_material_id",
+                        name: "FK_storeadmin_material_control_raw_material",
                         column: x => x.material_id,
                         principalTable: "raw_material",
-                        principalColumn: "material_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "material_id");
                     table.ForeignKey(
-                        name: "FK_storeadmin_material_control_store_admin_admin_id",
+                        name: "FK_storeadmin_material_control_store_admin",
                         column: x => x.admin_id,
                         principalTable: "store_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "admin_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -811,36 +1045,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_storeadmin_product_control_product_product_id",
+                        name: "FK_storeadmin_product_control_product",
                         column: x => x.product_id,
                         principalTable: "product",
-                        principalColumn: "product_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "product_id");
                     table.ForeignKey(
-                        name: "FK_storeadmin_product_control_store_admin_admin_id",
+                        name: "FK_storeadmin_product_control_store_admin",
                         column: x => x.admin_id,
                         principalTable: "store_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "storeadmin_regestriation",
-                columns: table => new
-                {
-                    username = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    admin_id = table.Column<int>(type: "int", nullable: false),
-                    password = table.Column<int>(type: "int", nullable: false),
-                    date = table.Column<DateOnly>(type: "date", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.ForeignKey(
-                        name: "FK_storeadmin_regestriation_store_admin_admin_id",
-                        column: x => x.admin_id,
-                        principalTable: "store_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "admin_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -853,17 +1066,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_useradmin_doctor_control_doctor_doctor_id",
+                        name: "FK_useradmin_doctor_control_doctor",
                         column: x => x.doctor_id,
                         principalTable: "doctor",
-                        principalColumn: "doctor_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "doctor_id");
                     table.ForeignKey(
-                        name: "FK_useradmin_doctor_control_user_admin_admin_id",
+                        name: "FK_useradmin_doctor_control_user_admin",
                         column: x => x.admin_id,
                         principalTable: "user_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "admin_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -875,11 +1086,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_useradmin_patient_approve_user_admin_admin_id",
+                        name: "FK_useradmin_patient_approve_user_admin",
                         column: x => x.admin_id,
                         principalTable: "user_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "admin_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -892,17 +1102,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_useradmin_patient_control_patient_patient_id",
+                        name: "FK_useradmin_patient_control_patient",
                         column: x => x.patient_id,
                         principalTable: "patient",
-                        principalColumn: "patient_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "patient_id");
                     table.ForeignKey(
-                        name: "FK_useradmin_patient_control_user_admin_admin_id",
+                        name: "FK_useradmin_patient_control_user_admin",
                         column: x => x.admin_id,
                         principalTable: "user_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "admin_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -915,17 +1123,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_useradmin_storeadmin_control_store_admin_Sadmin_id",
+                        name: "FK_useradmin_storeadmin_control_store_admin",
                         column: x => x.Sadmin_id,
                         principalTable: "store_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "admin_id");
                     table.ForeignKey(
-                        name: "FK_useradmin_storeadmin_control_user_admin_Uadmin_id",
+                        name: "FK_useradmin_storeadmin_control_user_admin",
                         column: x => x.Uadmin_id,
                         principalTable: "user_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "admin_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -938,16 +1144,83 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_medicaladmin_clinic_control_clinic_clinic_id",
+                        name: "FK_medicaladmin_clinic_control_clinic",
                         column: x => x.clinic_id,
                         principalTable: "clinic",
-                        principalColumn: "clinic_id",
+                        principalColumn: "clinic_id");
+                    table.ForeignKey(
+                        name: "FK_medicaladmin_clinic_control_medical_admin",
+                        column: x => x.admin_id,
+                        principalTable: "medical_admin",
+                        principalColumn: "admin_id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "medicaladmin_hospital_control",
+                columns: table => new
+                {
+                    hospital_id = table.Column<int>(type: "int", nullable: false),
+                    admin_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_medicaladmin_hospital_control_hospital_hospital_id",
+                        column: x => x.hospital_id,
+                        principalTable: "hospital",
+                        principalColumn: "hospital_id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_medicaladmin_clinic_control_medical_admin_admin_id",
+                        name: "FK_medicaladmin_hospital_control_medical_admin_admin_id",
                         column: x => x.admin_id,
                         principalTable: "medical_admin",
                         principalColumn: "admin_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "medicaladmin_lab_control",
+                columns: table => new
+                {
+                    lab_id = table.Column<int>(type: "int", nullable: false),
+                    admin_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_medicaladmin_lab_control_lab_lab_id",
+                        column: x => x.lab_id,
+                        principalTable: "lab",
+                        principalColumn: "lab_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_medicaladmin_lab_control_medical_admin_admin_id",
+                        column: x => x.admin_id,
+                        principalTable: "medical_admin",
+                        principalColumn: "admin_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "medicaladmin_pharmacy_control",
+                columns: table => new
+                {
+                    pharmacy_id = table.Column<int>(type: "int", nullable: false),
+                    admin_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.ForeignKey(
+                        name: "FK_medicaladmin_pharmacy_control_medical_admin_admin_id",
+                        column: x => x.admin_id,
+                        principalTable: "medical_admin",
+                        principalColumn: "admin_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_medicaladmin_pharmacy_control_pharmacy_pharmacy_id",
+                        column: x => x.pharmacy_id,
+                        principalTable: "pharmacy",
+                        principalColumn: "pharmacy_id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -961,17 +1234,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_useradmin_medicaladmin_control_medical_admin_Madmin_id",
+                        name: "FK_useradmin_medicaladmin_control_medical_admin",
                         column: x => x.Madmin_id,
                         principalTable: "medical_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "admin_id");
                     table.ForeignKey(
-                        name: "FK_useradmin_medicaladmin_control_user_admin_Uadmin_id",
+                        name: "FK_useradmin_medicaladmin_control_user_admin",
                         column: x => x.Uadmin_id,
                         principalTable: "user_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "admin_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -985,17 +1256,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_cart_material_add_cart_order_id",
+                        name: "FK_cart_material_add_cart",
                         column: x => x.order_id,
                         principalTable: "cart",
-                        principalColumn: "order_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "order_id");
                     table.ForeignKey(
-                        name: "FK_cart_material_add_raw_material_material_id",
+                        name: "FK_cart_material_add_raw_material",
                         column: x => x.material_id,
                         principalTable: "raw_material",
-                        principalColumn: "material_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "material_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1009,17 +1278,15 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.ForeignKey(
-                        name: "FK_cart_product_add_cart_order_id",
+                        name: "FK_cart_product_add_cart",
                         column: x => x.order_id,
                         principalTable: "cart",
-                        principalColumn: "order_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "order_id");
                     table.ForeignKey(
-                        name: "FK_cart_product_add_product_product_id",
+                        name: "FK_cart_product_add_product",
                         column: x => x.product_id,
                         principalTable: "product",
-                        principalColumn: "product_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "product_id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -1053,6 +1320,11 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 column: "patient_id");
 
             migrationBuilder.CreateIndex(
+                name: "IX_cart_payment_id",
+                table: "cart",
+                column: "payment_id");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_cart_material_add_material_id",
                 table: "cart_material_add",
                 column: "material_id");
@@ -1071,6 +1343,11 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "IX_cart_product_add_product_id",
                 table: "cart_product_add",
                 column: "product_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_clinic_address_clinic_id",
+                table: "clinic_address",
+                column: "clinic_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_clinic_assosiation_discount_assosiation_id",
@@ -1143,9 +1420,29 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 column: "doctor_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_doctor_regestraion_doctor_id",
-                table: "doctor_regestraion",
-                column: "doctor_id");
+                name: "IX_hospital_address_hospitalId",
+                table: "hospital_address",
+                column: "hospitalId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_hospital_insurance_discount_hospital_id",
+                table: "hospital_insurance_discount",
+                column: "hospital_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_hospital_insurance_discount_insurance_id",
+                table: "hospital_insurance_discount",
+                column: "insurance_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_hospital_phone_hospital_id",
+                table: "hospital_phone",
+                column: "hospital_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_hospital_type_hospital_id",
+                table: "hospital_type",
+                column: "hospital_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_insurance_address_insurance_id",
@@ -1156,6 +1453,41 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "IX_insurance_phone_insurance_id",
                 table: "insurance_phone",
                 column: "insurance_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_lab_address_labId",
+                table: "lab_address",
+                column: "labId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_lab_assosiation_discount_assosiation_id",
+                table: "lab_assosiation_discount",
+                column: "assosiation_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_lab_assosiation_discount_lab_id",
+                table: "lab_assosiation_discount",
+                column: "lab_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_lab_insurance_discount_insurance_id",
+                table: "lab_insurance_discount",
+                column: "insurance_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_lab_insurance_discount_lab_id",
+                table: "lab_insurance_discount",
+                column: "lab_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_lab_phone_lab_id",
+                table: "lab_phone",
+                column: "lab_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_lab_type_lab_id",
+                table: "lab_type",
+                column: "lab_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_medical_admin_assosiation_id",
@@ -1181,6 +1513,36 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "IX_medicaladmin_clinic_control_clinic_id",
                 table: "medicaladmin_clinic_control",
                 column: "clinic_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_medicaladmin_hospital_control_admin_id",
+                table: "medicaladmin_hospital_control",
+                column: "admin_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_medicaladmin_hospital_control_hospital_id",
+                table: "medicaladmin_hospital_control",
+                column: "hospital_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_medicaladmin_lab_control_admin_id",
+                table: "medicaladmin_lab_control",
+                column: "admin_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_medicaladmin_lab_control_lab_id",
+                table: "medicaladmin_lab_control",
+                column: "lab_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_medicaladmin_pharmacy_control_admin_id",
+                table: "medicaladmin_pharmacy_control",
+                column: "admin_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_medicaladmin_pharmacy_control_pharmacy_id",
+                table: "medicaladmin_pharmacy_control",
+                column: "pharmacy_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_patient_address_patient_id",
@@ -1233,9 +1595,34 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 column: "patient_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_patient_registrition_patient_id",
-                table: "patient_registrition",
-                column: "patient_id");
+                name: "IX_pharmacy_address_pharmacy_id",
+                table: "pharmacy_address",
+                column: "pharmacy_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_pharmacy_assosiation_discount_assosiation_id",
+                table: "pharmacy_assosiation_discount",
+                column: "assosiation_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_pharmacy_assosiation_discount_pharmacy_id",
+                table: "pharmacy_assosiation_discount",
+                column: "pharmacy_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_pharmacy_insurance_discount_insurance_id",
+                table: "pharmacy_insurance_discount",
+                column: "insurance_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_pharmacy_insurance_discount_Pharmacy_id",
+                table: "pharmacy_insurance_discount",
+                column: "Pharmacy_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_pharmacy_phone_pharmacy_id",
+                table: "pharmacy_phone",
+                column: "pharmacy_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_product_image_product_id",
@@ -1246,6 +1633,16 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "IX_rawmaterial_image_material_id",
                 table: "rawmaterial_image",
                 column: "material_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_reservation_clinic_id",
+                table: "reservation",
+                column: "clinic_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_reservation_patient_id",
+                table: "reservation",
+                column: "patient_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_storeadmin_material_control_admin_id",
@@ -1266,11 +1663,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "IX_storeadmin_product_control_product_id",
                 table: "storeadmin_product_control",
                 column: "product_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_storeadmin_regestriation_admin_id",
-                table: "storeadmin_regestriation",
-                column: "admin_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_useradmin_doctor_control_admin_id",
@@ -1337,6 +1729,9 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "cart_product_add");
 
             migrationBuilder.DropTable(
+                name: "clinic_address");
+
+            migrationBuilder.DropTable(
                 name: "clinic_assosiation_discount");
 
             migrationBuilder.DropTable(
@@ -1361,13 +1756,37 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "doctor_phone");
 
             migrationBuilder.DropTable(
-                name: "doctor_regestraion");
+                name: "hospital_address");
+
+            migrationBuilder.DropTable(
+                name: "hospital_insurance_discount");
+
+            migrationBuilder.DropTable(
+                name: "hospital_phone");
+
+            migrationBuilder.DropTable(
+                name: "hospital_type");
 
             migrationBuilder.DropTable(
                 name: "insurance_address");
 
             migrationBuilder.DropTable(
                 name: "insurance_phone");
+
+            migrationBuilder.DropTable(
+                name: "lab_address");
+
+            migrationBuilder.DropTable(
+                name: "lab_assosiation_discount");
+
+            migrationBuilder.DropTable(
+                name: "lab_insurance_discount");
+
+            migrationBuilder.DropTable(
+                name: "lab_phone");
+
+            migrationBuilder.DropTable(
+                name: "lab_type");
 
             migrationBuilder.DropTable(
                 name: "medical_record-drug");
@@ -1379,7 +1798,13 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "medicaladmin_clinic_control");
 
             migrationBuilder.DropTable(
-                name: "medicaladmin_regesteration");
+                name: "medicaladmin_hospital_control");
+
+            migrationBuilder.DropTable(
+                name: "medicaladmin_lab_control");
+
+            migrationBuilder.DropTable(
+                name: "medicaladmin_pharmacy_control");
 
             migrationBuilder.DropTable(
                 name: "patient_address");
@@ -1400,10 +1825,16 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "patient_rawmaterial_veiw");
 
             migrationBuilder.DropTable(
-                name: "patient_registrition");
+                name: "pharmacy_address");
 
             migrationBuilder.DropTable(
-                name: "payment");
+                name: "pharmacy_assosiation_discount");
+
+            migrationBuilder.DropTable(
+                name: "pharmacy_insurance_discount");
+
+            migrationBuilder.DropTable(
+                name: "pharmacy_phone");
 
             migrationBuilder.DropTable(
                 name: "product_image");
@@ -1419,9 +1850,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             migrationBuilder.DropTable(
                 name: "storeadmin_product_control");
-
-            migrationBuilder.DropTable(
-                name: "storeadmin_regestriation");
 
             migrationBuilder.DropTable(
                 name: "useradmin_doctor_control");
@@ -1442,16 +1870,25 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "cart");
 
             migrationBuilder.DropTable(
-                name: "health_insurance");
-
-            migrationBuilder.DropTable(
                 name: "medical_record");
 
             migrationBuilder.DropTable(
-                name: "clinic");
+                name: "hospital");
+
+            migrationBuilder.DropTable(
+                name: "lab");
 
             migrationBuilder.DropTable(
                 name: "dises");
+
+            migrationBuilder.DropTable(
+                name: "health_insurance");
+
+            migrationBuilder.DropTable(
+                name: "pharmacy");
+
+            migrationBuilder.DropTable(
+                name: "clinic");
 
             migrationBuilder.DropTable(
                 name: "raw_material");
@@ -1473,6 +1910,9 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             migrationBuilder.DropTable(
                 name: "patient");
+
+            migrationBuilder.DropTable(
+                name: "payment");
 
             migrationBuilder.DropTable(
                 name: "assosiation_branch");

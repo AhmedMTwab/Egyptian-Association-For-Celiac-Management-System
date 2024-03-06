@@ -28,11 +28,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", b =>
                 {
                     b.Property<int>("AssosiationId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("assosiation_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AssosiationId"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -114,11 +111,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Cart", b =>
                 {
                     b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("order_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
 
                     b.Property<DateOnly>("OrderDate")
                         .HasColumnType("date")
@@ -210,11 +204,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Clinic", b =>
                 {
                     b.Property<int>("ClinicId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("clinic_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClinicId"));
 
                     b.Property<TimeOnly>("CloseTime")
                         .HasColumnType("time")
@@ -234,6 +225,22 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasKey("ClinicId");
 
                     b.ToTable("clinic");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.ClinicAddress", b =>
+                {
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("clinic_address");
+
+                    b.Property<int>("ClinicId")
+                        .HasColumnType("int")
+                        .HasColumnName("clinic_id");
+
+                    b.HasIndex("ClinicId");
+
+                    b.ToTable("clinic_address");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.ClinicAssosiationDiscount", b =>
@@ -296,11 +303,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Dise", b =>
                 {
                     b.Property<int>("DisesId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("dises_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DisesId"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -365,11 +369,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Doctor", b =>
                 {
                     b.Property<int>("DoctorId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("doctor_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DoctorId"));
 
                     b.Property<TimeOnly>("ArriveTime")
                         .HasColumnType("time")
@@ -447,43 +448,11 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("doctor_phone");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.DoctorRegestraion", b =>
-                {
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date")
-                        .HasColumnName("date");
-
-                    b.Property<int>("DoctorId")
-                        .HasColumnType("int")
-                        .HasColumnName("doctor_id");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("password");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("username");
-
-                    b.HasIndex("DoctorId");
-
-                    b.ToTable("doctor_regestraion");
-                });
-
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HealthInsurance", b =>
                 {
                     b.Property<int>("InsuranceId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("insurance_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InsuranceId"));
 
                     b.Property<int>("LicenseCode")
                         .HasColumnType("int");
@@ -498,6 +467,98 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasKey("InsuranceId");
 
                     b.ToTable("health_insurance");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Hospital", b =>
+                {
+                    b.Property<int>("HospitalId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("hospital_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HospitalId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("name");
+
+                    b.HasKey("HospitalId");
+
+                    b.ToTable("hospital");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalAddress", b =>
+                {
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("hospital_address");
+
+                    b.Property<int>("HospitalId")
+                        .HasColumnType("int")
+                        .HasColumnName("hospital_id");
+
+                    b.Property<int>("hospitalId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("hospitalId");
+
+                    b.ToTable("hospital_address");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalInsuranceDiscount", b =>
+                {
+                    b.Property<double>("DiscountPrecentage")
+                        .HasColumnType("float")
+                        .HasColumnName("discount_precentage");
+
+                    b.Property<int>("HospitalId")
+                        .HasColumnType("int")
+                        .HasColumnName("hospital_id");
+
+                    b.Property<int>("InsuranceId")
+                        .HasColumnType("int")
+                        .HasColumnName("insurance_id");
+
+                    b.HasIndex("HospitalId");
+
+                    b.HasIndex("InsuranceId");
+
+                    b.ToTable("hospital_insurance_discount");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalPhone", b =>
+                {
+                    b.Property<int>("HospitalId")
+                        .HasColumnType("int")
+                        .HasColumnName("hospital_id");
+
+                    b.Property<decimal>("PhoneNumber")
+                        .HasColumnType("numeric(18, 0)")
+                        .HasColumnName("phone_number");
+
+                    b.HasIndex("HospitalId");
+
+                    b.ToTable("hospital_phone");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalType", b =>
+                {
+                    b.Property<int>("HospitalId")
+                        .HasColumnType("int")
+                        .HasColumnName("hospital_id");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("hospital_type");
+
+                    b.HasIndex("HospitalId");
+
+                    b.ToTable("hospital_type");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.InsuranceAddress", b =>
@@ -533,14 +594,132 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("insurance_phone");
                 });
 
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Lab", b =>
+                {
+                    b.Property<int>("LabId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("lab_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LabId"));
+
+                    b.Property<TimeOnly>("CloseTime")
+                        .HasColumnType("time")
+                        .HasColumnName("close_time");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("name");
+
+                    b.Property<TimeOnly>("OpenTime")
+                        .HasColumnType("time")
+                        .HasColumnName("open_time");
+
+                    b.HasKey("LabId");
+
+                    b.ToTable("lab");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabAddress", b =>
+                {
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("lab_address");
+
+                    b.Property<int>("LabId")
+                        .HasColumnType("int")
+                        .HasColumnName("lab_id");
+
+                    b.Property<int>("labId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("labId");
+
+                    b.ToTable("lab_address");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabAssosiationDiscount", b =>
+                {
+                    b.Property<int>("AssosiationId")
+                        .HasColumnType("int")
+                        .HasColumnName("assosiation_id");
+
+                    b.Property<double>("DiscountPrecentage")
+                        .HasColumnType("float")
+                        .HasColumnName("discount_precentage");
+
+                    b.Property<int>("LabId")
+                        .HasColumnType("int")
+                        .HasColumnName("lab_id");
+
+                    b.HasIndex("AssosiationId");
+
+                    b.HasIndex("LabId");
+
+                    b.ToTable("lab_assosiation_discount");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabInsuranceDiscount", b =>
+                {
+                    b.Property<double>("DiscountPrecentage")
+                        .HasColumnType("float")
+                        .HasColumnName("discount_precentage");
+
+                    b.Property<int>("InsuranceId")
+                        .HasColumnType("int")
+                        .HasColumnName("insurance_id");
+
+                    b.Property<int>("LabId")
+                        .HasColumnType("int")
+                        .HasColumnName("lab_id");
+
+                    b.HasIndex("InsuranceId");
+
+                    b.HasIndex("LabId");
+
+                    b.ToTable("lab_insurance_discount");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabPhone", b =>
+                {
+                    b.Property<int>("LabId")
+                        .HasColumnType("int")
+                        .HasColumnName("lab_id");
+
+                    b.Property<decimal>("PhoneNumber")
+                        .HasColumnType("numeric(18, 0)")
+                        .HasColumnName("phone_number");
+
+                    b.HasIndex("LabId");
+
+                    b.ToTable("lab_phone");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabType", b =>
+                {
+                    b.Property<int>("LabId")
+                        .HasColumnType("int")
+                        .HasColumnName("lab_id");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("lab_type");
+
+                    b.HasIndex("LabId");
+
+                    b.ToTable("lab_type");
+                });
+
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", b =>
                 {
                     b.Property<int>("AdminId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("admin_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
 
                     b.Property<int>("AssosiationId")
                         .HasColumnType("int")
@@ -574,14 +753,62 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("medical_admin");
                 });
 
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminHospitalControl", b =>
+                {
+                    b.Property<int>("AdminId")
+                        .HasColumnType("int")
+                        .HasColumnName("admin_id");
+
+                    b.Property<int>("HospitalId")
+                        .HasColumnType("int")
+                        .HasColumnName("hospital_id");
+
+                    b.HasIndex("AdminId");
+
+                    b.HasIndex("HospitalId");
+
+                    b.ToTable("medicaladmin_hospital_control");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminLabControl", b =>
+                {
+                    b.Property<int>("AdminId")
+                        .HasColumnType("int")
+                        .HasColumnName("admin_id");
+
+                    b.Property<int>("LabId")
+                        .HasColumnType("int")
+                        .HasColumnName("lab_id");
+
+                    b.HasIndex("AdminId");
+
+                    b.HasIndex("LabId");
+
+                    b.ToTable("medicaladmin_lab_control");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminPharmacyControl", b =>
+                {
+                    b.Property<int>("AdminId")
+                        .HasColumnType("int")
+                        .HasColumnName("admin_id");
+
+                    b.Property<int>("PharmacyId")
+                        .HasColumnType("int")
+                        .HasColumnName("pharmacy_id");
+
+                    b.HasIndex("AdminId");
+
+                    b.HasIndex("PharmacyId");
+
+                    b.ToTable("medicaladmin_pharmacy_control");
+                });
+
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalRecord", b =>
                 {
                     b.Property<int>("RecordId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("record_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RecordId"));
 
                     b.Property<DateOnly>("Date")
                         .HasColumnType("date")
@@ -652,43 +879,11 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("medicaladmin_clinic_control");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicaladminRegesteration", b =>
-                {
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
-
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date")
-                        .HasColumnName("date");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("password");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("username");
-
-                    b.HasIndex("AdminId");
-
-                    b.ToTable("medicaladmin_regesteration");
-                });
-
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Patient", b =>
                 {
                     b.Property<int>("PatientId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("patient_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PatientId"));
 
                     b.Property<DateOnly>("Dob")
                         .HasColumnType("date")
@@ -697,8 +892,9 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Property<string>("PatientBloodtype")
                         .IsRequired()
                         .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
-                        .HasColumnName("patient_bloodtype");
+                        .HasColumnType("nchar(10)")
+                        .HasColumnName("patient_bloodtype")
+                        .IsFixedLength();
 
                     b.Property<string>("PatientName")
                         .IsRequired()
@@ -824,49 +1020,18 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("patient_rawmaterial_veiw");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientRegistrition", b =>
-                {
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date")
-                        .HasColumnName("date");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("password");
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int")
-                        .HasColumnName("patient_id");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("username");
-
-                    b.HasIndex("PatientId");
-
-                    b.ToTable("patient_registrition");
-                });
-
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Payment", b =>
                 {
                     b.Property<int>("PaymentId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("payment_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
 
                     b.Property<string>("PaymentType")
                         .IsRequired()
                         .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
-                        .HasColumnName("payment_type");
+                        .HasColumnType("nchar(10)")
+                        .HasColumnName("payment_type")
+                        .IsFixedLength();
 
                     b.Property<decimal>("TotalPaid")
                         .HasColumnType("money")
@@ -877,14 +1042,113 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("payment");
                 });
 
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Pharmacy", b =>
+                {
+                    b.Property<int>("pharmacyId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("pharmacy_id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("pharmacyId"));
+
+                    b.Property<TimeOnly>("CloseTime")
+                        .HasColumnType("time")
+                        .HasColumnName("close_time");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("name");
+
+                    b.Property<TimeOnly>("OpenTime")
+                        .HasColumnType("time")
+                        .HasColumnName("open_time");
+
+                    b.HasKey("pharmacyId");
+
+                    b.ToTable("pharmacy");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyAddress", b =>
+                {
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("pharmacy_address");
+
+                    b.Property<int>("PharmacyId")
+                        .HasColumnType("int")
+                        .HasColumnName("pharmacy_id");
+
+                    b.HasIndex("PharmacyId");
+
+                    b.ToTable("pharmacy_address");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyAssosiationDiscount", b =>
+                {
+                    b.Property<int>("AssosiationId")
+                        .HasColumnType("int")
+                        .HasColumnName("assosiation_id");
+
+                    b.Property<double>("DiscountPrecentage")
+                        .HasColumnType("float")
+                        .HasColumnName("discount_precentage");
+
+                    b.Property<int>("PharmacyId")
+                        .HasColumnType("int")
+                        .HasColumnName("pharmacy_id");
+
+                    b.HasIndex("AssosiationId");
+
+                    b.HasIndex("PharmacyId");
+
+                    b.ToTable("pharmacy_assosiation_discount");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyInsuranceDiscount", b =>
+                {
+                    b.Property<double>("DiscountPrecentage")
+                        .HasColumnType("float")
+                        .HasColumnName("discount_precentage");
+
+                    b.Property<int>("InsuranceId")
+                        .HasColumnType("int")
+                        .HasColumnName("insurance_id");
+
+                    b.Property<int>("PharmacyId")
+                        .HasColumnType("int")
+                        .HasColumnName("Pharmacy_id");
+
+                    b.HasIndex("InsuranceId");
+
+                    b.HasIndex("PharmacyId");
+
+                    b.ToTable("pharmacy_insurance_discount");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyPhone", b =>
+                {
+                    b.Property<int>("PharmacyId")
+                        .HasColumnType("int")
+                        .HasColumnName("pharmacy_id");
+
+                    b.Property<decimal>("PhoneNumber")
+                        .HasColumnType("numeric(18, 0)")
+                        .HasColumnName("phone_number");
+
+                    b.HasIndex("PharmacyId");
+
+                    b.ToTable("pharmacy_phone");
+                });
+
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Product", b =>
                 {
                     b.Property<int>("ProductId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("product_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"));
 
                     b.Property<string>("Details")
                         .IsRequired()
@@ -926,11 +1190,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.RawMaterial", b =>
                 {
                     b.Property<int>("MaterialId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("material_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MaterialId"));
 
                     b.Property<string>("Details")
                         .IsRequired()
@@ -972,11 +1233,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Reservation", b =>
                 {
                     b.Property<int>("ReservationId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("reservation_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReservationId"));
 
                     b.Property<string>("AppointmentType")
                         .IsRequired()
@@ -1026,11 +1284,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.StoreAdmin", b =>
                 {
                     b.Property<int>("AdminId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("admin_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
 
                     b.Property<int>("AssosiationId")
                         .HasColumnType("int")
@@ -1096,40 +1351,11 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("storeadmin_product_control");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.StoreadminRegestriation", b =>
-                {
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
-
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date")
-                        .HasColumnName("date");
-
-                    b.Property<int>("Password")
-                        .HasColumnType("int")
-                        .HasColumnName("password");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("username");
-
-                    b.HasIndex("AdminId");
-
-                    b.ToTable("storeadmin_regestriation");
-                });
-
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UserAdmin", b =>
                 {
                     b.Property<int>("AdminId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("admin_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
 
                     b.Property<string>("AdminEmail")
                         .IsRequired()
@@ -1156,7 +1382,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasColumnType("int")
                         .HasColumnName("assosiation_id");
 
-                    b.HasKey("AdminId");
+                    b.HasKey("AdminId")
+                        .HasName("PK_ADMIN_table");
 
                     b.ToTable("user_admin");
                 });
@@ -1245,8 +1472,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
                         .WithMany()
                         .HasForeignKey("AssosiationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_assosiation_branch_phone_assosiation_branch");
 
                     b.Navigation("Assosiation");
                 });
@@ -1256,14 +1483,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
                         .WithMany()
                         .HasForeignKey("AssosiationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_assosiation_dises_follow_assosiation_branch");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Dise", "Dises")
                         .WithMany()
                         .HasForeignKey("DisesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_assosiation_dises__dises");
 
                     b.Navigation("Assosiation");
 
@@ -1275,14 +1502,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
                         .WithMany()
                         .HasForeignKey("AssosiationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_assosiation_assosiation_branch");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.HealthInsurance", "Insurance")
                         .WithMany()
                         .HasForeignKey("InsuranceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_assosiation_health_insurance");
 
                     b.Navigation("Assosiation");
 
@@ -1294,8 +1521,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
                         .WithMany("Carts")
                         .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_cart_patient");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Payment", "Payment")
                         .WithMany()
@@ -1313,14 +1540,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.RawMaterial", "Material")
                         .WithMany()
                         .HasForeignKey("MaterialId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_cart_material_add_raw_material");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Cart", "Order")
                         .WithMany()
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_cart_material_add_cart");
 
                     b.Navigation("Material");
 
@@ -1332,18 +1559,29 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Cart", "Order")
                         .WithMany()
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_cart_product_add_cart");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_cart_product_add_product");
 
                     b.Navigation("Order");
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.ClinicAddress", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Clinic", "Clinic")
+                        .WithMany()
+                        .HasForeignKey("ClinicId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Clinic");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.ClinicAssosiationDiscount", b =>
@@ -1351,14 +1589,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
                         .WithMany()
                         .HasForeignKey("AssosiationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_clinic_assosiation_discount_assosiation_branch");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Clinic", "Clinic")
                         .WithMany()
                         .HasForeignKey("ClinicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_clinic_assosiation_discount_clinic");
 
                     b.Navigation("Assosiation");
 
@@ -1370,14 +1608,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Clinic", "Clinic")
                         .WithMany()
                         .HasForeignKey("ClinicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_clinic_insurance_discount_clinic");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.HealthInsurance", "Insurance")
                         .WithMany()
                         .HasForeignKey("InsuranceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_clinic_insurance_discount_health_insurance");
 
                     b.Navigation("Clinic");
 
@@ -1389,8 +1627,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Clinic", "Clinic")
                         .WithMany()
                         .HasForeignKey("ClinicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_clinic_phone_clinic");
 
                     b.Navigation("Clinic");
                 });
@@ -1400,14 +1638,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Dise", "Dises")
                         .WithMany()
                         .HasForeignKey("DisesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_raw_material_dises_catogrize_dises");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.RawMaterial", "Material")
                         .WithMany()
                         .HasForeignKey("MaterialId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_raw_material_dises_catogrize_raw_material");
 
                     b.Navigation("Dises");
 
@@ -1419,14 +1657,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Dise", "Dises")
                         .WithMany()
                         .HasForeignKey("DisesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_dises_product_catogrize_dises");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_dises_product_catogrize_product");
 
                     b.Navigation("Dises");
 
@@ -1438,14 +1676,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Clinic", "Clinic")
                         .WithMany()
                         .HasForeignKey("ClinicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_doctor_clinic_work_clinic");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_doctor_clinic_work_doctor");
 
                     b.Navigation("Clinic");
 
@@ -1457,14 +1695,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_doctor_medicalrecord_veiw_doctor");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalRecord", "Record")
                         .WithMany()
                         .HasForeignKey("RecordId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_doctor_medicalrecord_veiw_medical_record");
 
                     b.Navigation("Doctor");
 
@@ -1476,21 +1714,62 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_doctor_phone_doctor");
 
                     b.Navigation("Doctor");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.DoctorRegestraion", b =>
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalAddress", b =>
                 {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Doctor", "Doctor")
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Hospital", "Hospital")
                         .WithMany()
-                        .HasForeignKey("DoctorId")
+                        .HasForeignKey("hospitalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Doctor");
+                    b.Navigation("Hospital");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalInsuranceDiscount", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Hospital", "Hospital")
+                        .WithMany()
+                        .HasForeignKey("HospitalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.HealthInsurance", "Insurance")
+                        .WithMany()
+                        .HasForeignKey("InsuranceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hospital");
+
+                    b.Navigation("Insurance");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalPhone", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Hospital", "Hospital")
+                        .WithMany()
+                        .HasForeignKey("HospitalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hospital");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalType", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Hospital", "Hospital")
+                        .WithMany()
+                        .HasForeignKey("HospitalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hospital");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.InsuranceAddress", b =>
@@ -1498,8 +1777,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.HealthInsurance", "Insurance")
                         .WithMany()
                         .HasForeignKey("InsuranceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_insurance_address_health_insurance");
 
                     b.Navigation("Insurance");
                 });
@@ -1509,10 +1788,81 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.HealthInsurance", "Insurance")
                         .WithMany()
                         .HasForeignKey("InsuranceId")
+                        .IsRequired()
+                        .HasConstraintName("FK_insurance_phone_health_insurance");
+
+                    b.Navigation("Insurance");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabAddress", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Lab", "Lab")
+                        .WithMany()
+                        .HasForeignKey("labId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lab");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabAssosiationDiscount", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
+                        .WithMany()
+                        .HasForeignKey("AssosiationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Lab", "Lab")
+                        .WithMany()
+                        .HasForeignKey("LabId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Assosiation");
+
+                    b.Navigation("Lab");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabInsuranceDiscount", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.HealthInsurance", "Insurance")
+                        .WithMany()
+                        .HasForeignKey("InsuranceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Lab", "Lab")
+                        .WithMany()
+                        .HasForeignKey("LabId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Insurance");
+
+                    b.Navigation("Lab");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabPhone", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Lab", "Lab")
+                        .WithMany()
+                        .HasForeignKey("LabId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lab");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabType", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Lab", "Lab")
+                        .WithMany()
+                        .HasForeignKey("LabId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lab");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", b =>
@@ -1520,10 +1870,67 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
                         .WithMany("MedicalAdmins")
                         .HasForeignKey("AssosiationId")
+                        .IsRequired()
+                        .HasConstraintName("FK_medical_admin_assosiation_branch");
+
+                    b.Navigation("Assosiation");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminHospitalControl", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", "Admin")
+                        .WithMany()
+                        .HasForeignKey("AdminId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Assosiation");
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Hospital", "Hospital")
+                        .WithMany()
+                        .HasForeignKey("HospitalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+
+                    b.Navigation("Hospital");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminLabControl", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", "Admin")
+                        .WithMany()
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Lab", "Lab")
+                        .WithMany()
+                        .HasForeignKey("LabId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+
+                    b.Navigation("Lab");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminPharmacyControl", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", "Admin")
+                        .WithMany()
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Pharmacy", "Pharmacy")
+                        .WithMany()
+                        .HasForeignKey("PharmacyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+
+                    b.Navigation("Pharmacy");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalRecordDrug", b =>
@@ -1531,8 +1938,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalRecord", "Record")
                         .WithMany()
                         .HasForeignKey("RecordId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_medical_record-drug_medical_record");
 
                     b.Navigation("Record");
                 });
@@ -1542,8 +1949,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalRecord", "Record")
                         .WithMany()
                         .HasForeignKey("RecordId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_medical_record-test_medical_record");
 
                     b.Navigation("Record");
                 });
@@ -1553,29 +1960,18 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", "Admin")
                         .WithMany()
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_medicaladmin_clinic_control_medical_admin");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Clinic", "Clinic")
                         .WithMany()
                         .HasForeignKey("ClinicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_medicaladmin_clinic_control_clinic");
 
                     b.Navigation("Admin");
 
                     b.Navigation("Clinic");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicaladminRegesteration", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", "MedicalAdmin")
-                        .WithMany()
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("MedicalAdmin");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientAddress", b =>
@@ -1583,8 +1979,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_patient_address_patient");
 
                     b.Navigation("Patient");
                 });
@@ -1594,14 +1990,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
                         .WithMany()
                         .HasForeignKey("AssosiationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_patient_assosiation_particpate_assosiation_branch");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_patient_assosiation_particpate_patient");
 
                     b.Navigation("Assosiation");
 
@@ -1613,14 +2009,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Dise", "Dises")
                         .WithMany()
                         .HasForeignKey("DisesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_patient_dises-have_dises");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_patient_dises-have_patient");
 
                     b.Navigation("Dises");
 
@@ -1631,7 +2027,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 {
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
                         .WithMany()
-                        .HasForeignKey("PatientId");
+                        .HasForeignKey("PatientId")
+                        .HasConstraintName("FK_patient_phone_patient");
 
                     b.Navigation("Patient");
                 });
@@ -1640,11 +2037,13 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 {
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
                         .WithMany()
-                        .HasForeignKey("PatientId");
+                        .HasForeignKey("PatientId")
+                        .HasConstraintName("FK_patient_product_view_patient");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .HasConstraintName("FK_patient_product_view_product");
 
                     b.Navigation("Patient");
 
@@ -1656,29 +2055,78 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.RawMaterial", "Material")
                         .WithMany()
                         .HasForeignKey("MaterialId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_patient_rawmaterial_veiw_raw_material");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_patient_rawmaterial_veiw_patient");
 
                     b.Navigation("Material");
 
                     b.Navigation("Patient");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientRegistrition", b =>
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyAddress", b =>
                 {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Pharmacy", "Pharmacy")
                         .WithMany()
-                        .HasForeignKey("PatientId")
+                        .HasForeignKey("PharmacyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Patient");
+                    b.Navigation("Pharmacy");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyAssosiationDiscount", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
+                        .WithMany()
+                        .HasForeignKey("AssosiationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Pharmacy", "Pharmacy")
+                        .WithMany()
+                        .HasForeignKey("PharmacyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Assosiation");
+
+                    b.Navigation("Pharmacy");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyInsuranceDiscount", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.HealthInsurance", "Insurance")
+                        .WithMany()
+                        .HasForeignKey("InsuranceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Pharmacy", "Pharmacy")
+                        .WithMany()
+                        .HasForeignKey("PharmacyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Insurance");
+
+                    b.Navigation("Pharmacy");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyPhone", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Pharmacy", "Pharmacy")
+                        .WithMany()
+                        .HasForeignKey("PharmacyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pharmacy");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.ProductImage", b =>
@@ -1686,8 +2134,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_product_image_product");
 
                     b.Navigation("Product");
                 });
@@ -1697,8 +2145,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.RawMaterial", "Material")
                         .WithMany()
                         .HasForeignKey("MaterialId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_rawmaterial_image_raw_material");
 
                     b.Navigation("Material");
                 });
@@ -1727,14 +2175,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.StoreAdmin", "Admin")
                         .WithMany()
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_storeadmin_material_control_store_admin");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.RawMaterial", "Material")
                         .WithMany()
                         .HasForeignKey("MaterialId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_storeadmin_material_control_raw_material");
 
                     b.Navigation("Admin");
 
@@ -1746,29 +2194,18 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.StoreAdmin", "Admin")
                         .WithMany()
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_storeadmin_product_control_store_admin");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_storeadmin_product_control_product");
 
                     b.Navigation("Admin");
 
                     b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.StoreadminRegestriation", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.StoreAdmin", "Admin")
-                        .WithMany()
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Admin");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminDoctorControl", b =>
@@ -1776,14 +2213,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.UserAdmin", "Admin")
                         .WithMany()
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_useradmin_doctor_control_user_admin");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_useradmin_doctor_control_doctor");
 
                     b.Navigation("Admin");
 
@@ -1795,14 +2232,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", "Madmin")
                         .WithMany()
                         .HasForeignKey("MadminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_useradmin_medicaladmin_control_medical_admin");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.UserAdmin", "Uadmin")
                         .WithMany()
                         .HasForeignKey("UadminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_useradmin_medicaladmin_control_user_admin");
 
                     b.Navigation("Madmin");
 
@@ -1814,8 +2251,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.UserAdmin", "Admin")
                         .WithMany()
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_useradmin_patient_approve_user_admin");
 
                     b.Navigation("Admin");
                 });
@@ -1825,14 +2262,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.UserAdmin", "Admin")
                         .WithMany()
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_useradmin_patient_control_user_admin");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_useradmin_patient_control_patient");
 
                     b.Navigation("Admin");
 
@@ -1844,14 +2281,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.StoreAdmin", "Sadmin")
                         .WithMany()
                         .HasForeignKey("SadminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_useradmin_storeadmin_control_store_admin");
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.UserAdmin", "Uadmin")
                         .WithMany()
                         .HasForeignKey("UadminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_useradmin_storeadmin_control_user_admin");
 
                     b.Navigation("Sadmin");
 

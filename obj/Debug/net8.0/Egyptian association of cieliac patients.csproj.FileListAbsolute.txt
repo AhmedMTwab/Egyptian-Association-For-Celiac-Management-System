@@ -275,3 +275,4 @@ D:\Ahmed Badawy\Programming\Asp.Net Core\MVC\Egyptian-association-of-cieliac-pat
 D:\Ahmed Badawy\Programming\Asp.Net Core\MVC\Egyptian-association-of-cieliac-patients\obj\Debug\net8.0\Egyptian association of cieliac patients.pdb
 D:\Ahmed Badawy\Programming\Asp.Net Core\MVC\Egyptian-association-of-cieliac-patients\obj\Debug\net8.0\Egyptian association of cieliac patients.genruntimeconfig.cache
 D:\Ahmed Badawy\Programming\Asp.Net Core\MVC\Egyptian-association-of-cieliac-patients\obj\Debug\net8.0\ref\Egyptian association of cieliac patients.dll
+D:\graduation-project\Website\Egyptian association of cieliac patients\obj\Debug\net8.0\Egyptian association of cieliac patients.sourcelink.json

@@ -1422,17 +1422,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("useradmin_medicaladmin_control");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminPatientApprove", b =>
-                {
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
-
-                    b.HasIndex("AdminId");
-
-                    b.ToTable("useradmin_patient_approve");
-                });
-
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminPatientControl", b =>
                 {
                     b.Property<int>("AdminId")
@@ -2244,17 +2233,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Navigation("Madmin");
 
                     b.Navigation("Uadmin");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminPatientApprove", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.UserAdmin", "Admin")
-                        .WithMany()
-                        .HasForeignKey("AdminId")
-                        .IsRequired()
-                        .HasConstraintName("FK_useradmin_patient_approve_user_admin");
-
-                    b.Navigation("Admin");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminPatientControl", b =>

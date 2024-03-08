@@ -110,7 +110,6 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
     public virtual DbSet<UseradminMedicaladminControl> UseradminMedicaladminControls { get; set; }
 
-    public virtual DbSet<UseradminPatientApprove> UseradminPatientApproves { get; set; }
 
     public virtual DbSet<UseradminPatientControl> UseradminPatientControls { get; set; }
 
@@ -536,12 +535,7 @@ modelBuilder.Entity<UseradminMedicaladminControl>(entity =>
         .HasConstraintName("FK_useradmin_medicaladmin_control_user_admin");
 });
 
-modelBuilder.Entity<UseradminPatientApprove>(entity =>
-{
-    entity.HasOne(d => d.Admin).WithMany()
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_useradmin_patient_approve_user_admin");
-});
+
 
 modelBuilder.Entity<UseradminPatientControl>(entity =>
 {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sYS0S1COT0PzCPK3IYNtAFc9hWZFVnwe+nYz/v4Iw4M=",
+  "Hash": "MBkOMRBChHnNQ/3NcmFlXvJhCsiZ6KfVtIMixEzWPzg=",
   "Source": "Egyptian association of cieliac patients",
   "BasePath": "_content/Egyptian association of cieliac patients",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\wwwroot\\images\\3.jpeg",
+      "SourceId": "Egyptian association of cieliac patients",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\wwwroot\\",
+      "BasePath": "_content/Egyptian association of cieliac patients",
+      "RelativePath": "images/3.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\3.jpeg"
     },
     {
       "Identity": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\wwwroot\\js\\site.js",

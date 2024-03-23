@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\website\\egyptian association of cieliac patients\\repositories\\mainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:repositories\\mainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\website\\egyptian association of cieliac patients\\repositories\\icrudrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:repositories\\icrudrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\website\\egyptian association of cieliac patients\\migrations\\20240308180850_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:migrations\\20240308180850_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,48 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainRepository.cs",
-              "DocumentMoniker": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Repositories\\MainRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\MainRepository.cs",
-              "ToolTip": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Repositories\\MainRepository.cs",
-              "RelativeToolTip": "Repositories\\MainRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAQwBMAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T14:59:04.004Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ICRUDRepo.cs",
-              "DocumentMoniker": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Repositories\\ICRUDRepo.cs",
-              "RelativeDocumentMoniker": "Repositories\\ICRUDRepo.cs",
-              "ToolTip": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Repositories\\ICRUDRepo.cs",
-              "RelativeToolTip": "Repositories\\ICRUDRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T14:26:12.41Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20240308180850_init.cs",
-              "DocumentMoniker": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Migrations\\20240308180850_init.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240308180850_init.cs",
-              "ToolTip": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Migrations\\20240308180850_init.cs",
-              "RelativeToolTip": "Migrations\\20240308180850_init.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T18:08:50.951Z"
             }
           ]
         }

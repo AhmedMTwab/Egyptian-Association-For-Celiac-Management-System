@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\wwwroot\\images\\3.jpeg",
+      "PackagePath": "staticwebassets\\images\\3.jpeg"
+    },
+    {
       "Id": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

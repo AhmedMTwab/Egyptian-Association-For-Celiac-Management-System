@@ -34,8 +34,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Patient/UserAdminControls.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxVc2VyQWRtaW5Db250cm9scy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Patient/viewall.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFx2aWV3YWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Patient/viewone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFx2aWV3b25lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Shared/Error.cshtml]

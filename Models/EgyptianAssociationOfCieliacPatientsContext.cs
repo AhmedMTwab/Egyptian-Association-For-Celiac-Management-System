@@ -141,11 +141,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
-        //modelBuilder.Entity<UserAdminPatientRegistrationApprove>()
-        //   .HasOne(e => e.Registration)
-        //   .WithMany()
-        //   .HasForeignKey(e => new { e.PatientId, e.UserName })
-        //   .OnDelete(DeleteBehavior.Restrict);  // Adjust delete behavior as needed
+       
     
     modelBuilder.Entity<AssosiationBranch>(entity =>
         {
@@ -374,7 +370,7 @@ modelBuilder.Entity<MedicaladminClinicControl>(entity =>
 
 modelBuilder.Entity<Patient>(entity =>
 {
-    entity.Property(e => e.PatientId).ValueGeneratedNever();
+    entity.Property(e => e.PatientId)/*.ValueGeneratedNever()*/;
     entity.Property(e => e.PatientBloodtype).IsFixedLength();
 });
 
@@ -558,8 +554,8 @@ modelBuilder.Entity<UseradminStoreadminControl>(entity =>
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_useradmin_storeadmin_control_user_admin");
 });
-
-OnModelCreatingPartial(modelBuilder);
+       
+        OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

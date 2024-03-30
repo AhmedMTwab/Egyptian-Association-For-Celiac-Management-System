@@ -4,6 +4,7 @@ using Egyptian_association_of_cieliac_patients.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptian_association_of_cieliac_patients.Migrations
 {
     [DbContext(typeof(EgyptianAssociationOfCieliacPatientsContext))]
-    partial class EgyptianAssociationOfCieliacPatientsContextModelSnapshot : ModelSnapshot
+    [Migration("20240329082101_composedkey")]
+    partial class composedkey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -882,11 +885,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Patient", b =>
                 {
                     b.Property<int>("PatientId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("patient_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PatientId"));
 
                     b.Property<DateOnly>("Dob")
                         .HasColumnType("date")
@@ -926,14 +926,9 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasColumnType("int")
                         .HasColumnName("patient_id");
 
-                    b.Property<int?>("PatientId1")
-                        .HasColumnType("int");
-
                     b.HasKey("Address", "PatientId");
 
                     b.HasIndex("PatientId");
-
-                    b.HasIndex("PatientId1");
 
                     b.ToTable("patient_address");
                 });
@@ -1465,6 +1460,24 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("useradmin_storeadmin_control");
                 });
 
+            modelBuilder.Entity("PatientPatientAddress", b =>
+                {
+                    b.Property<int>("Patient1PatientId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AddressesAddress")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<int>("AddressesPatientId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Patient1PatientId", "AddressesAddress", "AddressesPatientId");
+
+                    b.HasIndex("AddressesAddress", "AddressesPatientId");
+
+                    b.ToTable("PatientPatientAddress");
+                });
+
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.AssosiationBranchPhone", b =>
                 {
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
@@ -1980,10 +1993,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_patient_address_patient");
 
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", null)
-                        .WithMany("Addresses")
-                        .HasForeignKey("PatientId1");
-
                     b.Navigation("Patient");
                 });
 
@@ -2286,6 +2295,21 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Navigation("Uadmin");
                 });
 
+            modelBuilder.Entity("PatientPatientAddress", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", null)
+                        .WithMany()
+                        .HasForeignKey("Patient1PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.PatientAddress", null)
+                        .WithMany()
+                        .HasForeignKey("AddressesAddress", "AddressesPatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", b =>
                 {
                     b.Navigation("MedicalAdmins");
@@ -2293,8 +2317,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Patient", b =>
                 {
-                    b.Navigation("Addresses");
-
                     b.Navigation("Carts");
                 });
 #pragma warning restore 612, 618

@@ -16,7 +16,7 @@ namespace Egyptian_association_of_cieliac_patients
             {
                 options.UseLazyLoadingProxies().UseSqlServer(CS);
             });
-            builder.Services.AddScoped<ICRUDRepo<Patient>,MainRepository<Patient>>();
+            builder.Services.AddScoped<IPatientRepo, ImpelmentPatientRepository>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

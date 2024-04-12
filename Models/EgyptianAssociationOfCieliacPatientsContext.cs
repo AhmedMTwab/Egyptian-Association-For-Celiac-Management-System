@@ -134,10 +134,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
     public virtual DbSet<MedicalAdminHospitalControl> MedicalAdminHospitalControls { get; set; }
     public virtual DbSet<HospitalInsuranceDiscount> HospitalInsuranceDiscounts { get; set; }
 
-    //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-    //        => optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Egyptian association of cieliac patients;Trusted_Connection=True;TrustServerCertificate=True;");
-
+   
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
@@ -376,7 +373,7 @@ modelBuilder.Entity<Patient>(entity =>
 
 modelBuilder.Entity<PatientAddress>(entity =>
 {
-    entity.HasOne(d => d.Patient).WithMany()
+    entity.HasOne(d => d.Patient).WithMany(d=>d.Addresses)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_patient_address_patient");
 });
@@ -405,7 +402,7 @@ modelBuilder.Entity<PatientDisesHave>(entity =>
 
 modelBuilder.Entity<PatientPhone>(entity =>
 {
-    entity.HasOne(d => d.Patient).WithMany().HasConstraintName("FK_patient_phone_patient");
+    entity.HasOne(d => d.Patient).WithMany(d=>d.PhoneNumbers).HasConstraintName("FK_patient_phone_patient");
 });
 
 modelBuilder.Entity<PatientProductView>(entity =>
@@ -554,6 +551,7 @@ modelBuilder.Entity<UseradminStoreadminControl>(entity =>
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_useradmin_storeadmin_control_user_admin");
 });
+
        
         OnModelCreatingPartial(modelBuilder);
     }

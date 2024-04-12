@@ -18,9 +18,8 @@ public partial class PatientAddress
     public string Address { get; set; } = null!;
 
     [Column("patient_id")]
-   
+    [ForeignKey("Patient")]
     public int PatientId { get; set; }
-
-    [ForeignKey("PatientId")]
+    [InverseProperty("Addresses")]
     public virtual Patient Patient { get; set; } = null!;
 }

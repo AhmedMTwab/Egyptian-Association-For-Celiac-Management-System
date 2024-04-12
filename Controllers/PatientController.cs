@@ -42,18 +42,39 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 var patient = new Patient();
                 var adress = new PatientAddress()
                 {
-                    Address = NewPatientData.PatientAddress
+                    Address = NewPatientData.PatientAddress,
+                    PatientId = patient.PatientId
+                };
+                var phone = new PatientPhone()
+                {
+                    PhoneNumber = NewPatientData.PatientPhone,
+                    PatientId = patient.PatientId
                 };
                 patient.PatientName=NewPatientData.PatientName;
                 patient.PatientBloodtype = NewPatientData.PatientBloodType;
                 patient.Dob = NewPatientData.Dob;
                 patient.Ssn = NewPatientData.Ssn;
-                //patient.Addresses.Add(adress);
+                patient.Addresses.Add(adress);
+                patient.PhoneNumbers.Add(phone);
                 patientrepo.AddOne(patient);
                 return RedirectToAction("viewall");
 
             }
 			return View("UserAdminControls",NewPatientData);
 		}
-	}
+        [HttpGet]
+        public IActionResult Editpatient()
+        {
+
+            return View("UserAdminControls");
+        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult Editpatient()
+        //{
+
+        //    return View("UserAdminControls");
+        //}
+
+    }
 }

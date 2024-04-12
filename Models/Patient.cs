@@ -29,8 +29,8 @@ public partial class Patient
 
     [InverseProperty("Patient")]
     public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
-    
+    [InverseProperty("Patient")]
     public virtual ICollection<PatientAddress> Addresses { get; set; } = new List<PatientAddress>();
-    
-    //public virtual ICollection<PatientPhone> PhoneNumbers { get; set; } = new List<PatientPhone>();
+    [InverseProperty("Patient")]
+    public virtual ICollection<PatientPhone> PhoneNumbers { get; set; } = new List<PatientPhone>();
 }

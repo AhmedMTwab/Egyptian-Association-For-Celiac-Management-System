@@ -86,14 +86,23 @@
 
 <div class="patient-box update-patient">
     <h2> Update Patient</h2>
-    <form>
+    <form asp-action="Editpatient" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
         <div class="user-box">
-            <input type="" name="" required="">
+            <input asp-for="Ssn">
+            <span asp-validation-for="Ssn" class="text-danger"></span>
+            <label>Patient ssn</label>
+        </div>
+        <h5 style="color:white">--------------new data----------------</h5>
+        <div class="user-box">
+            <input asp-for="PatientPhone">
             <label>Phone Number</label>
+            <span asp-validation-for="PatientPhone" class="text-danger"></span>
         </div>
         <div class="user-box">
-            <input type="" name="" required="">
+            <input asp-for="PatientAddress">
             <label>Address</label>
+            <span asp-validation-for="PatientAddress" class="text-danger"></span>
         </div>
         <div class="user-box">
             <input type="file" name="" required="">

@@ -23,4 +23,19 @@ public partial class Clinic
 
     [Column("close_time")]
     public TimeOnly CloseTime { get; set; }
+    [InverseProperty("Clinic")]
+    public virtual ICollection<DoctorClinicWork> Doctors { get; set; } = new List<DoctorClinicWork>();
+    [InverseProperty("Clinic")]
+    public virtual ICollection<ClinicPhone> clinicphones { get; set; } = new List<ClinicPhone>();
+    [InverseProperty("Clinic")]
+    public virtual ICollection<ClinicAddress> clinicaddreses { get; set; } = new List<ClinicAddress>();
+    [InverseProperty("Clinic")]
+    public virtual ICollection<Reservation> patients { get; set; } = new List<Reservation>();
+    [InverseProperty("Clinic")]
+    public virtual ICollection<ClinicAssosiationDiscount> branches { get; set; } = new List<ClinicAssosiationDiscount>();
+    [InverseProperty("Clinic")]
+    public virtual ICollection<ClinicInsuranceDiscount> insurences { get; set; } = new List<ClinicInsuranceDiscount>();
+    [InverseProperty("Clinic")]
+    public virtual ICollection<MedicaladminClinicControl> admins { get; set; } = new List<MedicaladminClinicControl>();
 }
+

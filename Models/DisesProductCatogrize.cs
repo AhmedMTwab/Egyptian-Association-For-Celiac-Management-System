@@ -22,7 +22,7 @@ public partial class DisesProductCatogrize
     public string CatogertName { get; set; } = null!;
 
     [ForeignKey("DisesId")]
-    public virtual Dise Dises { get; set; } = null!;
+    public virtual Dises Dises { get; set; } = null!;
 
     [ForeignKey("ProductId")]
     public virtual Product Product { get; set; } = null!;

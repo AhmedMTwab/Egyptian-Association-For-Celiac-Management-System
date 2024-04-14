@@ -22,7 +22,7 @@ public partial class DisesMaterialCatogrize
     public string CatogeryName { get; set; } = null!;
 
     [ForeignKey("DisesId")]
-    public virtual Dise Dises { get; set; } = null!;
+    public virtual Dises Dises { get; set; } = null!;
 
     [ForeignKey("MaterialId")]
     public virtual RawMaterial Material { get; set; } = null!;

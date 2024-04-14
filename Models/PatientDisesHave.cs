@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Keyless]
+[PrimaryKey("PatientId","DisesId")]
 [Table("patient_dises-have")]
 public partial class PatientDisesHave
 {
@@ -17,8 +17,10 @@ public partial class PatientDisesHave
     public int DisesId { get; set; }
 
     [ForeignKey("DisesId")]
-    public virtual Dise Dises { get; set; } = null!;
+    [InverseProperty("patients")]
+    public virtual Dises Dises { get; set; } = null!;
 
     [ForeignKey("PatientId")]
+    [InverseProperty("Diseses")]
     public virtual Patient Patient { get; set; } = null!;
 }

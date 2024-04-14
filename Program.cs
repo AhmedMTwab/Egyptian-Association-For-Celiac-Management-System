@@ -1,5 +1,7 @@
 using Egyptian_association_of_cieliac_patients.Models;
+using Egyptian_association_of_cieliac_patients.Repositories;
 using Microsoft.EntityFrameworkCore;
+using TestCoreApp.Repository;
 
 namespace Egyptian_association_of_cieliac_patients
 {
@@ -14,6 +16,7 @@ namespace Egyptian_association_of_cieliac_patients
             {
                 options.UseLazyLoadingProxies().UseSqlServer(CS);
             });
+            builder.Services.AddScoped<IPatientRepo, ImpelmentPatientRepository>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

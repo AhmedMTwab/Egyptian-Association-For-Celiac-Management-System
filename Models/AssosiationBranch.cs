@@ -26,4 +26,9 @@ public partial class AssosiationBranch
 
     [InverseProperty("Assosiation")]
     public virtual ICollection<MedicalAdmin> MedicalAdmins { get; set; } = new List<MedicalAdmin>();
+    [InverseProperty("Branch")]
+    public virtual ICollection<Patient> Patients { get; set; } = new List<Patient>();
+    [InverseProperty("Assosiation")]
+    public virtual ICollection<ClinicAssosiationDiscount> clinics { get; set; } = new List<ClinicAssosiationDiscount>();
+
 }

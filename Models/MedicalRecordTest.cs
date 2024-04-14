@@ -12,7 +12,9 @@ public partial class MedicalRecordTest
 {
     [Column("test")]
     [MaxLength(50)]
-    public byte[] Test { get; set; } = null!;
+    public string TestsPath { get; set; } = null!;
+    [NotMapped]
+    public IFormFile Tests {  get; set; }
 
     [Column("record_id")]
     public int RecordId { get; set; }

@@ -30,4 +30,7 @@ public partial class UserAdmin
 
     [Column("assosiation_id")]
     public int AssosiationId { get; set; }
+
+    [InverseProperty("Admin")]
+    public virtual ICollection<UseradminDoctorControl> doctors { get; set; } = new List<UseradminDoctorControl>();
 }

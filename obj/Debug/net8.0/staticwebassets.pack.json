@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\Egyptian association of cieliac patients.bundle.scp.css"
     },
     {
+      "Id": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\wwwroot\\css\\UserAdmin.css",
+      "PackagePath": "staticwebassets\\css\\UserAdmin.css"
+    },
+    {
       "Id": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\wwwroot\\images\\3.jpeg",
+      "PackagePath": "staticwebassets\\images\\3.jpeg"
     },
     {
       "Id": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\wwwroot\\js\\site.js",

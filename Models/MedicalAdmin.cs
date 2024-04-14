@@ -34,4 +34,6 @@ public partial class MedicalAdmin
     [ForeignKey("AssosiationId")]
     [InverseProperty("MedicalAdmins")]
     public virtual AssosiationBranch Assosiation { get; set; } = null!;
+    [InverseProperty("Admin")]
+    public virtual ICollection<MedicaladminClinicControl> clinics { get; set; } = new List<MedicaladminClinicControl>();
 }

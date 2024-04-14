@@ -21,4 +21,6 @@ public partial class MedicalRecord
 
     [Column("dises_id")]
     public int? DisesId { get; set; }
+    [InverseProperty("Record")]
+    public virtual ICollection<DoctorMedicalrecordVeiw> Doctors { get; set; } = new List<DoctorMedicalrecordVeiw>();
 }

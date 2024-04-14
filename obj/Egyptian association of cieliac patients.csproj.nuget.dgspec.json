@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Egyptian association of cieliac patients.csproj": {}
+    "D:\\graduation-project\\impelmentation\\Egyptian association of cieliac Diseses\\Egyptian association of cieliac patients.csproj": {}
   },
   "projects": {
-    "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Egyptian association of cieliac patients.csproj": {
+    "D:\\graduation-project\\impelmentation\\Egyptian association of cieliac Diseses\\Egyptian association of cieliac patients.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Egyptian association of cieliac patients.csproj",
+        "projectUniqueName": "D:\\graduation-project\\impelmentation\\Egyptian association of cieliac Diseses\\Egyptian association of cieliac patients.csproj",
         "projectName": "Egyptian association of cieliac patients",
-        "projectPath": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Egyptian association of cieliac patients.csproj",
+        "projectPath": "D:\\graduation-project\\impelmentation\\Egyptian association of cieliac Diseses\\Egyptian association of cieliac patients.csproj",
         "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-        "outputPath": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\obj\\",
+        "outputPath": "D:\\graduation-project\\impelmentation\\Egyptian association of cieliac Diseses\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",

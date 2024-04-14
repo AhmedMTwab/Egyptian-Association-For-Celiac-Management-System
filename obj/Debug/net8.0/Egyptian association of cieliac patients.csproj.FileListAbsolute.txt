@@ -392,3 +392,15 @@ D:\graduation-project\Website\Egyptian association of cieliac patients\bin\Debug
 D:\graduation-project\Website\Egyptian association of cieliac patients\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 D:\graduation-project\Website\Egyptian association of cieliac patients\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\graduation-project\Website\Egyptian association of cieliac patients\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.csproj.AssemblyReference.cache
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.GeneratedMSBuildEditorConfig.editorconfig
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.AssemblyInfoInputs.cache
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.AssemblyInfo.cs
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.csproj.CoreCompileInputs.cache
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.MvcApplicationPartsAssemblyInfo.cache
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.RazorAssemblyInfo.cache
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.RazorAssemblyInfo.cs
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.sourcelink.json
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.dll
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\refint\Egyptian association of cieliac patients.dll
+D:\graduation-project\impelmentation\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.pdb

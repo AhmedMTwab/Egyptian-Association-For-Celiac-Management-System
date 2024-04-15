@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Keyless]
+[PrimaryKey("HospitalId", "InsuranceId")]
 [Table("hospital_insurance_discount")]
 public partial class HospitalInsuranceDiscount
 {
@@ -24,4 +24,5 @@ public partial class HospitalInsuranceDiscount
 
     [ForeignKey("InsuranceId")]
     public virtual HealthInsurance Insurance { get; set; } = null!;
+   
 }

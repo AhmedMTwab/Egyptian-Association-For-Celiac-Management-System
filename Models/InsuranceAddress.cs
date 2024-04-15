@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Keyless]
+[PrimaryKey("Address", "InsuranceId")]
 [Table("insurance_address")]
 public partial class InsuranceAddress
 {

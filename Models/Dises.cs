@@ -23,4 +23,5 @@ public partial class Dises
 
     [InverseProperty("Dises")]
     public virtual ICollection<DisesMaterialCatogrize> Materials { get; set; } = new List<DisesMaterialCatogrize>();
+    public virtual ICollection<PatientDisesHave> patients { get;}=new List<PatientDisesHave>();
 }

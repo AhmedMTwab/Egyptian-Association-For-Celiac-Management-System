@@ -19,4 +19,19 @@ public partial class HealthInsurance
     public string Name { get; set; } = null!;
 
     public int LicenseCode { get; set; }
+
+    [InverseProperty("Insurance")]
+    public virtual ICollection<ClinicInsuranceDiscount> clinics { get; set; } = new List<ClinicInsuranceDiscount>();
+    [InverseProperty("Insurance")]
+    public virtual ICollection<LabInsuranceDiscount> labs { get; set; } = new List<LabInsuranceDiscount>();
+    [InverseProperty("Insurance")]
+    public virtual ICollection<PharmacyInsuranceDiscount> pharmacys { get; set; } = new List<PharmacyInsuranceDiscount>();
+    [InverseProperty("Insurance")]
+    public virtual ICollection<HospitalInsuranceDiscount> hospitals { get; set; } = new List<HospitalInsuranceDiscount>();
+    [InverseProperty("Insurance")]
+    public virtual ICollection<AssosiationInsuranceProvide> AssosiationBranches { get; set; } = new List<AssosiationInsuranceProvide>();
+    [InverseProperty("Insurance")]
+    public virtual ICollection<InsuranceAddress> addresses { get; set; } = new List<InsuranceAddress>();
+    [InverseProperty("Insurance")]
+    public virtual ICollection<InsurancePhone> PhoneNumbers { get; set; } = new List<InsurancePhone>();
 }

@@ -27,6 +27,11 @@ public partial class Patient
     [Column("SSN")]
     public int Ssn { get; set; }
 
+    public int assosiationid { get; set; }
+
+    [ForeignKey("assosiationid")]
+    public virtual AssosiationBranch Branch { get; set; } = new AssosiationBranch();
+
     [InverseProperty("Patient")]
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
     [InverseProperty("Patient")]
@@ -39,4 +44,12 @@ public partial class Patient
 
     [InverseProperty("Patient")]
     public virtual ICollection<PatientRawmaterialVeiw> Materials { get; set; } = new List<PatientRawmaterialVeiw>();
+   
+    [InverseProperty("Patient")]
+    public virtual ICollection<PatientDisesHave> Diseses { get; set; } = new List<PatientDisesHave>();
+    [InverseProperty("Patient")]
+    public virtual ICollection<Reservation> clinics { get; set; } = new List<Reservation>();
+
+
 }
+

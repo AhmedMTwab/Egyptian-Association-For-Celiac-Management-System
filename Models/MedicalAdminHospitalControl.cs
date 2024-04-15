@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Keyless]
+[PrimaryKey("HospitalId", "AdminId")]
 [Table("medicaladmin_hospital_control")]
 public partial class MedicalAdminHospitalControl
 {

@@ -23,4 +23,14 @@ public partial class Pharmacy
 
     [Column("close_time")]
     public TimeOnly CloseTime { get; set; }
+    [InverseProperty("Pharmacy")]
+    public virtual ICollection<MedicalAdminPharmacyControl> Madmins { get; set; } = new List<MedicalAdminPharmacyControl>();
+    [InverseProperty("Pharmacy")]
+    public virtual ICollection<PharmacyInsuranceDiscount> insurances { get; set; } = new List<PharmacyInsuranceDiscount>();
+    [InverseProperty("Pharmacy")]
+    public virtual ICollection<PharmacyAssosiationDiscount> AssosiationBranches { get; set; } = new List<PharmacyAssosiationDiscount>();
+    [InverseProperty("Pharmacy")]
+    public virtual ICollection<PharmacyAddress> addresses { get; set; } = new List<PharmacyAddress>();
+    [InverseProperty("Pharmacy")]
+    public virtual ICollection<PharmacyPhone> PhoneNumbers { get; set; } = new List<PharmacyPhone>();
 }

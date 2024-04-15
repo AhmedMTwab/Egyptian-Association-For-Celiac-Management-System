@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Egyptian_association_of_cieliac_patients.Models
 {
-    [Keyless]
+    [PrimaryKey("Address", "PharmacyId")]
     [Table("pharmacy_address")]
     public partial class PharmacyAddress
     {

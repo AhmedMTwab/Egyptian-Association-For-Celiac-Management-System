@@ -147,7 +147,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
         modelBuilder.Entity<AssosiationBranchPhone>(entity =>
         {
-            entity.HasOne(d => d.Assosiation).WithMany()
+            entity.HasOne(d => d.Assosiation).WithMany(d=>d.PhoneNumbers)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_assosiation_branch_phone_assosiation_branch");
         });
@@ -165,11 +165,11 @@ modelBuilder.Entity<AssosiationDisesFollow>(entity =>
 
 modelBuilder.Entity<AssosiationInsuranceProvide>(entity =>
 {
-    entity.HasOne(d => d.Assosiation).WithMany()
+    entity.HasOne(d => d.Assosiation).WithMany(d=>d.insurances)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_assosiation_assosiation_branch");
 
-    entity.HasOne(d => d.Insurance).WithMany()
+    entity.HasOne(d => d.Insurance).WithMany(d=>d.AssosiationBranches)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_assosiation_health_insurance");
 });
@@ -308,14 +308,14 @@ modelBuilder.Entity<HealthInsurance>(entity =>
 
 modelBuilder.Entity<InsuranceAddress>(entity =>
 {
-    entity.HasOne(d => d.Insurance).WithMany()
+    entity.HasOne(d => d.Insurance).WithMany(d=>d.addresses)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_insurance_address_health_insurance");
 });
 
 modelBuilder.Entity<InsurancePhone>(entity =>
 {
-    entity.HasOne(d => d.Insurance).WithMany()
+    entity.HasOne(d => d.Insurance).WithMany(d=>d.PhoneNumbers)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_insurance_phone_health_insurance");
 });
@@ -504,11 +504,11 @@ modelBuilder.Entity<UseradminDoctorControl>(entity =>
 
 modelBuilder.Entity<UseradminMedicaladminControl>(entity =>
 {
-    entity.HasOne(d => d.Madmin).WithMany()
+    entity.HasOne(d => d.Madmin).WithMany(d=>d.Uadmins)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_useradmin_medicaladmin_control_medical_admin");
 
-    entity.HasOne(d => d.Uadmin).WithMany()
+    entity.HasOne(d => d.Uadmin).WithMany(d=>d.Madmins)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_useradmin_medicaladmin_control_user_admin");
 });

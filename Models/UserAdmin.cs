@@ -35,4 +35,7 @@ public partial class UserAdmin
     public virtual ICollection<UseradminDoctorControl> doctors { get; set; } = new List<UseradminDoctorControl>();
     [InverseProperty("Uadmin")]
     public virtual ICollection<UseradminMedicaladminControl> Madmins { get; set; } = new List<UseradminMedicaladminControl>();
+
+    [ForeignKey("AssosiationId")]
+    public virtual AssosiationBranch Assosiation { get; set; } = null!;
 }

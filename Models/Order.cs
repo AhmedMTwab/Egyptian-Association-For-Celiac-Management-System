@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Table("cart")]
-public partial class Cart
+[Table("order")]
+public partial class Order
 {
     [Key]
     [Column("order_id")]
@@ -18,6 +18,8 @@ public partial class Cart
 
     [Column("order_details", TypeName = "text")]
     public string OrderDetails { get; set; } = null!;
+    [Column("quantity")]
+    public int Quantity { get; set; }
 
     [Column("total_cost", TypeName = "money")]
     public decimal TotalCost { get; set; }
@@ -33,16 +35,29 @@ public partial class Cart
     [Column("shipment_phone", TypeName = "numeric(18, 0)")]
     public decimal ShipmentPhone { get; set; }
 
+    [Column("product_id")]
+    public int ProductId { get; set; }
+
+    [Column("material_id")]
+    public int MaterialId { get; set; }
+
     [Column("patient_id")]
     public int PatientId { get; set; }
 
     [Column("payment_id")]
     public int PaymentId { get; set; }
 
+
     [ForeignKey("PatientId")]
-    [InverseProperty("Carts")]
+    [InverseProperty("Orders")]
     public virtual Patient Patient { get; set; } = null!;
 
     [ForeignKey("PaymentId")]
     public virtual Payment Payment { get; set; } = null!;
+
+    [ForeignKey("ProductId")]
+    public virtual ICollection<Product> products { get; set; } = new List<Product>();
+
+    [ForeignKey("MaterialId")]
+    public virtual ICollection<RawMaterial> Matrerials { get; set; } = new List<RawMaterial>();
 }

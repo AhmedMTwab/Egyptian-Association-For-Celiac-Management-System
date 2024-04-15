@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Egyptian association of cieliac patients")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a45e2c1b7d609155163a1ac4d5c460b0ef7b4afa")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1213af78a2c40885877a20be75ee6f2a75e85a4")]
+>>>>>>> b3feb215df36f47c5294f1f05e4b5bfc9afad0ad
 [assembly: System.Reflection.AssemblyProductAttribute("Egyptian association of cieliac patients")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Egyptian association of cieliac patients")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1949,6 +1949,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Navigation("Clinic");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Patient", b =>
                 {
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Branch")
@@ -1960,6 +1961,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Navigation("Branch");
                 });
 
+=======
+>>>>>>> b3feb215df36f47c5294f1f05e4b5bfc9afad0ad
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientAddress", b =>
                 {
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
@@ -1967,6 +1970,28 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasForeignKey("PatientId")
                         .IsRequired()
                         .HasConstraintName("FK_patient_address_patient");
+<<<<<<< HEAD
+=======
+
+                    b.Navigation("Patient");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientAssosiationParticpate", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
+                        .WithMany()
+                        .HasForeignKey("AssosiationId")
+                        .IsRequired()
+                        .HasConstraintName("FK_patient_assosiation_particpate_assosiation_branch");
+
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientId")
+                        .IsRequired()
+                        .HasConstraintName("FK_patient_assosiation_particpate_patient");
+
+                    b.Navigation("Assosiation");
+>>>>>>> b3feb215df36f47c5294f1f05e4b5bfc9afad0ad
 
                     b.Navigation("Patient");
                 });
@@ -2271,8 +2296,11 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.Navigation("Carts");
 
+<<<<<<< HEAD
                     b.Navigation("Diseses");
 
+=======
+>>>>>>> b3feb215df36f47c5294f1f05e4b5bfc9afad0ad
                     b.Navigation("PhoneNumbers");
                 });
 #pragma warning restore 612, 618

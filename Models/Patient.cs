@@ -33,6 +33,17 @@ public partial class Patient
     public virtual AssosiationBranch Branch { get; set; } = new AssosiationBranch();
 
     [InverseProperty("Patient")]
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+    [InverseProperty("Patient")]
+    public virtual ICollection<PatientAddress> Addresses { get; set; } = new List<PatientAddress>();
+    [InverseProperty("Patient")]
+    public virtual ICollection<PatientPhone> PhoneNumbers { get; set; } = new List<PatientPhone>();
+
+    [InverseProperty("Patient")]
+    public virtual ICollection<PatientProductView> products { get; set; } = new List<PatientProductView>();
+
+    [InverseProperty("Patient")]
+    public virtual ICollection<PatientRawmaterialVeiw> Materials { get; set; } = new List<PatientRawmaterialVeiw>();
     public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
     [InverseProperty("Patient")]
     public virtual ICollection<PatientAddress> Addresses { get; set; } = new List<PatientAddress>();

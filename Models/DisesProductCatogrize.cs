@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Keyless]
+[PrimaryKey("DisesId", "ProductId")]
 [Table("dises_product_catogrize")]
 public partial class DisesProductCatogrize
 {

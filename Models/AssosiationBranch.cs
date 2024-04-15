@@ -40,4 +40,7 @@ public partial class AssosiationBranch
     [InverseProperty("Assosiation")]
     public virtual ICollection<AssosiationBranchPhone> PhoneNumbers { get; set; } = new List<AssosiationBranchPhone>();
 
+
+    [InverseProperty("Assosiation")]
+    public virtual ICollection<StoreAdmin> StoreAdmins { get; set; } = new List<StoreAdmin>();
 }

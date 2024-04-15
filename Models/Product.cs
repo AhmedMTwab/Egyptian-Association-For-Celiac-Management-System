@@ -23,4 +23,19 @@ public partial class Product
 
     [Column("price", TypeName = "money")]
     public decimal Price { get; set; }
+
+    [Column("admin_id")]
+    public int AdminId { get; set; }
+
+    [ForeignKey("AdminId")]
+    public virtual StoreAdmin Admin { get; set; } = null!;
+
+    [InverseProperty("Product")]
+    public virtual ICollection<ProductImage> Images { get; set; } = new List<ProductImage>();
+
+    [InverseProperty("Product")]
+    public virtual ICollection<DisesProductCatogrize> dises { get; set; } = new List<DisesProductCatogrize>();
+
+    [InverseProperty("Product")]
+    public virtual ICollection<PatientProductView> patients { get; set; } = new List<PatientProductView>();
 }

@@ -20,5 +20,5 @@ public partial class AssosiationDisesFollow
     public virtual AssosiationBranch Assosiation { get; set; } = null!;
 
     [ForeignKey("DisesId")]
-    public virtual Dise Dises { get; set; } = null!;
+    public virtual Dises Dises { get; set; } = null!;
 }

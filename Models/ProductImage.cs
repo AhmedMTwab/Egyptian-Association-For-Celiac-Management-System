@@ -6,12 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Keyless]
+[PrimaryKey("ProductId", "Image")]
 [Table("product_image")]
 public partial class ProductImage
 {
     [Column("product_image", TypeName = "image")]
-    public byte[] ProductImage1 { get; set; } = null!;
+    public byte[] Image { get; set; } = null!;
 
     [Column("product_id")]
     public int ProductId { get; set; }

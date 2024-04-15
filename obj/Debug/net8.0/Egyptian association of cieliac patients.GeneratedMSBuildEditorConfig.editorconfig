@@ -17,51 +17,51 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Egyptian_association_of_cieliac_patients
 build_property.RootNamespace = Egyptian_association_of_cieliac_patients
-build_property.ProjectDir = D:\graduation-project\Website\Egyptian association of cieliac patients\
+build_property.ProjectDir = D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\graduation-project\Website\Egyptian association of cieliac patients
+build_property.MSBuildProjectDirectory = D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Home/Index.cshtml]
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Home/Privacy.cshtml]
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Patient/UserAdminControls.cshtml]
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Patient/UserAdminControls.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxVc2VyQWRtaW5Db250cm9scy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Patient/viewall.cshtml]
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Patient/viewall.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFx2aWV3YWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Patient/viewone.cshtml]
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Patient/viewone.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFx2aWV3b25lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Shared/Error.cshtml]
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/_ViewImports.cshtml]
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/_ViewStart.cshtml]
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/graduation-project/Website/Egyptian association of cieliac patients/Views/Shared/_Layout.cshtml]
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-da29ga9vkz

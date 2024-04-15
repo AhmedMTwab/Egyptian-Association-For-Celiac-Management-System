@@ -30,4 +30,7 @@ public partial class UserAdmin
 
     [Column("assosiation_id")]
     public int AssosiationId { get; set; }
+
+    [ForeignKey("AssosiationId")]
+    public virtual AssosiationBranch Assosiation { get; set; } = null!;
 }

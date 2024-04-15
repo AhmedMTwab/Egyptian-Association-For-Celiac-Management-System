@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Keyless]
+[PrimaryKey("PatientId", "MaterialId")]
 [Table("patient_rawmaterial_veiw")]
 public partial class PatientRawmaterialVeiw
 {

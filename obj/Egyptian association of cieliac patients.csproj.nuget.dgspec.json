@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Egyptian association of cieliac patients.csproj": {}
+    "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\Egyptian association of cieliac patients.csproj": {}
   },
   "projects": {
-    "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Egyptian association of cieliac patients.csproj": {
+    "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\Egyptian association of cieliac patients.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Egyptian association of cieliac patients.csproj",
+        "projectUniqueName": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\Egyptian association of cieliac patients.csproj",
         "projectName": "Egyptian association of cieliac patients",
-        "projectPath": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\Egyptian association of cieliac patients.csproj",
-        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-        "outputPath": "D:\\graduation-project\\Website\\Egyptian association of cieliac patients\\obj\\",
+        "projectPath": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\Egyptian association of cieliac patients.csproj",
+        "packagesPath": "C:\\Users\\Ahmed Badawy\\.nuget\\packages\\",
+        "outputPath": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ahmed Badawy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -17,7 +17,7 @@ public partial class PatientDisesHave
     public int DisesId { get; set; }
 
     [ForeignKey("DisesId")]
-    public virtual Dise Dises { get; set; } = null!;
+    public virtual Dises Dises { get; set; } = null!;
 
     [ForeignKey("PatientId")]
     public virtual Patient Patient { get; set; } = null!;

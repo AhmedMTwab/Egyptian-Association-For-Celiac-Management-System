@@ -23,11 +23,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
     public virtual DbSet<AssosiationInsuranceProvide> AssosiationInsuranceProvides { get; set; }
 
-    public virtual DbSet<Cart> Carts { get; set; }
-
-    public virtual DbSet<CartMaterialAdd> CartMaterialAdds { get; set; }
-
-    public virtual DbSet<CartProductAdd> CartProductAdds { get; set; }
+    public virtual DbSet<Order> Orders { get; set; }
 
     public virtual DbSet<Clinic> Clinics { get; set; }
 
@@ -38,7 +34,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
     public virtual DbSet<ClinicPhone> ClinicPhones { get; set; }
     public virtual DbSet<ClinicAddress> ClinicAddresses { get; set; }
 
-    public virtual DbSet<Dise> Dises { get; set; }
+    public virtual DbSet<Dises> Dises { get; set; }
 
     public virtual DbSet<DisesMaterialCatogrize> DisesMaterialCatogrizes { get; set; }
 
@@ -99,11 +95,6 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
     public virtual DbSet<StoreAdmin> StoreAdmins { get; set; }
 
-    public virtual DbSet<StoreadminMaterialControl> StoreadminMaterialControls { get; set; }
-
-    public virtual DbSet<StoreadminProductControl> StoreadminProductControls { get; set; }
-
-
     public virtual DbSet<UserAdmin> UserAdmins { get; set; }
 
     public virtual DbSet<UseradminDoctorControl> UseradminDoctorControls { get; set; }
@@ -112,8 +103,6 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
 
     public virtual DbSet<UseradminPatientControl> UseradminPatientControls { get; set; }
-
-    public virtual DbSet<UseradminStoreadminControl> UseradminStoreadminControls { get; set; }
     public virtual DbSet<Lab> Labs { get; set; }
     public virtual DbSet<LabPhone> LabPhones { get; set; }
     public virtual DbSet<LabAddress> LabAddresses { get; set; }
@@ -174,35 +163,13 @@ modelBuilder.Entity<AssosiationInsuranceProvide>(entity =>
         .HasConstraintName("FK_assosiation_health_insurance");
 });
 
-modelBuilder.Entity<Cart>(entity =>
+modelBuilder.Entity<Order>(entity =>
 {
     entity.Property(e => e.OrderId).ValueGeneratedNever();
 
-    entity.HasOne(d => d.Patient).WithMany(p => p.Carts)
+    entity.HasOne(d => d.Patient).WithMany(p => p.Orders)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_cart_patient");
-});
-
-modelBuilder.Entity<CartMaterialAdd>(entity =>
-{
-    entity.HasOne(d => d.Material).WithMany()
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_cart_material_add_raw_material");
-
-    entity.HasOne(d => d.Order).WithMany()
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_cart_material_add_cart");
-});
-
-modelBuilder.Entity<CartProductAdd>(entity =>
-{
-    entity.HasOne(d => d.Order).WithMany()
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_cart_product_add_cart");
-
-    entity.HasOne(d => d.Product).WithMany()
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_cart_product_add_product");
 });
 
 modelBuilder.Entity<Clinic>(entity =>
@@ -239,29 +206,29 @@ modelBuilder.Entity<ClinicPhone>(entity =>
         .HasConstraintName("FK_clinic_phone_clinic");
 });
 
-modelBuilder.Entity<Dise>(entity =>
+modelBuilder.Entity<Dises>(entity =>
 {
     entity.Property(e => e.DisesId).ValueGeneratedNever();
 });
 
 modelBuilder.Entity<DisesMaterialCatogrize>(entity =>
 {
-    entity.HasOne(d => d.Dises).WithMany()
+    entity.HasOne(d => d.Dises).WithMany(d => d.Materials)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_raw_material_dises_catogrize_dises");
 
-    entity.HasOne(d => d.Material).WithMany()
+    entity.HasOne(d => d.Material).WithMany(d => d.dises)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_raw_material_dises_catogrize_raw_material");
 });
 
 modelBuilder.Entity<DisesProductCatogrize>(entity =>
 {
-    entity.HasOne(d => d.Dises).WithMany()
+    entity.HasOne(d => d.Dises).WithMany(d => d.Products)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_dises_product_catogrize_dises");
 
-    entity.HasOne(d => d.Product).WithMany()
+    entity.HasOne(d => d.Product).WithMany(d => d.dises)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_dises_product_catogrize_product");
 });
@@ -407,18 +374,18 @@ modelBuilder.Entity<PatientPhone>(entity =>
 
 modelBuilder.Entity<PatientProductView>(entity =>
 {
-    entity.HasOne(d => d.Patient).WithMany().HasConstraintName("FK_patient_product_view_patient");
+    entity.HasOne(d => d.Patient).WithMany(d => d.products).HasConstraintName("FK_patient_product_view_patient");
 
-    entity.HasOne(d => d.Product).WithMany().HasConstraintName("FK_patient_product_view_product");
+    entity.HasOne(d => d.Product).WithMany(d => d.patients).HasConstraintName("FK_patient_product_view_product");
 });
 
 modelBuilder.Entity<PatientRawmaterialVeiw>(entity =>
 {
-    entity.HasOne(d => d.Material).WithMany()
+    entity.HasOne(d => d.Material).WithMany(d => d.patients)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_patient_rawmaterial_veiw_raw_material");
 
-    entity.HasOne(d => d.Patient).WithMany()
+    entity.HasOne(d => d.Patient).WithMany(d => d.Materials)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_patient_rawmaterial_veiw_patient");
 });
@@ -443,7 +410,7 @@ modelBuilder.Entity<Product>(entity =>
 
 modelBuilder.Entity<ProductImage>(entity =>
 {
-    entity.HasOne(d => d.Product).WithMany()
+    entity.HasOne(d => d.Product).WithMany(d => d.Images)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_product_image_product");
 });
@@ -455,7 +422,7 @@ modelBuilder.Entity<RawMaterial>(entity =>
 
 modelBuilder.Entity<RawmaterialImage>(entity =>
 {
-    entity.HasOne(d => d.Material).WithMany()
+    entity.HasOne(d => d.Material).WithMany( d => d.Images)
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_rawmaterial_image_raw_material");
 });
@@ -469,35 +436,6 @@ modelBuilder.Entity<StoreAdmin>(entity =>
 {
     entity.Property(e => e.AdminId).ValueGeneratedNever();
 });
-
-modelBuilder.Entity<StoreadminMaterialControl>(entity =>
-{
-    entity.HasOne(d => d.Admin).WithMany()
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_storeadmin_material_control_store_admin");
-
-    entity.HasOne(d => d.Material).WithMany()
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_storeadmin_material_control_raw_material");
-});
-
-modelBuilder.Entity<StoreadminProductControl>(entity =>
-{
-    entity.HasOne(d => d.Admin).WithMany()
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_storeadmin_product_control_store_admin");
-
-    entity.HasOne(d => d.Product).WithMany()
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_storeadmin_product_control_product");
-});
-
-//modelBuilder.Entity<StoreadminRegestriation>(entity =>
-//{
-//    entity.HasOne(d => d.Admin).WithMany()
-//        .OnDelete(DeleteBehavior.ClientSetNull)
-//        .HasConstraintName("FK_storeadmin_regestriation_store_admin");
-//});
 
 modelBuilder.Entity<UserAdmin>(entity =>
 {
@@ -539,17 +477,6 @@ modelBuilder.Entity<UseradminPatientControl>(entity =>
     entity.HasOne(d => d.Patient).WithMany()
         .OnDelete(DeleteBehavior.ClientSetNull)
         .HasConstraintName("FK_useradmin_patient_control_patient");
-});
-
-modelBuilder.Entity<UseradminStoreadminControl>(entity =>
-{
-    entity.HasOne(d => d.Sadmin).WithMany()
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_useradmin_storeadmin_control_store_admin");
-
-    entity.HasOne(d => d.Uadmin).WithMany()
-        .OnDelete(DeleteBehavior.ClientSetNull)
-        .HasConstraintName("FK_useradmin_storeadmin_control_user_admin");
 });
 
        

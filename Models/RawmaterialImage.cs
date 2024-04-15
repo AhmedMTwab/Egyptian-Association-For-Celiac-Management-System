@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Keyless]
+[PrimaryKey("MaterialImage", "MaterialId")]
 [Table("rawmaterial_image")]
 public partial class RawmaterialImage
 {

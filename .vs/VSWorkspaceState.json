@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Migrations"
+    "\\Migrations",
+    "\\Models"
   ],
-  "SelectedNode": "\\Migrations\\20240302175259_init1.cs",
+  "SelectedNode": "\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

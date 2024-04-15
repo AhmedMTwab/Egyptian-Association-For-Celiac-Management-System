@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptian_association_of_cieliac_patients.Migrations
 {
     [DbContext(typeof(EgyptianAssociationOfCieliacPatientsContext))]
-<<<<<<<< HEAD:Migrations/20240413154421_patient-assosiation.Designer.cs
     [Migration("20240413154421_patient-assosiation")]
     partial class patientassosiation
-========
-    [Migration("20240329100554_identityerror")]
-    partial class identityerror
->>>>>>>> b3feb215df36f47c5294f1f05e4b5bfc9afad0ad:Migrations/20240329100554_identityerror.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -939,17 +934,9 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasColumnType("int")
                         .HasColumnName("patient_id");
 
-<<<<<<<< HEAD:Migrations/20240413154421_patient-assosiation.Designer.cs
-========
-                    b.Property<int?>("PatientId1")
-                        .HasColumnType("int");
-
->>>>>>>> b3feb215df36f47c5294f1f05e4b5bfc9afad0ad:Migrations/20240329100554_identityerror.Designer.cs
                     b.HasKey("Address", "PatientId");
 
                     b.HasIndex("PatientId");
-
-                    b.HasIndex("PatientId1");
 
                     b.ToTable("patient_address");
                 });
@@ -1983,32 +1970,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasForeignKey("PatientId")
                         .IsRequired()
                         .HasConstraintName("FK_patient_address_patient");
-<<<<<<<< HEAD:Migrations/20240413154421_patient-assosiation.Designer.cs
-========
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", null)
-                        .WithMany("Addresses")
-                        .HasForeignKey("PatientId1");
-
-                    b.Navigation("Patient");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientAssosiationParticpate", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
-                        .WithMany()
-                        .HasForeignKey("AssosiationId")
-                        .IsRequired()
-                        .HasConstraintName("FK_patient_assosiation_particpate_assosiation_branch");
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
-                        .WithMany()
-                        .HasForeignKey("PatientId")
-                        .IsRequired()
-                        .HasConstraintName("FK_patient_assosiation_particpate_patient");
-
-                    b.Navigation("Assosiation");
->>>>>>>> b3feb215df36f47c5294f1f05e4b5bfc9afad0ad:Migrations/20240329100554_identityerror.Designer.cs
 
                     b.Navigation("Patient");
                 });
@@ -2035,15 +1996,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientPhone", b =>
                 {
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
-<<<<<<<< HEAD:Migrations/20240413154421_patient-assosiation.Designer.cs
                         .WithMany("PhoneNumbers")
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-========
-                        .WithMany()
-                        .HasForeignKey("PatientId")
->>>>>>>> b3feb215df36f47c5294f1f05e4b5bfc9afad0ad:Migrations/20240329100554_identityerror.Designer.cs
                         .HasConstraintName("FK_patient_phone_patient");
 
                     b.Navigation("Patient");

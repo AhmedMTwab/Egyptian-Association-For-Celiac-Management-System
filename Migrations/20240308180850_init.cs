@@ -4,7 +4,6 @@
 
 namespace Egyptian_association_of_cieliac_patients.Migrations
 {
-<<<<<<< HEAD
     /// <inheritdoc />
     public partial class init : Migration
     {
@@ -40,21 +39,3 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
         }
     }
 }
-=======
-	/// <inheritdoc />
-	public partial class init : Migration
-	{
-		/// <inheritdoc />
-		protected override void Up(MigrationBuilder migrationBuilder)
-		{
-			
-		}
-
-		/// <inheritdoc />
-		protected override void Down(MigrationBuilder migrationBuilder)
-		{
-
-		}
-	}
-}
->>>>>>> b3feb215df36f47c5294f1f05e4b5bfc9afad0ad

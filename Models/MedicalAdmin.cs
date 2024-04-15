@@ -36,4 +36,13 @@ public partial class MedicalAdmin
     public virtual AssosiationBranch Assosiation { get; set; } = null!;
     [InverseProperty("Admin")]
     public virtual ICollection<MedicaladminClinicControl> clinics { get; set; } = new List<MedicaladminClinicControl>();
+    [InverseProperty("Admin")]
+    public virtual ICollection<MedicalAdminLabControl> labs { get; set; } = new List<MedicalAdminLabControl>();
+    [InverseProperty("Admin")]
+    public virtual ICollection<MedicalAdminPharmacyControl> pharmacys { get; set; } = new List<MedicalAdminPharmacyControl>();
+    [InverseProperty("Admin")]
+    public virtual ICollection<MedicalAdminHospitalControl> hospitals { get; set; } = new List<MedicalAdminHospitalControl>();
+    [InverseProperty("Madmin")]
+    public virtual ICollection<UseradminMedicaladminControl> Uadmins { get; set; } = new List<UseradminMedicaladminControl>();
+
 }

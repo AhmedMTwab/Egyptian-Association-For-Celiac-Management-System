@@ -30,5 +30,17 @@ public partial class AssosiationBranch
     public virtual ICollection<Patient> Patients { get; set; } = new List<Patient>();
     [InverseProperty("Assosiation")]
     public virtual ICollection<ClinicAssosiationDiscount> clinics { get; set; } = new List<ClinicAssosiationDiscount>();
+    [InverseProperty("Assosiation")]
+    public virtual ICollection<LabAssosiationDiscount> labs { get; set; } = new List<LabAssosiationDiscount>();
+    [InverseProperty("Assosiation")]
+    public virtual ICollection<PharmacyAssosiationDiscount> pharmacys { get; set; } = new List<PharmacyAssosiationDiscount>();
 
+    [InverseProperty("Assosiation")]
+    public virtual ICollection<AssosiationInsuranceProvide> insurances { get; set; } = new List<AssosiationInsuranceProvide>();
+    [InverseProperty("Assosiation")]
+    public virtual ICollection<AssosiationBranchPhone> PhoneNumbers { get; set; } = new List<AssosiationBranchPhone>();
+
+
+    [InverseProperty("Assosiation")]
+    public virtual ICollection<StoreAdmin> StoreAdmins { get; set; } = new List<StoreAdmin>();
 }

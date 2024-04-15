@@ -17,5 +17,11 @@ public partial class Dises
     [StringLength(50)]
     [Unicode(false)]
     public string Name { get; set; } = null!;
+
+    [InverseProperty("Dises")]
+    public virtual ICollection<DisesProductCatogrize> Products { get; set; } = new List<DisesProductCatogrize>();
+
+    [InverseProperty("Dises")]
+    public virtual ICollection<DisesMaterialCatogrize> Materials { get; set; } = new List<DisesMaterialCatogrize>();
     public virtual ICollection<PatientDisesHave> patients { get;}=new List<PatientDisesHave>();
 }

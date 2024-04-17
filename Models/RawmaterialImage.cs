@@ -10,8 +10,8 @@ namespace Egyptian_association_of_cieliac_patients.Models;
 [Table("rawmaterial_image")]
 public partial class RawmaterialImage
 {
-    [Column("material_image", TypeName = "image")]
-    public byte[] MaterialImage { get; set; } = null!;
+    [Column("material_image")]
+    public string MaterialImage { get; set; } = null!;
 
     [Column("material_id")]
     public int MaterialId { get; set; }

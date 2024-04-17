@@ -10,8 +10,8 @@ namespace Egyptian_association_of_cieliac_patients.Models;
 [Table("product_image")]
 public partial class ProductImage
 {
-    [Column("product_image", TypeName = "image")]
-    public byte[] Image { get; set; } = null!;
+    [Column("product_image")]
+    public string Image { get; set; } = null!;
 
     [Column("product_id")]
     public int ProductId { get; set; }

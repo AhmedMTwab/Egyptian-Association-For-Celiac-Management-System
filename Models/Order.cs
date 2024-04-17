@@ -32,8 +32,8 @@ public partial class Order
     [Column("shipment_time")]
     public TimeOnly ShipmentTime { get; set; }
 
-    [Column("shipment_phone", TypeName = "numeric(18, 0)")]
-    public decimal ShipmentPhone { get; set; }
+    [Column("shipment_phone")]
+    public string ShipmentPhone { get; set; }
 
     [Column("product_id")]
     public int ProductId { get; set; }

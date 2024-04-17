@@ -10,7 +10,7 @@ namespace Egyptian_association_of_cieliac_patients.Models;
 [Table("doctor_phone")]
 public partial class DoctorPhone
 {
-    [Column("phone_number", TypeName = "numeric(18, 0)")]
+    [Column("phone_number")]
     public string PhoneNumber { get; set; }
 
     [Column("doctor_id")]

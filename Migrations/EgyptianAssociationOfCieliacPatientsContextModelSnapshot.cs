@@ -53,8 +53,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.AssosiationBranchPhone", b =>
                 {
-                    b.Property<decimal>("PhoneNumber")
-                        .HasColumnType("numeric(18, 0)")
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("phone_number");
 
                     b.Property<int>("AssosiationId")
@@ -197,8 +197,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.ClinicPhone", b =>
                 {
-                    b.Property<decimal>("PhoneNumber")
-                        .HasColumnType("numeric(18, 0)")
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("phone_number");
 
                     b.Property<int>("ClinicId")
@@ -347,8 +347,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.DoctorPhone", b =>
                 {
-                    b.Property<decimal>("PhoneNumber")
-                        .HasColumnType("numeric(18, 0)")
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("phone_number");
 
                     b.Property<int>("DoctorId")
@@ -447,8 +447,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalPhone", b =>
                 {
-                    b.Property<decimal>("PhoneNumber")
-                        .HasColumnType("numeric(18, 0)")
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("phone_number");
 
                     b.Property<int>("HospitalId")
@@ -500,8 +500,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.InsurancePhone", b =>
                 {
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int")
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("phone_number");
 
                     b.Property<int>("InsuranceId")
@@ -608,8 +608,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabPhone", b =>
                 {
-                    b.Property<decimal>("PhoneNumber")
-                        .HasColumnType("numeric(18, 0)")
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("phone_number");
 
                     b.Property<int>("LabId")
@@ -846,8 +846,9 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("shipment_location");
 
-                    b.Property<decimal>("ShipmentPhone")
-                        .HasColumnType("numeric(18, 0)")
+                    b.Property<string>("ShipmentPhone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("shipment_phone");
 
                     b.Property<TimeOnly>("ShipmentTime")
@@ -893,8 +894,9 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("patient_name");
 
-                    b.Property<int>("Ssn")
-                        .HasColumnType("int")
+                    b.Property<string>("Ssn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("SSN");
 
                     b.Property<int>("assosiationid")
@@ -1107,8 +1109,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyPhone", b =>
                 {
-                    b.Property<decimal>("PhoneNumber")
-                        .HasColumnType("numeric(18, 0)")
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("phone_number");
 
                     b.Property<int>("PharmacyId")
@@ -1155,8 +1157,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasColumnType("int")
                         .HasColumnName("product_id");
 
-                    b.Property<byte[]>("Image")
-                        .HasColumnType("image")
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("product_image");
 
                     b.HasKey("ProductId", "Image");
@@ -1193,8 +1195,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.RawmaterialImage", b =>
                 {
-                    b.Property<byte[]>("MaterialImage")
-                        .HasColumnType("image")
+                    b.Property<string>("MaterialImage")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("material_image");
 
                     b.Property<int>("MaterialId")

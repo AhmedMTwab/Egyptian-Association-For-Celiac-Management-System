@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Egyptian_association_of_cieliac_patients.Migrations
 {
     /// <inheritdoc />
-    public partial class lastmigration : Migration
+    public partial class newdatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -153,7 +153,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "assosiation_branch_phone",
                 columns: table => new
                 {
-                    phone_number = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
+                    phone_number = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     assosiation_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -195,7 +195,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     patient_name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     patient_bloodtype = table.Column<string>(type: "nchar(10)", fixedLength: true, maxLength: 10, nullable: false),
                     DOB = table.Column<DateOnly>(type: "date", nullable: false),
-                    SSN = table.Column<int>(type: "int", nullable: false),
+                    SSN = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     assosiation_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -296,7 +296,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "clinic_phone",
                 columns: table => new
                 {
-                    phone_number = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
+                    phone_number = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     clinic_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -357,7 +357,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "doctor_phone",
                 columns: table => new
                 {
-                    phone_number = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
+                    phone_number = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     doctor_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -438,7 +438,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "insurance_phone",
                 columns: table => new
                 {
-                    phone_number = table.Column<int>(type: "int", nullable: false),
+                    phone_number = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     insurance_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -499,7 +499,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "hospital_phone",
                 columns: table => new
                 {
-                    phone_number = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
+                    phone_number = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     hospital_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -604,7 +604,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "lab_phone",
                 columns: table => new
                 {
-                    phone_number = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
+                    phone_number = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     lab_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -764,7 +764,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "pharmacy_phone",
                 columns: table => new
                 {
-                    phone_number = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
+                    phone_number = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     pharmacy_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -883,7 +883,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     total_cost = table.Column<decimal>(type: "money", nullable: false),
                     shipment_location = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     shipment_time = table.Column<TimeOnly>(type: "time", nullable: false),
-                    shipment_phone = table.Column<decimal>(type: "numeric(18,0)", nullable: false),
+                    shipment_phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     product_id = table.Column<int>(type: "int", nullable: false),
                     material_id = table.Column<int>(type: "int", nullable: false),
                     patient_id = table.Column<int>(type: "int", nullable: false),
@@ -1172,7 +1172,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "product_image",
                 columns: table => new
                 {
-                    product_image = table.Column<byte[]>(type: "image", nullable: false),
+                    product_image = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     product_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -1256,7 +1256,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "rawmaterial_image",
                 columns: table => new
                 {
-                    material_image = table.Column<byte[]>(type: "image", nullable: false),
+                    material_image = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     material_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

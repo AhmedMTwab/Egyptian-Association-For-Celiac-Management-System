@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Keyless]
+[PrimaryKey("DisesId", "AssosiationId")]
 [Table("assosiation_dises_follow")]
 public partial class AssosiationDisesFollow
 {

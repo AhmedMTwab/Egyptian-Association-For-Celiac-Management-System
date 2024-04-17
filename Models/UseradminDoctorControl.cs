@@ -17,7 +17,7 @@ public partial class UseradminDoctorControl
     public int DoctorId { get; set; }
 
     [ForeignKey("AdminId")]
-    public virtual UserAdmin Admin { get; set; } = null!;
+    public virtual UserAdmin Uadmin { get; set; } = null!;
 
     [ForeignKey("DoctorId")]
     public virtual Doctor Doctor { get; set; } = null!;

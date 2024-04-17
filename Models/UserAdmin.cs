@@ -31,10 +31,16 @@ public partial class UserAdmin
     [Column("assosiation_id")]
     public int AssosiationId { get; set; }
 
-    [InverseProperty("Admin")]
+    [InverseProperty("Uadmin")]
     public virtual ICollection<UseradminDoctorControl> doctors { get; set; } = new List<UseradminDoctorControl>();
     [InverseProperty("Uadmin")]
     public virtual ICollection<UseradminMedicaladminControl> Madmins { get; set; } = new List<UseradminMedicaladminControl>();
+
+    [InverseProperty("Uadmin")]
+    public virtual ICollection<UseradminStoreadminControl> Sadmins { get; set; } = new List<UseradminStoreadminControl>();
+
+    [InverseProperty("Uadmin")]
+    public virtual ICollection<UseradminPatientControl> Patient { get; set; } = new List<UseradminPatientControl>();
 
     [ForeignKey("AssosiationId")]
     public virtual AssosiationBranch Assosiation { get; set; } = null!;

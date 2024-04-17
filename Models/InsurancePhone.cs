@@ -11,7 +11,7 @@ namespace Egyptian_association_of_cieliac_patients.Models;
 public partial class InsurancePhone
 {
     [Column("phone_number")]
-    public int PhoneNumber { get; set; }
+    public string PhoneNumber { get; set; }
 
     [Column("insurance_id")]
     public int InsuranceId { get; set; }

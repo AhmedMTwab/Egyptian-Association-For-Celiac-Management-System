@@ -98,6 +98,11 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
     public virtual DbSet<UseradminMedicaladminControl> UseradminMedicaladminControls { get; set; }
 
+    public virtual DbSet<UseradminStoreadminControl> UseradminStoreadminControls { get; set; }
+
+    public virtual DbSet<StoreadminMaterialControl> StoreadminMaterialControls { get; set; }
+
+    public virtual DbSet<StoreadminProductControl> StoreadminProductControls { get; set; }
 
     public virtual DbSet<UseradminPatientControl> UseradminPatientControls { get; set; }
     public virtual DbSet<Lab> Labs { get; set; }
@@ -129,7 +134,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
         modelBuilder.Entity<AssosiationBranch>(entity =>
         {
             entity.Property(e => e.AssosiationId).ValueGeneratedNever();
-            entity.HasMany(e => e.Patients).WithOne(e => e.Branch).HasForeignKey(e => e.assosiationid);
+            entity.HasMany(e => e.Patients).WithOne(e => e.Assosiation).HasForeignKey(e => e.assosiationid);
         });
 
         modelBuilder.Entity<AssosiationBranchPhone>(entity =>
@@ -141,11 +146,11 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
         modelBuilder.Entity<AssosiationDisesFollow>(entity =>
         {
-            entity.HasOne(d => d.Assosiation).WithMany()
+            entity.HasOne(d => d.Assosiation).WithMany(d => d.Dises)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_assosiation_dises_follow_assosiation_branch");
 
-            entity.HasOne(d => d.Dises).WithMany()
+            entity.HasOne(d => d.Dises).WithMany(d => d.Branches)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_assosiation_dises__dises");
         });
@@ -292,14 +297,14 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
         modelBuilder.Entity<MedicalRecordDrug>(entity =>
         {
-            entity.HasOne(d => d.Record).WithMany()
+            entity.HasOne(d => d.Record).WithMany(d => d.Drug)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_medical_record-drug_medical_record");
         });
 
         modelBuilder.Entity<MedicalRecordTest>(entity =>
         {
-            entity.HasOne(d => d.Record).WithMany()
+            entity.HasOne(d => d.Record).WithMany(d => d.Test)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_medical_record-test_medical_record");
         });
@@ -415,11 +420,11 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
         modelBuilder.Entity<UseradminDoctorControl>(entity =>
         {
-            entity.HasOne(d => d.Admin).WithMany(d => d.doctors)
+            entity.HasOne(d => d.Uadmin).WithMany(d => d.doctors)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_useradmin_doctor_control_user_admin");
 
-            entity.HasOne(d => d.Doctor).WithMany(d => d.admins)
+            entity.HasOne(d => d.Doctor).WithMany(d => d.Uadmins)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_useradmin_doctor_control_doctor");
         });
@@ -435,15 +440,46 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
                 .HasConstraintName("FK_useradmin_medicaladmin_control_user_admin");
         });
 
+        modelBuilder.Entity<StoreadminMaterialControl>(entity =>
+        {
+            entity.HasOne(d => d.Sadmin).WithMany(d => d.Materials)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_storeadmin_material_control_store_admin");
 
+            entity.HasOne(d => d.Material).WithMany(d => d.Sadmins)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_storeadmin_material_control_raw_material");
+        });
+
+        modelBuilder.Entity<StoreadminProductControl>(entity =>
+        {
+            entity.HasOne(d => d.Sadmin).WithMany(d => d.Products)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_storeadmin_product_control_store_admin");
+
+            entity.HasOne(d => d.Product).WithMany(d => d.Sadmins)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_storeadmin_product_control_product");
+        });
+
+        modelBuilder.Entity<UseradminStoreadminControl>(entity =>
+        {
+            entity.HasOne(d => d.Sadmin).WithMany(d => d.Uadmins)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_useradmin_storeadmin_control_store_admin");
+
+            entity.HasOne(d => d.Uadmin).WithMany(d => d.Sadmins)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_useradmin_storeadmin_control_user_admin");
+        });
 
         modelBuilder.Entity<UseradminPatientControl>(entity =>
         {
-            entity.HasOne(d => d.Admin).WithMany()
+            entity.HasOne(d => d.Uadmin).WithMany(d => d.Patient)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_useradmin_patient_control_user_admin");
 
-            entity.HasOne(d => d.Patient).WithMany()
+            entity.HasOne(d => d.Patient).WithMany(d => d.Uadmins)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_useradmin_patient_control_patient");
         });

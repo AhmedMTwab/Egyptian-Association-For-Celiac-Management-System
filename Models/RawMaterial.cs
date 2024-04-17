@@ -24,11 +24,6 @@ public partial class RawMaterial
     [Column("price", TypeName = "money")]
     public decimal Price { get; set; }
 
-    [Column("admin_id")]
-    public int AdminId { get; set; }
-
-    [ForeignKey("AdminId")]
-    public virtual StoreAdmin Admin { get; set; } = null!;
 
     [InverseProperty("Material")]
     public virtual ICollection<RawmaterialImage> Images { get; set; } = new List<RawmaterialImage>();
@@ -38,4 +33,7 @@ public partial class RawMaterial
 
     [InverseProperty("Material")]
     public virtual ICollection<PatientRawmaterialVeiw> patients { get; set; } = new List<PatientRawmaterialVeiw>();
+
+    [InverseProperty("Material")]
+    public virtual ICollection<StoreadminMaterialControl> Sadmins { get; set; } = new List<StoreadminMaterialControl>();
 }

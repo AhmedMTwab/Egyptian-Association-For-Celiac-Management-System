@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Keyless]
+[PrimaryKey("RecordId", "TestsPath")]
 [Table("medical_record-test")]
 public partial class MedicalRecordTest
 {

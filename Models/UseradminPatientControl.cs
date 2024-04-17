@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[Keyless]
+[PrimaryKey("AdminId", "PatientId")]
 [Table("useradmin_patient_control")]
 public partial class UseradminPatientControl
 {
@@ -17,7 +17,7 @@ public partial class UseradminPatientControl
     public int PatientId { get; set; }
 
     [ForeignKey("AdminId")]
-    public virtual UserAdmin Admin { get; set; } = null!;
+    public virtual UserAdmin Uadmin { get; set; } = null!;
 
     [ForeignKey("PatientId")]
     public virtual Patient Patient { get; set; } = null!;

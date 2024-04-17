@@ -25,12 +25,13 @@ public partial class Patient
     public DateOnly Dob { get; set; }
 
     [Column("SSN")]
-    public int Ssn { get; set; }
+    public string Ssn { get; set; }
 
+    [Column("assosiation_id")]
     public int assosiationid { get; set; }
 
     [ForeignKey("assosiationid")]
-    public virtual AssosiationBranch Branch { get; set; } = new AssosiationBranch();
+    public virtual AssosiationBranch Assosiation { get; set; } = new AssosiationBranch();
 
     [InverseProperty("Patient")]
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
@@ -50,6 +51,7 @@ public partial class Patient
     [InverseProperty("Patient")]
     public virtual ICollection<Reservation> clinics { get; set; } = new List<Reservation>();
 
-
+    [InverseProperty("Patient")]
+    public virtual ICollection<UseradminPatientControl> Uadmins { get; set; } = new List<UseradminPatientControl>();
 }
 

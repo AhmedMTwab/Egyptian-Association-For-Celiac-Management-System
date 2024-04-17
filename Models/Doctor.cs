@@ -33,7 +33,7 @@ public partial class Doctor
     [InverseProperty("Doctor")]
     public virtual ICollection<DoctorClinicWork> clinics { get; set; } = new List<DoctorClinicWork>();
     [InverseProperty("Doctor")]
-    public virtual ICollection<UseradminDoctorControl> admins { get; set; } = new List<UseradminDoctorControl>();
+    public virtual ICollection<UseradminDoctorControl> Uadmins { get; set; } = new List<UseradminDoctorControl>();
     [InverseProperty("Doctor")]
     public virtual ICollection<DoctorMedicalrecordVeiw> medicalrecords { get; set; } = new List<DoctorMedicalrecordVeiw>();
 }

@@ -11,7 +11,7 @@ namespace Egyptian_association_of_cieliac_patients.Models;
 public partial class AssosiationBranchPhone
 {
     [Column("phone_number", TypeName = "numeric(18, 0)")]
-    public decimal PhoneNumber { get; set; }
+    public string PhoneNumber { get; set; }
 
     [Column("assosiation_id")]
     public int AssosiationId { get; set; }

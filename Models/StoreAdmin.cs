@@ -28,15 +28,18 @@ public partial class StoreAdmin
     [Unicode(false)]
     public string Password { get; set; } = null!;
 
-    [Column("Useradmin_id")]
-    public int UseradminId { get; set; }
-
     [Column("assosiation_id")]
     public int AssosiationId { get; set; }
 
-    [ForeignKey("UseradminId")]
-    public virtual UserAdmin Admin { get; set; } = null!;
-
     [ForeignKey("AssosiationId")]
     public virtual AssosiationBranch Assosiation { get; set; } = null!;
+
+    [InverseProperty("Sadmin")]
+    public virtual ICollection<UseradminStoreadminControl> Uadmins { get; set; } = new List<UseradminStoreadminControl>();
+
+    [InverseProperty("Sadmin")]
+    public virtual ICollection<StoreadminProductControl> Products { get; set; } = new List<StoreadminProductControl>();
+
+    [InverseProperty("Sadmin")]
+    public virtual ICollection<StoreadminMaterialControl> Materials { get; set; } = new List<StoreadminMaterialControl>();
 }

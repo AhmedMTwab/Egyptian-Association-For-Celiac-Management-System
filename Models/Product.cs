@@ -24,11 +24,6 @@ public partial class Product
     [Column("price", TypeName = "money")]
     public decimal Price { get; set; }
 
-    [Column("admin_id")]
-    public int AdminId { get; set; }
-
-    [ForeignKey("AdminId")]
-    public virtual StoreAdmin Admin { get; set; } = null!;
 
     [InverseProperty("Product")]
     public virtual ICollection<ProductImage> Images { get; set; } = new List<ProductImage>();
@@ -38,4 +33,7 @@ public partial class Product
 
     [InverseProperty("Product")]
     public virtual ICollection<PatientProductView> patients { get; set; } = new List<PatientProductView>();
+
+    [InverseProperty("Product")]
+    public virtual ICollection<StoreadminProductControl> Sadmins { get; set; } = new List<StoreadminProductControl>();
 }

@@ -23,6 +23,8 @@ public partial class MedicalRecord
     public int? DisesId { get; set; }
     [InverseProperty("Record")]
     public virtual ICollection<DoctorMedicalrecordVeiw> Doctors { get; set; } = new List<DoctorMedicalrecordVeiw>();
-    public virtual ICollection<MedicalRecordDrug> Drug { get; set; } = new List<MedicalRecordDrug>();
-    public virtual ICollection<MedicalRecordTest> Test { get; set; } = new List<MedicalRecordTest>();
+    [ForeignKey("PatientId")]
+    public virtual Patient Patient { get; set; }=new Patient();
+    public virtual ICollection<MedicalRecordDrug> Drugs { get; set; } = new List<MedicalRecordDrug>();
+    public virtual ICollection<MedicalRecordTest> Tests { get; set; } = new List<MedicalRecordTest>();
 }

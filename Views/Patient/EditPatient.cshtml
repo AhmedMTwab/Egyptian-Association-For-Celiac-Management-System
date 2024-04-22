@@ -1,0 +1,77 @@
+﻿@model PatientViewModel
+@{
+    <link rel="stylesheet" href="~/css/UserAdmin.css">
+    <title>User Admin</title>
+    Layout = null;
+}
+<div class="patient-box">
+    <h2>Patient</h2>
+    <form asp-action="Editpatient" asp-route-Id="@Model.PatientId" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div>
+            <label style="color:white">patientName</label>
+        </div>
+        <div class="user-box">
+            <input asp-for="PatientName" type="text" readonly />
+            <span asp-validation-for="PatientName" class="text-danger"></span>
+        </div>
+        <div class="user-box date">
+            <input type="date" asp-for="Dob" name="" readonly>
+            <span asp-validation-for="Dob" class="text-danger"></span>
+            <label>Date Of Birth</label>
+
+        </div>
+        <div class="user-box">
+            <input asp-for="dises" type="text" />
+            <span asp-validation-for="dises" class="text-danger"></span>
+            <label>Dises</label>
+        </div>
+        <div class="user-box">
+            <input type="" asp-for="PatientPhone">
+            <span asp-validation-for="PatientPhone" class="text-danger"></span>
+            <label>Phone Number</label>
+
+        </div>
+        <div class="user-box">
+            <input type="" asp-for="PatientAddress">
+            <span asp-validation-for="PatientAddress" class="text-danger"></span>
+            <label>Address</label>
+
+
+        </div>
+        <div>
+            <label style="color:white">National Number</label>
+        </div>
+        <div class="user-box">
+            <input type="" asp-for="Ssn" readonly>
+            <span asp-validation-for="Ssn" class="text-danger"></span>
+
+
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" asp-for="assosiationId" style="color:#03e9f4">assosiation Branch</label>
+            <div class="col-sm-10">
+                @{
+                    SelectList assosiationList = new SelectList(ViewBag.assosiations, "AssosiationId", "Address");
+                }
+                <select class="form-select" asp-items="assosiationList" asp-for="assosiationId" placeholder="Enter assosiation">
+                </select>
+            </div>
+            <div>
+                <label class="license" style="color:white">Blood Type</label>
+            </div>
+            <div class="user-box">
+                <input asp-for="PatientBloodType" readonly/>
+                <span asp-validation-for="PatientBloodType" class="text-danger"></span>
+
+            </div>
+            <button type="submit" id="patient">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> update Patient
+            </button>
+                <a href="~/medical records/@Model.recordpath">Download Medical tests</a>
+    </form>
+
+</div>

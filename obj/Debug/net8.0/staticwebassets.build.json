@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zljXl5Vn9jVfadGR+CQSrw5kamxrTSFl1zdXdmOFosI=",
+  "Hash": "b8LFKGSFpGr+qXZwMPDWmuxjo2kNLTS1mYmvvMap8uo=",
   "Source": "Egyptian association of cieliac patients",
   "BasePath": "_content/Egyptian association of cieliac patients",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\stack and queue.pdf",
+      "SourceId": "Egyptian association of cieliac patients",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\",
+      "BasePath": "_content/Egyptian association of cieliac patients",
+      "RelativePath": "medical records/stack and queue.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical records\\stack and queue.pdf"
     }
   ]
 }

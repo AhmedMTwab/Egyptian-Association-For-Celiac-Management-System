@@ -18,7 +18,7 @@ namespace TestCoreApp.Repository
 
         public Patient FindById(int id)
         {
-            return context.Set<Patient>().Find(id);
+            return context.Patients.Include(d=>d.Addresses).Include(d=>d.PhoneNumbers).Include(d=>d.Diseses).Include(d=>d.Medicalrecords).FirstOrDefault(d=>d.PatientId == id);
         }
 
         public Patient SelectOne(Expression<Func<Patient, bool>> match)
@@ -87,7 +87,7 @@ namespace TestCoreApp.Repository
 
         public void DeleteOne(Patient myItem)
         {
-            context.Set<Patient>().Remove(myItem);
+            context.Patients.Remove(myItem);
             context.SaveChanges();
         }
 

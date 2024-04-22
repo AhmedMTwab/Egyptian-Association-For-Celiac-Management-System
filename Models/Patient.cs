@@ -28,30 +28,34 @@ public partial class Patient
     public string Ssn { get; set; }
 
     [Column("assosiation_id")]
-    public int assosiationid { get; set; }
+    public int? assosiationid { get; set; }
 
     [ForeignKey("assosiationid")]
-    public virtual AssosiationBranch Assosiation { get; set; } = new AssosiationBranch();
+    public virtual AssosiationBranch? Assosiation { get; set; } = new AssosiationBranch();
 
     [InverseProperty("Patient")]
-    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+    public virtual ICollection<Order>? Orders { get; set; } = new List<Order>();
     [InverseProperty("Patient")]
-    public virtual ICollection<PatientAddress> Addresses { get; set; } = new List<PatientAddress>();
+    public virtual ICollection<PatientAddress>? Addresses { get; set; } = new List<PatientAddress>();
     [InverseProperty("Patient")]
-    public virtual ICollection<PatientPhone> PhoneNumbers { get; set; } = new List<PatientPhone>();
+    public virtual ICollection<PatientPhone>? PhoneNumbers { get; set; } = new List<PatientPhone>();
 
     [InverseProperty("Patient")]
-    public virtual ICollection<PatientProductView> products { get; set; } = new List<PatientProductView>();
+    public virtual ICollection<PatientProductView>? products { get; set; } = new List<PatientProductView>();
 
     [InverseProperty("Patient")]
-    public virtual ICollection<PatientRawmaterialVeiw> Materials { get; set; } = new List<PatientRawmaterialVeiw>();
+    public virtual ICollection<PatientRawmaterialVeiw>? Materials { get; set; } = new List<PatientRawmaterialVeiw>();
    
     [InverseProperty("Patient")]
-    public virtual ICollection<PatientDisesHave> Diseses { get; set; } = new List<PatientDisesHave>();
+    public virtual ICollection<PatientDisesHave>? Diseses { get; set; } = new List<PatientDisesHave>();
     [InverseProperty("Patient")]
-    public virtual ICollection<Reservation> clinics { get; set; } = new List<Reservation>();
+    public virtual ICollection<Reservation>? clinics { get; set; } = new List<Reservation>();
 
     [InverseProperty("Patient")]
-    public virtual ICollection<UseradminPatientControl> Uadmins { get; set; } = new List<UseradminPatientControl>();
+    public virtual ICollection<UseradminPatientControl>? Uadmins { get; set; } = new List<UseradminPatientControl>();
+    [InverseProperty("Patient")]
+    public virtual ICollection<MedicalRecord>? Medicalrecords { get; set; } = new List<MedicalRecord>();
+
+
 }
 

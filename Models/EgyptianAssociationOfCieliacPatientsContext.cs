@@ -293,6 +293,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
         modelBuilder.Entity<MedicalRecord>(entity =>
         {
             entity.Property(e => e.RecordId).ValueGeneratedOnAdd();
+            entity.HasOne(d => d.Patient).WithMany(d => d.Medicalrecords).OnDelete(DeleteBehavior.Cascade).HasConstraintName("FK_medical_record-patient");
         });
 
         modelBuilder.Entity<MedicalRecordDrug>(entity =>

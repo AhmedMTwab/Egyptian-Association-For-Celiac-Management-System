@@ -1,10 +1,10 @@
-﻿@model PatientViewModel
+﻿@model EditPatientViewModel
 @{
     <link rel="stylesheet" href="~/css/UserAdmin.css">
     <title>User Admin</title>
     Layout = null;
 }
-<div class="patient-box">
+<div class="patient-box" style="overflow-y:scroll; height:900px;">
     <h2>Patient</h2>
     <form asp-action="Editpatient" asp-route-Id="@Model.PatientId" method="post">
         <div asp-validation-summary="All" class="text-danger"></div>
@@ -16,29 +16,46 @@
             <span asp-validation-for="PatientName" class="text-danger"></span>
         </div>
         <div class="user-box date">
-            <input type="date" asp-for="Dob" name="" readonly>
+            <input type="datetime" asp-for="Dob"  readonly>
             <span asp-validation-for="Dob" class="text-danger"></span>
             <label>Date Of Birth</label>
 
         </div>
-        <div class="user-box">
-            <input asp-for="dises" type="text" />
-            <span asp-validation-for="dises" class="text-danger"></span>
-            <label>Dises</label>
+        <div>
+            <label style="color:white">Dises</label>
         </div>
-        <div class="user-box">
-            <input type="" asp-for="PatientPhone">
-            <span asp-validation-for="PatientPhone" class="text-danger"></span>
-            <label>Phone Number</label>
+        @foreach(var dises in Model.patientDisses){
+            <div class="user-box">
+                <input asp-for="@dises" type="text" readonly />
+                <span asp-validation-for="@dises" class="text-danger"></span>
+            </div>
+        }
+        <p>-------------------------</p>
 
+        <div>
+            <label style="color:#03e9f4">Phone Number</label>
         </div>
-        <div class="user-box">
-            <input type="" asp-for="PatientAddress">
-            <span asp-validation-for="PatientAddress" class="text-danger"></span>
-            <label>Address</label>
-
-
+        @for (var i = 0; i < Model.PatientPhone.Count; i++)
+        {
+            <div class="user-box">
+                <input asp-for="@Model.PatientPhone[i]" type="text" />
+                <span asp-validation-for="@Model.PatientPhone[i]" class="text-danger"></span>
+            </div>
+        }
+        <p>-------------------------</p>
+        <div>
+            <label style="color:#03e9f4">Address</label>
         </div>
+        @for (var i = 0; i < Model.PatientAddress.Count; i++)
+        {
+            <div class="user-box">
+                <input asp-for="@Model.PatientAddress[i]" type="text" />
+                <span asp-validation-for="@Model.PatientAddress[i]" class="text-danger"></span>
+            </div>
+        }
+        <p>-------------------------</p>
+        
+
         <div>
             <label style="color:white">National Number</label>
         </div>

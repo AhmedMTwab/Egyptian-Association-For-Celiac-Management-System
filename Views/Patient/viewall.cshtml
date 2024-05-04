@@ -37,6 +37,9 @@
 			<td>
 				@item.PatientBloodtype
 			</td>
+					<td>
+						<a asp-action="viewone" asp-controller="Patient" asp-route-Id="@item.PatientId">Details</a>
+					</td>
 
 			<td>
 						<a asp-action="Editpatient" asp-controller="Patient" asp-route-Id="@item.PatientId">Edit</a>

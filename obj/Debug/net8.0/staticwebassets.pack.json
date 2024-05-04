@@ -253,8 +253,8 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\stack and queue.pdf",
-      "PackagePath": "staticwebassets\\medical records\\stack and queue.pdf"
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\تحليل الشخصية.pdf",
+      "PackagePath": "staticwebassets\\medical records\\تحليل الشخصية.pdf"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Egyptian association of cieliac patients.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "b8LFKGSFpGr+qXZwMPDWmuxjo2kNLTS1mYmvvMap8uo=",
+  "Hash": "pDoSHZ85z08u7JGdTTFb2aH0HecdyKDvzpzKfGABVcM=",
   "Source": "Egyptian association of cieliac patients",
   "BasePath": "_content/Egyptian association of cieliac patients",
   "Mode": "Default",
@@ -1233,12 +1233,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\stack and queue.pdf",
+      "Identity": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\تحليل الشخصية.pdf",
       "SourceId": "Egyptian association of cieliac patients",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\",
       "BasePath": "_content/Egyptian association of cieliac patients",
-      "RelativePath": "medical records/stack and queue.pdf",
+      "RelativePath": "medical records/تحليل الشخصية.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1249,7 +1249,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\medical records\\stack and queue.pdf"
+      "OriginalItemSpec": "wwwroot\\medical records\\تحليل الشخصية.pdf"
     }
   ]
 }

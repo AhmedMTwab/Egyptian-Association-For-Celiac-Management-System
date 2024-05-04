@@ -1,0 +1,64 @@
+﻿@model Doctor
+<div style="
+	 background: rgba(132, 134, 127, .5);
+	 box-sizing: border-box;
+	 box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+	 border-radius: 10px;">
+	<table class="table table-border">
+		<thead>
+			<tr itemscope="raw">
+				<th itemscope="col">doctor Id</th>
+				<th itemscope="col">doctor Name</th>
+				<th itemscope="col">Major</th>
+				<th itemscope="col">Phonenumbers</th>
+				<th itemscope="col">Clinics</th>
+				<th itemscope="col">Edit</th>
+				<th itemscope="col">Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr itemscope="raw">
+				<td>
+					@Model.DoctorId
+				</td>
+
+				<td>
+					@Model.Name
+				</td>
+
+				<td>
+					@Model.Major
+				</td>
+
+
+				<td>
+					@foreach (var phone in @Model.DoctorPhones)
+					{
+						<p>
+							@phone.PhoneNumber
+						</p>
+					}
+				</td>
+				
+				<td>
+					@foreach (var clinic in @Model.clinics)
+					{
+						<p>
+							@clinic.Clinic.Name
+						</p>
+					}
+				</td>
+			
+				
+				<td>
+					<a asp-action="EditDoctor" asp-controller="Doctor" asp-route-Id="@Model.DoctorId">Edit</a>
+				</td>
+				<td>
+					<a asp-action="DeleteDoctor" asp-controller="Doctor" asp-route-Id="@Model.DoctorId">Delete</a>
+				</td>
+			</tr>
+
+
+		</tbody>
+	</table>
+</div>

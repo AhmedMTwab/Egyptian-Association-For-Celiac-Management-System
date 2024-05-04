@@ -1,6 +1,7 @@
 ﻿using Egyptian_association_of_cieliac_patients.Models;
 using Egyptian_association_of_cieliac_patients.Repositories;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Versioning;
 using System;
 using System.Linq.Expressions;
 
@@ -15,12 +16,39 @@ namespace TestCoreApp.Repository
 
         protected EgyptianAssociationOfCieliacPatientsContext context;
 
-        public T FindById(int id)
+		
+
+		public T FindById(int id)
         {
             return context.Set<T>().Find(id);
         }
+		public T FindById(int id,params string[] agers)
+		{
+			IQueryable<T> query = context.Set<T>();
 
-        public T SelectOne(Expression<Func<T, bool>> match)
+			if (agers.Length > 0)
+			{
+				foreach (var ager in agers)
+				{
+					query = query.Include(ager);
+				}
+			}
+
+			// Get the primary key property name
+			var primaryKeyProperty = context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties.FirstOrDefault();
+
+			if (primaryKeyProperty == null)
+			{
+				throw new InvalidOperationException($"Entity type '{typeof(T).Name}' does not have a primary key property.");
+			}
+
+			string primaryKeyPropertyName = primaryKeyProperty.Name;
+
+			// Use EF.Property to access the primary key property dynamically
+			return query.FirstOrDefault(entity => EF.Property<int>(entity, primaryKeyPropertyName) == id);
+		}
+
+		public T SelectOne(Expression<Func<T, bool>> match)
         {
             return context.Set<T>().SingleOrDefault(match);
         }
@@ -107,5 +135,7 @@ namespace TestCoreApp.Repository
             context.Set<T>().RemoveRange(myList);
             context.SaveChanges();
         }
+
+        
     }
 }

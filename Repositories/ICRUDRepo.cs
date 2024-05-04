@@ -6,8 +6,9 @@ namespace Egyptian_association_of_cieliac_patients.Repositories
     public interface ICRUDRepo<T> where T : class
     {
             T FindById(int id);
+            T FindById(int id, params string[] agers);
 
-            T SelectOne(Expression<Func<T, bool>> match);
+			T SelectOne(Expression<Func<T, bool>> match);
 
             IEnumerable<T> FindAll();
 

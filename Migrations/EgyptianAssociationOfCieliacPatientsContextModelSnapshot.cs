@@ -296,14 +296,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DoctorId"));
 
-                    b.Property<TimeOnly>("ArriveTime")
-                        .HasColumnType("time")
-                        .HasColumnName("arrive_time");
-
-                    b.Property<TimeOnly>("LeaveTime")
-                        .HasColumnType("time")
-                        .HasColumnName("leave_time");
-
                     b.Property<string>("Major")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -332,6 +324,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Property<int>("DoctorId")
                         .HasColumnType("int")
                         .HasColumnName("doctor_id");
+
+                    b.Property<TimeOnly>("ArriveTime")
+                        .HasColumnType("time")
+                        .HasColumnName("arrive_time");
+
+                    b.Property<TimeOnly>("LeaveTime")
+                        .HasColumnType("time")
+                        .HasColumnName("leave_time");
 
                     b.HasKey("ClinicId", "DoctorId");
 

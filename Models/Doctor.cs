@@ -23,11 +23,7 @@ public partial class Doctor
     [Unicode(false)]
     public string Major { get; set; } = null!;
 
-    [Column("arrive_time")]
-    public TimeOnly ArriveTime { get; set; }
-
-    [Column("leave_time")]
-    public TimeOnly LeaveTime { get; set; }
+    
     [InverseProperty("Doctor")]
     public virtual ICollection<DoctorPhone> DoctorPhones { get; set; }=new List<DoctorPhone>();
     [InverseProperty("Doctor")]

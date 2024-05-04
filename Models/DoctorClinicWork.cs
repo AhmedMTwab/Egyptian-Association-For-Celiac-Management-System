@@ -15,6 +15,11 @@ public partial class DoctorClinicWork
 
     [Column("doctor_id")]
     public int DoctorId { get; set; }
+    [Column("arrive_time")]
+    public TimeOnly ArriveTime { get; set; }
+
+    [Column("leave_time")]
+    public TimeOnly LeaveTime { get; set; }
 
     [ForeignKey("ClinicId")]
     public virtual Clinic Clinic { get; set; } = null!;

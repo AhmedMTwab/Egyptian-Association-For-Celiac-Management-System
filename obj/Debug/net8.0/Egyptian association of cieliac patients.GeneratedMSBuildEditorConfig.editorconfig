@@ -26,6 +26,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\graduation-project\webpage\Egyptian association of cieliac Diseses
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Doctor/AddDoctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEFkZERvY3Rvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Doctor/EditDoctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEVkaXREb2N0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Doctor/viewall.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXHZpZXdhbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Doctor/viewone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXHZpZXdvbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,4 +1,4 @@
-﻿@model PatientViewModel
+﻿@model AddPatientViewModel
 @{
     <link rel="stylesheet" href="~/css/UserAdmin.css">
     <title>User Admin</title>
@@ -14,26 +14,31 @@
             <label>patientName</label>
         </div>
         <div class="user-box date">
-            <input type="date" asp-for="Dob" name="" required="">
+            <input type="date"  asp-for="Dob">
             <span asp-validation-for="Dob" class="text-danger"></span>
             <label>Date Of Birth</label>
 
         </div>
-        <div class="user-box">
-            <input asp-for="dises" type="text" />
-            <span asp-validation-for="dises" class="text-danger"></span>
-            <label>Dises</label>
-        </div>
-        <div class="user-box">
-            <input type="" asp-for="PatientPhone">
-            <span asp-validation-for="PatientPhone" class="text-danger"></span>
-            <label>Phone Number</label>
+      
+        <div class="form-group">
+            <label class="control-label col-sm-2" asp-for="dissesIds" style="color:#03e9f4">Disses</label>
+            <div class="col-sm-10">
+                @{
+                    SelectList disseslist = new SelectList(ViewBag.disess, "DisesId", "Name");
+                }
+                <select class="form-select" asp-items="disseslist" asp-for="dissesIds" placeholder="Enter Disses" multiple>
+                </select>
+            </div>
+            <p>
 
-        </div>
-        <div class="user-box">
-            <input type="" asp-for="PatientAddress" >
-            <span asp-validation-for="PatientAddress" class="text-danger"></span>
-            <label>Address</label>
+            </p>
+
+            <div id="phoneContainer"></div>
+            <button type="button" id="addPhoneBtn">Add PhoneNumber</button><br><br>
+
+
+            <div id="addressContainer"></div>
+            <button type="button" id="addAddressBtn">Add Address</button><br><br>
            
 
         </div>
@@ -81,3 +86,57 @@
     </form>
 
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const AddressContainer = document.getElementById("addressContainer");
+        const addAddressBtn = document.getElementById("addAddressBtn");
+        const phoneContainer = document.getElementById("phoneContainer");
+        const addPhoneBtn = document.getElementById("addPhoneBtn");
+
+        addAddressBtn.addEventListener("click", function () {
+            const addressDiv = document.createElement("div");
+            addressDiv.className = "address-container";
+
+            const addressNameInput = document.createElement("input");
+            addressNameInput.type = "text";
+            addressNameInput.name = "PatientAddress";
+            addressNameInput.required = true;
+
+            const removeAddressBtn = document.createElement("button");
+            removeAddressBtn.type = "button";
+            removeAddressBtn.textContent = "Remove Address";
+            removeAddressBtn.addEventListener("click", function () {
+                addressContainer.removeChild(addressDiv);
+            });
+
+            addressDiv.appendChild(addressNameInput);
+            addressDiv.appendChild(removeAddressBtn);
+
+
+            addressContainer.appendChild(addressDiv);
+        });
+
+        addPhoneBtn.addEventListener("click", function () {
+            const phoneDiv = document.createElement("div");
+            phoneDiv.className = "phone-container";
+
+            const phoneInput = document.createElement("input");
+            phoneInput.type = "tel";
+            phoneInput.name = "PatientPhone";
+            phoneInput.required = true;
+
+            const removePhoneBtn = document.createElement("button");
+            removePhoneBtn.type = "button";
+            removePhoneBtn.textContent = "Remove Phone Number";
+            removePhoneBtn.addEventListener("click", function () {
+                phoneContainer.removeChild(phoneDiv);
+            });
+
+            phoneDiv.appendChild(phoneInput);
+            phoneDiv.appendChild(removePhoneBtn);
+
+            phoneContainer.appendChild(phoneDiv);
+        });
+    });
+</script>
+

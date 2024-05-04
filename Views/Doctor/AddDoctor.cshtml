@@ -1,0 +1,105 @@
+﻿@model AddDoctorViewModel
+@{
+    <link rel="stylesheet" href="~/css/UserAdmin.css">
+    <title>User Admin</title>
+    Layout = null;
+}
+<div class="patient-box">
+    <h2>Patient</h2>
+    <form asp-action="AddDoctor" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="user-box">
+            <input asp-for="DoctorName" type="text" />
+            <span asp-validation-for="DoctorName" class="text-danger"></span>
+            <label>DoctorName</label>
+        </div>
+
+        <div class="user-box">
+            <input asp-for="DoctorMajor" type="text" />
+            <span asp-validation-for="DoctorMajor" class="text-danger"></span>
+            <label>DoctorMajor</label>
+        </div>
+
+            <div id="phoneContainer"></div>
+            <button type="button" id="addPhoneBtn">Add PhoneNumber</button><br><br>
+
+
+            <div id="clinicContainer"></div>
+            <button type="button" id="addClinicBtn">Add Clinic</button><br><br>
+           
+           
+                <button type="submit" id="Doctor">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> Add A Doctor
+                </button>
+
+    </form>
+
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const clinicContainer = document.getElementById("clinicContainer");
+        const addClinicBtn = document.getElementById("addClinicBtn");
+        const phoneContainer = document.getElementById("phoneContainer");
+        const addPhoneBtn = document.getElementById("addPhoneBtn");
+
+        addClinicBtn.addEventListener("click", function () {
+            const clinicDiv = document.createElement("div");
+            clinicDiv.className = "clinic-container";
+
+            const clinicNameInput = document.createElement("input");
+            clinicNameInput.type = "text";
+            clinicNameInput.name = "ClinicNames";
+            clinicNameInput.required = true;
+
+            const clinicArrivalInput = document.createElement("input");
+            clinicArrivalInput.type = "time";
+            clinicArrivalInput.name = "ClinicArrivalTimes";
+            clinicArrivalInput.required = true;
+
+            const clinicLeaveInput = document.createElement("input");
+            clinicLeaveInput.type = "time";
+            clinicLeaveInput.name = "ClinicLeaveTimes";
+            clinicLeaveInput.required = true;
+
+            const removeClinicBtn = document.createElement("button");
+            removeClinicBtn.type = "button";
+            removeClinicBtn.textContent = "Remove Clinic";
+            removeClinicBtn.addEventListener("click", function () {
+                clinicContainer.removeChild(clinicDiv);
+            });
+
+            clinicDiv.appendChild(clinicNameInput);
+            clinicDiv.appendChild(clinicArrivalInput);
+            clinicDiv.appendChild(clinicLeaveInput);
+            clinicDiv.appendChild(removeClinicBtn);
+
+
+            clinicContainer.appendChild(clinicDiv);
+        });
+
+        addPhoneBtn.addEventListener("click", function () {
+            const phoneDiv = document.createElement("div");
+            phoneDiv.className = "phone-container";
+
+            const phoneInput = document.createElement("input");
+            phoneInput.type = "tel";
+            phoneInput.name = "PhoneNumbers";
+            phoneInput.required = true;
+
+            const removePhoneBtn = document.createElement("button");
+            removePhoneBtn.type = "button";
+            removePhoneBtn.textContent = "Remove Phone Number";
+            removePhoneBtn.addEventListener("click", function () {
+                phoneContainer.removeChild(phoneDiv);
+            });
+
+            phoneDiv.appendChild(phoneInput);
+            phoneDiv.appendChild(removePhoneBtn);
+
+            phoneContainer.appendChild(phoneDiv);
+        });
+    });
+</script>

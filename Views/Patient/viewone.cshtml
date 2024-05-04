@@ -12,6 +12,13 @@
 				<th itemscope="col">Date Of Birth</th>
 				<th itemscope="col">ssn</th>
 				<th itemscope="col">Blood Type</th>
+				<th itemscope="col">Assosiation Branch</th>
+				<th itemscope="col">Disses</th>
+				<th itemscope="col">Addresses</th>
+				<th itemscope="col">Phonenumbers</th>
+				<th itemscope="col">Medical Tests</th>
+				<th itemscope="col">Edit</th>
+				<th itemscope="col">Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -35,16 +42,45 @@
 					<td>
 					@Model.PatientBloodtype
 					</td>
-
 					<td>
-						<a href="">Edit</a>
+					@Model.Assosiation.Address
 					</td>
 					<td>
-						<a href="">Delete</a>
+						@foreach (var disses in @Model.Diseses)
+						{
+							<p>
+								@disses.Dises.Name
+							</p>
+						}
 					</td>
+					<td>
+						@foreach(var address in @Model.Addresses)
+						{
+								<p>
+									@address.Address
+								</p>
+						}
+			        </td>
+					<td>
+						@foreach (var phone in @Model.PhoneNumbers)
+						{
+							<p>
+								@phone.PhoneNumber
+							</p>
+						}
+					</td>
+					<td>
+					<a href="~/medical records/@Model.Medicalrecords.First().Tests.First().TestsPath">Download</a>
+					</td>
+				<td>
+					<a asp-action="Editpatient" asp-controller="Patient" asp-route-Id="@Model.PatientId">Edit</a>
+				</td>
+				<td>
+					<a asp-action="Deletepatient" asp-controller="Patient" asp-route-Id="@Model.PatientId">Delete</a>
+				</td>
 				</tr>
 
-			}
+			
 		</tbody>
 	</table>
 </div>

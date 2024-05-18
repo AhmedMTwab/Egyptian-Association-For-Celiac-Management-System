@@ -1,0 +1,159 @@
+﻿@using System.Text.Json
+@using System.Text.Json.Serialization
+@model AddHospitalViewModel
+@{
+    <link rel="stylesheet" href="~/css/UserAdmin.css">
+    <title>User Admin</title>
+    
+    Layout = null;
+}
+<div class="patient-box">
+    <h2>Hospital</h2>
+    <form asp-action="AddHospital" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="user-box">
+            <lable>HospitalName</lable>
+            <input asp-for="HospitalName" type="text" />
+            <span asp-validation-for="HospitalName" class="text-danger"></span>
+            
+        </div>
+      
+        <div id="typeContainer"></div>
+        <button type="button" id="addTypeBtn">Add Type</button><br><br>
+
+        <div id="phoneContainer"></div>
+        <button type="button" id="addPhoneBtn">Add PhoneNumber</button><br><br>
+
+
+        <div id="addressContainer"></div>
+        <button type="button" id="addAddressBtn">Add Address</button><br><br>
+
+       
+
+        <div id="insuranceContainer"></div>
+        <button type="button" id="addInsuranceBtn">Add Insurance Discound</button><br><br>
+
+        <button type="submit" id="Doctor">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Add A Hospital
+        </button>
+
+    </form>
+
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const AddressContainer = document.getElementById("addressContainer");
+        const addAddressBtn = document.getElementById("addAddressBtn");
+        const TypeContainer = document.getElementById("typeContainer");
+        const addTypeBtn = document.getElementById("addTypeBtn");
+        const phoneContainer = document.getElementById("phoneContainer");
+        const addPhoneBtn = document.getElementById("addPhoneBtn");
+        const insuranceContainer = document.getElementById("insuranceContainer");
+        const addInsuranceBtn = document.getElementById("addInsuranceBtn");
+
+        addTypeBtn.addEventListener("click", function () {
+            const typeDiv = document.createElement("div");
+            typeDiv.className = "type-container";
+
+            const typeNameInput = document.createElement("input");
+            typeNameInput.type = "text";
+            typeNameInput.name = "HospitalTypes";
+            typeNameInput.required = true;
+
+            const removeTypeBtn = document.createElement("button");
+            removeTypeBtn.type = "button";
+            removeTypeBtn.textContent = "Remove Type";
+            removeTypeBtn.addEventListener("click", function () {
+                TypeContainer.removeChild(typeDiv);
+            });
+
+            typeDiv.appendChild(typeNameInput);
+            typeDiv.appendChild(removeTypeBtn);
+
+            TypeContainer.appendChild(typeDiv);
+        });
+
+        addAddressBtn.addEventListener("click", function () {
+            const addressDiv = document.createElement("div");
+            addressDiv.className = "address-container";
+
+            const addressNameInput = document.createElement("input");
+            addressNameInput.type = "text";
+            addressNameInput.name = "Addresses";
+            addressNameInput.required = true;
+
+            const removeAddressBtn = document.createElement("button");
+            removeAddressBtn.type = "button";
+            removeAddressBtn.textContent = "Remove Address";
+            removeAddressBtn.addEventListener("click", function () {
+                AddressContainer.removeChild(addressDiv);
+            });
+
+            addressDiv.appendChild(addressNameInput);
+            addressDiv.appendChild(removeAddressBtn);
+
+            AddressContainer.appendChild(addressDiv);
+        });
+
+        addPhoneBtn.addEventListener("click", function () {
+            const phoneDiv = document.createElement("div");
+            phoneDiv.className = "phone-container";
+
+            const phoneInput = document.createElement("input");
+            phoneInput.type = "tel";
+            phoneInput.name = "PhoneNumbers";
+            phoneInput.required = true;
+
+            const removePhoneBtn = document.createElement("button");
+            removePhoneBtn.type = "button";
+            removePhoneBtn.textContent = "Remove Phone Number";
+            removePhoneBtn.addEventListener("click", function () {
+                phoneContainer.removeChild(phoneDiv);
+            });
+
+            phoneDiv.appendChild(phoneInput);
+            phoneDiv.appendChild(removePhoneBtn);
+
+            phoneContainer.appendChild(phoneDiv);
+        });
+
+
+        addInsuranceBtn.addEventListener("click", function () {
+            const insuranceDiv = document.createElement("div");
+            insuranceDiv.className = "insurance-container";
+
+            const insuranceNameInput = document.createElement("select");
+            insuranceNameInput.name = "Insurances";
+            insuranceNameInput.required = true;
+            // Deserialize ViewBag.insurances JSON string
+            const insuranceList = JSON.parse('@Html.Raw(ViewBag.insurances)');
+
+            insuranceList.forEach(function (Name) { // Assuming 'Name' is a string
+                const option = document.createElement("option");
+                option.value = Name;
+                option.text = Name;
+                insuranceNameInput.appendChild(option);
+            });
+
+            const insuranceDiscoundInput = document.createElement("input");
+            insuranceDiscoundInput.name = "InsuranceDiscounds";
+            insuranceDiscoundInput.required = true;
+
+            const removeInsuranceBtn = document.createElement("button");
+            removeInsuranceBtn.type = "button";
+            removeInsuranceBtn.textContent = "Remove Insurance Discound";
+            removeInsuranceBtn.addEventListener("click", function () {
+                insuranceContainer.removeChild(insuranceDiv);
+            });
+
+            insuranceDiv.appendChild(insuranceNameInput);
+            insuranceDiv.appendChild(insuranceDiscoundInput);
+            insuranceDiv.appendChild(removeInsuranceBtn);
+            insuranceContainer.appendChild(insuranceDiv);
+        });
+    });
+</script>
+

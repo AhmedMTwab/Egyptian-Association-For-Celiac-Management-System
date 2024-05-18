@@ -18,7 +18,7 @@ public partial class Hospital
     [Unicode(false)]
     public string Name { get; set; } = null!;
     [InverseProperty("Hospital")]
-    public virtual ICollection<MedicalAdminHospitalControl> hospitals { get; set; } = new List<MedicalAdminHospitalControl>();
+    public virtual ICollection<MedicalAdminHospitalControl> Madmins { get; set; } = new List<MedicalAdminHospitalControl>();
     [InverseProperty("Hospital")]
     public virtual ICollection<HospitalInsuranceDiscount> insurances { get; set; } = new List<HospitalInsuranceDiscount>();
     [InverseProperty("Hospital")]

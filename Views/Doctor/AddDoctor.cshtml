@@ -1,11 +1,11 @@
 ﻿@model AddDoctorViewModel
 @{
-    <link rel="stylesheet" href="~/css/UserAdmin.css">
-    <title>User Admin</title>
+        <link rel="stylesheet" href="~/css/UserAdmin.css">
+        <title>User Admin</title>
     Layout = null;
 }
 <div class="patient-box">
-    <h2>Patient</h2>
+    <h2>Doctor</h2>
     <form asp-action="AddDoctor" method="post" enctype="multipart/form-data">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="user-box">
@@ -38,47 +38,56 @@
     </form>
 
 </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const clinicContainer = document.getElementById("clinicContainer");
-        const addClinicBtn = document.getElementById("addClinicBtn");
-        const phoneContainer = document.getElementById("phoneContainer");
-        const addPhoneBtn = document.getElementById("addPhoneBtn");
+       
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const clinicContainer = document.getElementById("clinicContainer");
+                const addClinicBtn = document.getElementById("addClinicBtn");
+                const phoneContainer = document.getElementById("phoneContainer");
+                const addPhoneBtn = document.getElementById("addPhoneBtn");
 
-        addClinicBtn.addEventListener("click", function () {
-            const clinicDiv = document.createElement("div");
-            clinicDiv.className = "clinic-container";
+                addClinicBtn.addEventListener("click", function () {
+                    const clinicDiv = document.createElement("div");
+                    clinicDiv.className = "clinic-container";
 
-            const clinicNameInput = document.createElement("input");
-            clinicNameInput.type = "text";
-            clinicNameInput.name = "ClinicNames";
-            clinicNameInput.required = true;
+                    const clinicNameInput = document.createElement("select");
+                    clinicNameInput.name = "ClinicNames";
+                    clinicNameInput.required = true;
+                    const clinicList = JSON.parse('@Html.Raw(ViewBag.clinics)');
 
-            const clinicArrivalInput = document.createElement("input");
-            clinicArrivalInput.type = "time";
-            clinicArrivalInput.name = "ClinicArrivalTimes";
-            clinicArrivalInput.required = true;
-
-            const clinicLeaveInput = document.createElement("input");
-            clinicLeaveInput.type = "time";
-            clinicLeaveInput.name = "ClinicLeaveTimes";
-            clinicLeaveInput.required = true;
-
-            const removeClinicBtn = document.createElement("button");
-            removeClinicBtn.type = "button";
-            removeClinicBtn.textContent = "Remove Clinic";
-            removeClinicBtn.addEventListener("click", function () {
-                clinicContainer.removeChild(clinicDiv);
-            });
-
-            clinicDiv.appendChild(clinicNameInput);
-            clinicDiv.appendChild(clinicArrivalInput);
-            clinicDiv.appendChild(clinicLeaveInput);
-            clinicDiv.appendChild(removeClinicBtn);
+                    clinicList.forEach(function (Name) {
+                        const option = document.createElement("option");
+                        option.value = Name;
+                        option.text = Name;
+                        clinicNameInput.appendChild(option);
+                    });
 
 
-            clinicContainer.appendChild(clinicDiv);
-        });
+                    const clinicArrivalInput = document.createElement("input");
+                    clinicArrivalInput.type = "time";
+                    clinicArrivalInput.name = "ClinicArrivalTimes";
+                    clinicArrivalInput.required = true;
+
+                    const clinicLeaveInput = document.createElement("input");
+                    clinicLeaveInput.type = "time";
+                    clinicLeaveInput.name = "ClinicLeaveTimes";
+                    clinicLeaveInput.required = true;
+
+                    const removeClinicBtn = document.createElement("button");
+                    removeClinicBtn.type = "button";
+                    removeClinicBtn.textContent = "Remove Clinic";
+                    removeClinicBtn.addEventListener("click", function () {
+                        clinicContainer.removeChild(clinicDiv);
+                    });
+
+                    clinicDiv.appendChild(clinicNameInput);
+                    clinicDiv.appendChild(clinicArrivalInput);
+                    clinicDiv.appendChild(clinicLeaveInput);
+                    clinicDiv.appendChild(removeClinicBtn);
+
+
+                    clinicContainer.appendChild(clinicDiv);
+                });
 
         addPhoneBtn.addEventListener("click", function () {
             const phoneDiv = document.createElement("div");

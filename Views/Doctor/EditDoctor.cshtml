@@ -40,8 +40,14 @@
         @for (var i = 0; i < Model.ClinicNames.Count; i++)
         {
             <div class="user-box">
-                <input asp-for="@Model.ClinicNames[i]" type="text" />
-                <span asp-validation-for="@Model.ClinicNames[i]" class="text-danger"></span>
+                <div class="col-sm-10">
+                    @{
+                        SelectList clinicList = new SelectList(ViewBag.clinics, "Name", "Name", Model.ClinicNames[i]);
+                    }
+                    <select style="width:auto" class="form-select" asp-items="clinicList" asp-for="@Model.ClinicNames[i]">
+                    </select>
+                    
+                </div>
                 <input asp-for="@Model.ClinicArrivalTimes[i]" />
                 <span asp-validation-for="@Model.ClinicArrivalTimes[i]" class="text-danger"></span>
                 <input asp-for="@Model.ClinicLeaveTimes[i]" />

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pDoSHZ85z08u7JGdTTFb2aH0HecdyKDvzpzKfGABVcM=",
+  "Hash": "9mXUBmSFCfVQmQmw0qD0YbGxtD3k58kDjZhoEe59gF8=",
   "Source": "Egyptian association of cieliac patients",
   "BasePath": "_content/Egyptian association of cieliac patients",
   "Mode": "Default",
@@ -1250,6 +1250,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\medical records\\تحليل الشخصية.pdf"
+    },
+    {
+      "Identity": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\نموذج ارشاد اكاديمي مقترح.pdf",
+      "SourceId": "Egyptian association of cieliac patients",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\",
+      "BasePath": "_content/Egyptian association of cieliac patients",
+      "RelativePath": "medical records/نموذج ارشاد اكاديمي مقترح.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\medical records\\نموذج ارشاد اكاديمي مقترح.pdf"
     }
   ]
 }

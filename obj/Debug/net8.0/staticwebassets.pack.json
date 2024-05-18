@@ -257,6 +257,10 @@
       "PackagePath": "staticwebassets\\medical records\\تحليل الشخصية.pdf"
     },
     {
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\نموذج ارشاد اكاديمي مقترح.pdf",
+      "PackagePath": "staticwebassets\\medical records\\نموذج ارشاد اكاديمي مقترح.pdf"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Egyptian association of cieliac patients.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

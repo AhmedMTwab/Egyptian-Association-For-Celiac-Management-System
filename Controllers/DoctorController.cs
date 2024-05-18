@@ -2,16 +2,21 @@
 using Egyptian_association_of_cieliac_patients.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Egyptian_association_of_cieliac_patients.ViewModels;
+using System.Text.Json.Serialization;
+using System.Text.Json;
+using Microsoft.Extensions.Options;
 
 namespace Egyptian_association_of_cieliac_patients.Controllers
 {
     public class DoctorController : Controller
     {
         private readonly ICRUDRepo<Doctor> doctor_Crud;
+        private readonly ICRUDRepo<Clinic> clinicRepo;
 
-        public DoctorController(ICRUDRepo<Doctor> Doctor_crud) 
+        public DoctorController(ICRUDRepo<Doctor> Doctor_crud,ICRUDRepo<Clinic> ClinicRepo) 
         {
             doctor_Crud = Doctor_crud;
+            clinicRepo = ClinicRepo;
         }
         public IActionResult Index()
         {
@@ -31,6 +36,14 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         [HttpGet]
         public IActionResult AddDoctor()
         {
+            // Serialize ViewBag.assosiations to JSON with ReferenceHandler.Preserve
+            var options = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve
+            };
+            var clinics = clinicRepo.FindAll();
+            var clinicName = clinics.Select(a => a.Name).ToArray();
+            ViewBag.clinics = JsonSerializer.Serialize(clinicName, options);
             return View("AddDoctor");
         }
         [HttpPost]
@@ -40,23 +53,32 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             Doctor doc =new Doctor();
             doc.Name = doctor.DoctorName;
             doc.Major = doctor.DoctorMajor;
-            ICollection<DoctorClinicWork> clinics=new List<DoctorClinicWork>();
+
+            List<DoctorClinicWork> newclinic = new List<DoctorClinicWork>();
+            var addedClinics = new HashSet<int>(); // To track ClinicIds already added
             int i = 0;
-            foreach(var ClinicName in doctor.ClinicNames)
+            foreach (var clinicName in doctor.ClinicNames)
             {
-                
-                var clinic = new Clinic();
-                var doctor_clinics = new DoctorClinicWork();
-                clinic.Name = ClinicName;
-                doctor_clinics.ArriveTime = TimeOnly.FromTimeSpan(doctor.ClinicArrivalTimes[i]);
-                doctor_clinics.LeaveTime= TimeOnly.FromTimeSpan(doctor.ClinicLeaveTimes[i]);
-                //clinic.Doctors.Add(doctor_clinics);
-                doctor_clinics.Clinic = clinic;
-                clinics.Add(doctor_clinics);
+                var existingClinic = clinicRepo.FindAll().FirstOrDefault(c => c.Name == clinicName);
+
+                if (existingClinic != null && !addedClinics.Contains(existingClinic.ClinicId)) // Check if already added
+                {
+                    var clinic = new DoctorClinicWork()
+                    {
+                        Clinic = existingClinic,
+                        DoctorId = doctor.doctorid,
+                        ArriveTime = TimeOnly.FromTimeSpan(doctor.ClinicArrivalTimes[i]),
+                        LeaveTime = TimeOnly.FromTimeSpan(doctor.ClinicLeaveTimes[i]),
+                    };
+
+                    newclinic.Add(clinic);
+                    addedClinics.Add(existingClinic.ClinicId);  // Add the ClinicId to the set
+                }
+
                 i++;
             }
-            doc.clinics = clinics;
 
+            doc.clinics = newclinic;
             foreach (var phone in doctor.PhoneNumbers)
             {
                 var phonenumber = new DoctorPhone()
@@ -82,9 +104,10 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 doctorView.doctorid = id;
                 doctorView.DoctorName = doctor.Name;
                 doctorView.DoctorMajor = doctor.Major;
-                
-                
-                foreach (var phone in doctor.DoctorPhones)
+                var clinics = clinicRepo.FindAll();
+                ViewBag.clinics = clinics;
+
+            foreach (var phone in doctor.DoctorPhones)
                 {
                     doctorView.PhoneNumbers.Add(phone.PhoneNumber);
                 }
@@ -118,30 +141,30 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             doctor.DoctorPhones = newphones;
 
             doctor.clinics.Clear();
-			List<DoctorClinicWork> newclinic = new List<DoctorClinicWork>();
+            List<DoctorClinicWork> newclinic = new List<DoctorClinicWork>();
             int i = 0;
-			foreach (var clinic_ in newdata.ClinicNames)
-			{
-                var clinicc = new Clinic()
+            foreach (var clinicName in newdata.ClinicNames)
+            {
+                // Find the clinic by name
+                var existingClinic = clinicRepo.FindAll().FirstOrDefault(c => c.Name == clinicName);
+
+                if (existingClinic != null)
                 {
-                    Name = clinic_
-                };
-                var clinic = new DoctorClinicWork()
-                {
-                    Clinic = clinicc,
-                    DoctorId = doctor.DoctorId,
-                    ArriveTime = TimeOnly.FromTimeSpan(newdata.ClinicArrivalTimes[i]),
-					LeaveTime = TimeOnly.FromTimeSpan(newdata.ClinicLeaveTimes[i]),
-				};
-				newclinic.Add(clinic);
+                    // Clinic with the same name exists, use its ClinicId
+                    var clinic = new DoctorClinicWork()
+                    {
+                        Clinic = existingClinic,
+                        DoctorId = doctor.DoctorId,
+                        ArriveTime = TimeOnly.FromTimeSpan(newdata.ClinicArrivalTimes[i]),
+                        LeaveTime = TimeOnly.FromTimeSpan(newdata.ClinicLeaveTimes[i]),
+                    };
+                    newclinic.Add(clinic);
+                }
                 i++;
-			}
+            }
 
-			doctor.clinics = newclinic;
-
-
-
-			doctor_Crud.UpdateOne(doctor);
+            doctor.clinics = newclinic;
+            doctor_Crud.UpdateOne(doctor);
 
             return RedirectToAction("viewall");
         }

@@ -1,0 +1,89 @@
+﻿@model EditClinicViewModel
+@{
+    <link rel="stylesheet" href="~/css/UserAdmin.css">
+    <title>User Admin</title>
+    Layout = null;
+}
+<div class="patient-box" style="overflow-y:scroll; height:900px;">
+    <h2>Edit Clinic</h2>
+    <form asp-action="EditClinic" asp-route-Id="@Model.clinicid" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div>
+            <label style="color:white">Clinic Name</label>
+        </div>
+        <div class="user-box">
+            <input asp-for="ClinicName" type="text" readonly />
+            <span asp-validation-for="ClinicName" class="text-danger"></span>
+        </div>
+        <div>
+            <label style="color:#03e9f4">OpenTime</label>
+        </div>
+        <div class="user-box">
+            <input asp-for="OpenTime" type="time"  />
+            <span asp-validation-for="OpenTime" class="text-danger"></span>
+        </div>
+        <div>
+            <label style="color:#03e9f4">CloseTime</label>
+        </div>
+        <div class="user-box">
+            <input asp-for="CloseTime" type="time"  />
+            <span asp-validation-for="CloseTime" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label style="color:#03e9f4">Phone Number</label>
+        </div>
+        @for (var i = 0; i < Model.PhoneNumbers.Count; i++)
+        {
+            <div class="user-box">
+                <input asp-for="@Model.PhoneNumbers[i]" type="text" />
+                <span asp-validation-for="@Model.PhoneNumbers[i]" class="text-danger"></span>
+            </div>
+        }
+
+        <div>
+            <label style="color:#03e9f4">Address</label>
+        </div>
+        @for (var i = 0; i < Model.Addresses.Count; i++)
+        {
+            <div class="user-box">
+                <input asp-for="@Model.Addresses[i]" type="text" />
+                <span asp-validation-for="@Model.Addresses[i]" class="text-danger"></span>
+            </div>
+        }
+        <p>-------------------------</p>
+        <div>
+            <label style="color:#03e9f4">Assosiation Discound</label>
+        </div>
+        @for (var i = 0; i < Model.AssosiationBranches.Count; i++)
+        {
+            <div class="user-box">
+                <input asp-for="@Model.AssosiationBranches[i]" type="text" style="width:auto" readonly/>
+                <span asp-validation-for="@Model.AssosiationBranches[i]" class="text-danger"></span>
+                <input asp-for="@Model.AssosiationDiscounds[i]" />
+                <span asp-validation-for="@Model.AssosiationDiscounds[i]" class="text-danger"></span>
+            </div>
+        }
+        <p>-------------------------</p>
+        <div>
+            <label style="color:#03e9f4">Insurance Discound</label>
+        </div>
+        @for (var i = 0; i < Model.Insurances.Count; i++)
+        {
+            <div class="user-box">
+                <input asp-for="@Model.Insurances[i]" type="text" style="width:fit-content" readonly />
+                <span asp-validation-for="@Model.Insurances[i]" class="text-danger"></span>
+                <input asp-for="@Model.InsuranceDiscounds[i]" />
+                <span asp-validation-for="@Model.InsuranceDiscounds[i]" class="text-danger"></span>
+            </div>
+        }
+        <p>----------------------------------------</p>
+        <button type="submit" id="patient">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> update Clinic
+        </button>
+    </form>
+
+</div>

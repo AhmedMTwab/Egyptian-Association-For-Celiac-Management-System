@@ -20,6 +20,12 @@ namespace Egyptian_association_of_cieliac_patients
             builder.Services.AddScoped<ICRUDRepo<AssosiationBranch>,MainRepository<AssosiationBranch>>();
             builder.Services.AddScoped<ICRUDRepo<Dises>, MainRepository<Dises>>();
             builder.Services.AddScoped<ICRUDRepo<Doctor>, MainRepository<Doctor>>();
+			builder.Services.AddScoped<ICRUDRepo<Clinic>, MainRepository<Clinic>>();
+            builder.Services.AddScoped<ICRUDRepo<HealthInsurance>, MainRepository<HealthInsurance>>();
+            builder.Services.AddScoped<ICRUDRepo<Pharmacy>, MainRepository<Pharmacy>>();
+            builder.Services.AddScoped<ICRUDRepo<Lab>, MainRepository<Lab>>();
+            builder.Services.AddScoped<ICRUDRepo<Hospital>, MainRepository<Hospital>>();
+
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

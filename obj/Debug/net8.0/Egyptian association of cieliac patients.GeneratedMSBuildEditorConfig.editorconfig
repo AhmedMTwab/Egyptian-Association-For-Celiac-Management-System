@@ -26,6 +26,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\graduation-project\webpage\Egyptian association of cieliac Diseses
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Clinic/AddClinic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljXEFkZENsaW5pYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Clinic/EditClinic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljXEVkaXRDbGluaWMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Clinic/viewall.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljXHZpZXdhbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Clinic/viewone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljXHZpZXdvbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Doctor/AddDoctor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEFkZERvY3Rvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +66,38 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Hospital/AddHospital.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWxcQWRkSG9zcGl0YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Hospital/EditHospital.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWxcRWRpdEhvc3BpdGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Hospital/viewall.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWxcdmlld2FsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Hospital/viewone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWxcdmlld29uZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Lab/AddLab.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFiXEFkZExhYi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Lab/EditLab.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFiXEVkaXRMYWIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Lab/viewall.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFiXHZpZXdhbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Lab/viewone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFiXHZpZXdvbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Patient/AddPatient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxBZGRQYXRpZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -64,6 +112,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Patient/viewone.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFx2aWV3b25lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Pharmacy/AddPharmacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhhcm1hY3lcQWRkUGhhcm1hY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Pharmacy/EditPharmacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhhcm1hY3lcRWRpdFBoYXJtYWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Pharmacy/viewall.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhhcm1hY3lcdmlld2FsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Pharmacy/viewone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhhcm1hY3lcdmlld29uZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/graduation-project/webpage/Egyptian association of cieliac Diseses/Views/Shared/Error.cshtml]

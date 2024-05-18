@@ -1,0 +1,181 @@
+﻿@using System.Text.Json
+@using System.Text.Json.Serialization
+@model AddClinicViewModel
+@{
+    <link rel="stylesheet" href="~/css/UserAdmin.css">
+    <title>User Admin</title>
+    Layout = null;
+}
+<div class="patient-box">
+    <h2>Clinic</h2>
+    <form asp-action="AddClinic" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="user-box">
+            <input asp-for="ClinicName" type="text" />
+            <span asp-validation-for="ClinicName" class="text-danger"></span>
+            <label>ClinicName</label>
+        </div>
+
+        <div class="user-box">
+            <input asp-for="OpenTime" type="time" />
+            <span asp-validation-for="OpenTime" class="text-danger"></span>
+            <label>OpenTime</label>
+        </div>
+        <div class="user-box">
+            <input asp-for="CloseTime" type="time" />
+            <span asp-validation-for="CloseTime" class="text-danger"></span>
+            <label>CloseTime</label>
+        </div>
+
+        <p>
+
+        </p>
+
+        <div id="phoneContainer"></div>
+        <button type="button" id="addPhoneBtn">Add PhoneNumber</button><br><br>
+
+
+        <div id="addressContainer"></div>
+        <button type="button" id="addAddressBtn">Add Address</button><br><br>
+
+        <div id="assosiationContainer"></div>
+        <button type="button" id="addAssosiationBtn">Add Assosiation Discound</button><br><br>
+
+        <div id="insuranceContainer"></div>
+        <button type="button" id="addInsuranceBtn">Add Insurance Discound</button><br><br>
+
+        <button type="submit" id="Doctor">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Add A Clinic
+        </button>
+
+    </form>
+
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const AddressContainer = document.getElementById("addressContainer");
+        const addAddressBtn = document.getElementById("addAddressBtn");
+        const phoneContainer = document.getElementById("phoneContainer");
+        const addPhoneBtn = document.getElementById("addPhoneBtn");
+        const assosiationContainer = document.getElementById("assosiationContainer");
+        const addAssosiationBtn = document.getElementById("addAssosiationBtn");
+        const insuranceContainer = document.getElementById("insuranceContainer");
+        const addInsuranceBtn = document.getElementById("addInsuranceBtn");
+
+        addAddressBtn.addEventListener("click", function () {
+            const addressDiv = document.createElement("div");
+            addressDiv.className = "address-container";
+
+            const addressNameInput = document.createElement("input");
+            addressNameInput.type = "text";
+            addressNameInput.name = "Addresses";
+            addressNameInput.required = true;
+
+            const removeAddressBtn = document.createElement("button");
+            removeAddressBtn.type = "button";
+            removeAddressBtn.textContent = "Remove Address";
+            removeAddressBtn.addEventListener("click", function () {
+                AddressContainer.removeChild(addressDiv);
+            });
+
+            addressDiv.appendChild(addressNameInput);
+            addressDiv.appendChild(removeAddressBtn);
+
+            AddressContainer.appendChild(addressDiv);
+        });
+
+        addPhoneBtn.addEventListener("click", function () {
+            const phoneDiv = document.createElement("div");
+            phoneDiv.className = "phone-container";
+
+            const phoneInput = document.createElement("input");
+            phoneInput.type = "tel";
+            phoneInput.name = "PhoneNumbers";
+            phoneInput.required = true;
+
+            const removePhoneBtn = document.createElement("button");
+            removePhoneBtn.type = "button";
+            removePhoneBtn.textContent = "Remove Phone Number";
+            removePhoneBtn.addEventListener("click", function () {
+                phoneContainer.removeChild(phoneDiv);
+            });
+
+            phoneDiv.appendChild(phoneInput);
+            phoneDiv.appendChild(removePhoneBtn);
+
+            phoneContainer.appendChild(phoneDiv);
+        });
+
+        addAssosiationBtn.addEventListener("click", function () {
+            const assosiationDiv = document.createElement("div");
+            assosiationDiv.className = "assosiation-container";
+
+            const assosiationAddressInput = document.createElement("select");
+            assosiationAddressInput.name = "AssosiationBranches";
+            assosiationAddressInput.required = true;
+            // Deserialize ViewBag.assosiations JSON string
+            const assosiationList = JSON.parse('@Html.Raw(ViewBag.assosiations)');
+
+            assosiationList.forEach(function (address) { // Assuming 'Address' is a string
+                const option = document.createElement("option");
+                option.value = address;
+                option.text = address;
+                assosiationAddressInput.appendChild(option);
+            });
+
+            const assosiationDiscoundInput = document.createElement("input");
+            assosiationDiscoundInput.name = "AssosiationDiscounds"; 
+            assosiationDiscoundInput.required = true;
+
+            const removeAssosiationBtn = document.createElement("button");
+            removeAssosiationBtn.type = "button";
+            removeAssosiationBtn.textContent = "Remove Assosiation Discound";
+            removeAssosiationBtn.addEventListener("click", function () {
+                assosiationContainer.removeChild(assosiationDiv);
+            });
+
+            assosiationDiv.appendChild(assosiationAddressInput);
+            assosiationDiv.appendChild(assosiationDiscoundInput);
+            assosiationDiv.appendChild(removeAssosiationBtn);
+            assosiationContainer.appendChild(assosiationDiv);
+        });
+
+        addInsuranceBtn.addEventListener("click", function () {
+            const insuranceDiv = document.createElement("div");
+            insuranceDiv.className = "insurance-container";
+
+            const insuranceNameInput = document.createElement("select");
+            insuranceNameInput.name = "Insurances";
+            insuranceNameInput.required = true;
+            // Deserialize ViewBag.insurances JSON string
+            const insuranceList = JSON.parse('@Html.Raw(ViewBag.insurances)');
+
+            insuranceList.forEach(function (Name) { // Assuming 'Name' is a string
+                const option = document.createElement("option");
+                option.value = Name;
+                option.text = Name;
+                insuranceNameInput.appendChild(option);
+            });
+
+            const insuranceDiscoundInput = document.createElement("input");
+            insuranceDiscoundInput.name = "InsuranceDiscounds"; 
+            insuranceDiscoundInput.required = true;
+
+            const removeInsuranceBtn = document.createElement("button");
+            removeInsuranceBtn.type = "button";
+            removeInsuranceBtn.textContent = "Remove Insurance Discound";
+            removeInsuranceBtn.addEventListener("click", function () {
+                insuranceContainer.removeChild(insuranceDiv);
+            });
+
+            insuranceDiv.appendChild(insuranceNameInput);
+            insuranceDiv.appendChild(insuranceDiscoundInput);
+            insuranceDiv.appendChild(removeInsuranceBtn);
+            insuranceContainer.appendChild(insuranceDiv);
+        });
+    });
+</script>
+

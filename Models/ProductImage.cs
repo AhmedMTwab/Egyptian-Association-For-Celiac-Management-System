@@ -12,7 +12,7 @@ public partial class ProductImage
 {
     [Column("product_image")]
     [NotMapped]
-    public IFormFile Product_Image { get; set; } = null!;
+    public IFormFile Product_Image { get; set; }
 
     [Column("image_path")]
     public string ImagePath { get; set; }

@@ -23,8 +23,8 @@ public partial class Lab
 
     [Column("close_time")]
     public TimeOnly CloseTime { get; set; }
-    [InverseProperty("Lab")]
-    public virtual ICollection<MedicalAdminLabControl> Madmins { get; set; } = new List<MedicalAdminLabControl>();
+
+
     [InverseProperty("Lab")]
     public virtual ICollection<LabInsuranceDiscount> insurances { get; set; } = new List<LabInsuranceDiscount>();
     [InverseProperty("Lab")]

@@ -23,8 +23,8 @@ public partial class Pharmacy
 
     [Column("close_time")]
     public TimeOnly CloseTime { get; set; }
-    [InverseProperty("Pharmacy")]
-    public virtual ICollection<MedicalAdminPharmacyControl> Madmins { get; set; } = new List<MedicalAdminPharmacyControl>();
+
+
     [InverseProperty("Pharmacy")]
     public virtual ICollection<PharmacyInsuranceDiscount> insurances { get; set; } = new List<PharmacyInsuranceDiscount>();
     [InverseProperty("Pharmacy")]

@@ -17,7 +17,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "8.0.5")
                 .HasAnnotation("Proxies:ChangeTracking", false)
                 .HasAnnotation("Proxies:CheckEquality", false)
                 .HasAnnotation("Proxies:LazyLoading", true)
@@ -655,98 +655,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("lab_type");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", b =>
-                {
-                    b.Property<int>("AdminId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
-
-                    b.Property<int>("AssosiationId")
-                        .HasColumnType("int")
-                        .HasColumnName("assosiation_id");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("email");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("name");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("password");
-
-                    b.HasKey("AdminId");
-
-                    b.HasIndex("AssosiationId");
-
-                    b.ToTable("medical_admin");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminHospitalControl", b =>
-                {
-                    b.Property<int>("HospitalId")
-                        .HasColumnType("int")
-                        .HasColumnName("hospital_id");
-
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
-
-                    b.HasKey("HospitalId", "AdminId");
-
-                    b.HasIndex("AdminId");
-
-                    b.ToTable("medicaladmin_hospital_control");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminLabControl", b =>
-                {
-                    b.Property<int>("LabId")
-                        .HasColumnType("int")
-                        .HasColumnName("lab_id");
-
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
-
-                    b.HasKey("LabId", "AdminId");
-
-                    b.HasIndex("AdminId");
-
-                    b.ToTable("medicaladmin_lab_control");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminPharmacyControl", b =>
-                {
-                    b.Property<int>("PharmacyId")
-                        .HasColumnType("int")
-                        .HasColumnName("pharmacy_id");
-
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
-
-                    b.HasKey("PharmacyId", "AdminId");
-
-                    b.HasIndex("AdminId");
-
-                    b.ToTable("medicaladmin_pharmacy_control");
-                });
-
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalRecord", b =>
                 {
                     b.Property<int>("RecordId")
@@ -808,23 +716,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasKey("RecordId", "TestsPath");
 
                     b.ToTable("medical_record-test");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicaladminClinicControl", b =>
-                {
-                    b.Property<int>("ClinicId")
-                        .HasColumnType("int")
-                        .HasColumnName("clinic_id");
-
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
-
-                    b.HasKey("ClinicId", "AdminId");
-
-                    b.HasIndex("AdminId");
-
-                    b.ToTable("medicaladmin_clinic_control");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Order", b =>
@@ -1295,189 +1186,206 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("reservation");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.StoreAdmin", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
-                    b.Property<int>("AdminId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
-
-                    b.Property<int>("AssosiationId")
-                        .HasColumnType("int")
-                        .HasColumnName("assosiation_id");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("email");
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("name");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("password");
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
-                    b.HasKey("AdminId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("AssosiationId");
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
 
-                    b.ToTable("store_admin");
+                    b.ToTable("AspNetRoles", (string)null);
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.StoreadminMaterialControl", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.Property<int>("MaterialId")
-                        .HasColumnType("int")
-                        .HasColumnName("material_id");
-
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
-
-                    b.HasKey("MaterialId", "AdminId");
-
-                    b.HasIndex("AdminId");
-
-                    b.ToTable("storeadmin_material_control");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.StoreadminProductControl", b =>
-                {
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int")
-                        .HasColumnName("product_id");
-
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
-
-                    b.HasKey("ProductId", "AdminId");
-
-                    b.HasIndex("AdminId");
-
-                    b.ToTable("storeadmin_product_control");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UserAdmin", b =>
-                {
-                    b.Property<int>("AdminId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AdminEmail")
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("admin_email");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("AdminName")
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("admin_name");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("AdminPassword")
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("admin_password");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("AssosiationId")
-                        .HasColumnType("int")
-                        .HasColumnName("assosiation_id");
+                    b.HasKey("LoginProvider", "ProviderKey");
 
-                    b.HasKey("AdminId")
-                        .HasName("PK_ADMIN_table");
+                    b.HasIndex("UserId");
 
-                    b.HasIndex("AssosiationId");
-
-                    b.ToTable("user_admin");
+                    b.ToTable("AspNetUserLogins", (string)null);
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminDoctorControl", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("DoctorId")
-                        .HasColumnType("int")
-                        .HasColumnName("doctor_id");
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("AdminId", "DoctorId");
+                    b.HasKey("UserId", "RoleId");
 
-                    b.HasIndex("DoctorId");
+                    b.HasIndex("RoleId");
 
-                    b.ToTable("useradmin_doctor_control");
+                    b.ToTable("AspNetUserRoles", (string)null);
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminMedicaladminControl", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.Property<int>("UadminId")
-                        .HasColumnType("int")
-                        .HasColumnName("Uadmin_id");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("MadminId")
-                        .HasColumnType("int")
-                        .HasColumnName("Madmin_id");
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
-                    b.HasKey("UadminId", "MadminId");
+                    b.Property<string>("Name")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
-                    b.HasIndex("MadminId");
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("useradmin_medicaladmin_control");
-                });
+                    b.HasKey("UserId", "LoginProvider", "Name");
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminPatientControl", b =>
-                {
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int")
-                        .HasColumnName("admin_id");
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int")
-                        .HasColumnName("patient_id");
-
-                    b.HasKey("AdminId", "PatientId");
-
-                    b.HasIndex("PatientId");
-
-                    b.ToTable("useradmin_patient_control");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminStoreadminControl", b =>
-                {
-                    b.Property<int>("UadminId")
-                        .HasColumnType("int")
-                        .HasColumnName("Uadmin_id");
-
-                    b.Property<int>("SadminId")
-                        .HasColumnType("int")
-                        .HasColumnName("Sadmin_id");
-
-                    b.HasKey("UadminId", "SadminId");
-
-                    b.HasIndex("SadminId");
-
-                    b.ToTable("useradmin_storeadmin_control");
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.AssosiationBranchPhone", b =>
@@ -1842,75 +1750,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Navigation("Lab");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
-                        .WithMany("MedicalAdmins")
-                        .HasForeignKey("AssosiationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_medical_admin_assosiation_branch");
-
-                    b.Navigation("Assosiation");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminHospitalControl", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", "Admin")
-                        .WithMany("hospitals")
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Hospital", "Hospital")
-                        .WithMany("Madmins")
-                        .HasForeignKey("HospitalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Admin");
-
-                    b.Navigation("Hospital");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminLabControl", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", "Admin")
-                        .WithMany("labs")
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Lab", "Lab")
-                        .WithMany("Madmins")
-                        .HasForeignKey("LabId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Admin");
-
-                    b.Navigation("Lab");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdminPharmacyControl", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", "Admin")
-                        .WithMany("pharmacys")
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Pharmacy", "Pharmacy")
-                        .WithMany("Madmins")
-                        .HasForeignKey("PharmacyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Admin");
-
-                    b.Navigation("Pharmacy");
-                });
-
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalRecord", b =>
                 {
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
@@ -1944,27 +1783,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasConstraintName("FK_medical_record-test_medical_record");
 
                     b.Navigation("Record");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicaladminClinicControl", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", "Admin")
-                        .WithMany("clinics")
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_medicaladmin_clinic_control_medical_admin");
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Clinic", "Clinic")
-                        .WithMany("admins")
-                        .HasForeignKey("ClinicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_medicaladmin_clinic_control_clinic");
-
-                    b.Navigation("Admin");
-
-                    b.Navigation("Clinic");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Order", b =>
@@ -2204,167 +2022,64 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Navigation("clinic");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.StoreAdmin", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
-                        .WithMany("StoreAdmins")
-                        .HasForeignKey("AssosiationId")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Assosiation");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.StoreadminMaterialControl", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.StoreAdmin", "Sadmin")
-                        .WithMany("Materials")
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_storeadmin_material_control_store_admin");
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.RawMaterial", "Material")
-                        .WithMany("Sadmins")
-                        .HasForeignKey("MaterialId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_storeadmin_material_control_raw_material");
-
-                    b.Navigation("Material");
-
-                    b.Navigation("Sadmin");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.StoreadminProductControl", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.StoreAdmin", "Sadmin")
-                        .WithMany("Products")
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_storeadmin_product_control_store_admin");
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Product", "Product")
-                        .WithMany("Sadmins")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_storeadmin_product_control_product");
-
-                    b.Navigation("Product");
-
-                    b.Navigation("Sadmin");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UserAdmin", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
-                        .WithMany("UserAdmins")
-                        .HasForeignKey("AssosiationId")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Assosiation");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminDoctorControl", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.UserAdmin", "Uadmin")
-                        .WithMany("doctors")
-                        .HasForeignKey("AdminId")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_useradmin_doctor_control_user_admin");
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Doctor", "Doctor")
-                        .WithMany("Uadmins")
-                        .HasForeignKey("DoctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_useradmin_doctor_control_doctor");
-
-                    b.Navigation("Doctor");
-
-                    b.Navigation("Uadmin");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminMedicaladminControl", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", "Madmin")
-                        .WithMany("Uadmins")
-                        .HasForeignKey("MadminId")
-                        .OnDelete(DeleteBehavior.ClientCascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_useradmin_medicaladmin_control_medical_admin");
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.UserAdmin", "Uadmin")
-                        .WithMany("Madmins")
-                        .HasForeignKey("UadminId")
-                        .OnDelete(DeleteBehavior.ClientCascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_useradmin_medicaladmin_control_user_admin");
-
-                    b.Navigation("Madmin");
-
-                    b.Navigation("Uadmin");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminPatientControl", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.UserAdmin", "Uadmin")
-                        .WithMany("Patient")
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_useradmin_patient_control_user_admin");
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Patient", "Patient")
-                        .WithMany("Uadmins")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_useradmin_patient_control_patient");
-
-                    b.Navigation("Patient");
-
-                    b.Navigation("Uadmin");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UseradminStoreadminControl", b =>
-                {
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.StoreAdmin", "Sadmin")
-                        .WithMany("Uadmins")
-                        .HasForeignKey("SadminId")
-                        .OnDelete(DeleteBehavior.ClientCascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_useradmin_storeadmin_control_store_admin");
-
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.UserAdmin", "Uadmin")
-                        .WithMany("Sadmins")
-                        .HasForeignKey("UadminId")
-                        .OnDelete(DeleteBehavior.ClientCascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_useradmin_storeadmin_control_user_admin");
-
-                    b.Navigation("Sadmin");
-
-                    b.Navigation("Uadmin");
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", b =>
                 {
                     b.Navigation("Dises");
 
-                    b.Navigation("MedicalAdmins");
-
                     b.Navigation("Patients");
 
                     b.Navigation("PhoneNumbers");
-
-                    b.Navigation("StoreAdmins");
-
-                    b.Navigation("UserAdmins");
 
                     b.Navigation("clinics");
 
@@ -2378,8 +2093,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Clinic", b =>
                 {
                     b.Navigation("Doctors");
-
-                    b.Navigation("admins");
 
                     b.Navigation("branches");
 
@@ -2407,8 +2120,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 {
                     b.Navigation("DoctorPhones");
 
-                    b.Navigation("Uadmins");
-
                     b.Navigation("clinics");
 
                     b.Navigation("medicalrecords");
@@ -2433,8 +2144,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Hospital", b =>
                 {
-                    b.Navigation("Madmins");
-
                     b.Navigation("PhoneNumbers");
 
                     b.Navigation("addresses");
@@ -2448,8 +2157,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 {
                     b.Navigation("AssosiationBranches");
 
-                    b.Navigation("Madmins");
-
                     b.Navigation("PhoneNumbers");
 
                     b.Navigation("addresses");
@@ -2457,19 +2164,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Navigation("insurances");
 
                     b.Navigation("types");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalAdmin", b =>
-                {
-                    b.Navigation("Uadmins");
-
-                    b.Navigation("clinics");
-
-                    b.Navigation("hospitals");
-
-                    b.Navigation("labs");
-
-                    b.Navigation("pharmacys");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalRecord", b =>
@@ -2502,8 +2196,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.Navigation("PhoneNumbers");
 
-                    b.Navigation("Uadmins");
-
                     b.Navigation("clinics");
 
                     b.Navigation("products");
@@ -2512,8 +2204,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Pharmacy", b =>
                 {
                     b.Navigation("AssosiationBranches");
-
-                    b.Navigation("Madmins");
 
                     b.Navigation("PhoneNumbers");
 
@@ -2526,8 +2216,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 {
                     b.Navigation("Images");
 
-                    b.Navigation("Sadmins");
-
                     b.Navigation("dises");
 
                     b.Navigation("patients");
@@ -2537,31 +2225,9 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 {
                     b.Navigation("Images");
 
-                    b.Navigation("Sadmins");
-
                     b.Navigation("dises");
 
                     b.Navigation("patients");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.StoreAdmin", b =>
-                {
-                    b.Navigation("Materials");
-
-                    b.Navigation("Products");
-
-                    b.Navigation("Uadmins");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.UserAdmin", b =>
-                {
-                    b.Navigation("Madmins");
-
-                    b.Navigation("Patient");
-
-                    b.Navigation("Sadmins");
-
-                    b.Navigation("doctors");
                 });
 #pragma warning restore 612, 618
         }

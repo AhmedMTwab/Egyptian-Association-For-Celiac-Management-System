@@ -2,6 +2,7 @@ using Egyptian_association_of_cieliac_patients.Models;
 using Egyptian_association_of_cieliac_patients.Repositories;
 using Microsoft.EntityFrameworkCore;
 using TestCoreApp.Repository;
+using Microsoft.AspNetCore.Identity;
 
 namespace Egyptian_association_of_cieliac_patients
 {
@@ -16,6 +17,8 @@ namespace Egyptian_association_of_cieliac_patients
             {
                 options.UseLazyLoadingProxies().UseSqlServer(CS);
             });
+
+            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<EgyptianAssociationOfCieliacPatientsContext>();
             builder.Services.AddScoped<ICRUDRepo<Patient>,MainRepository<Patient>>();
             builder.Services.AddScoped<ICRUDRepo<AssosiationBranch>,MainRepository<AssosiationBranch>>();
             builder.Services.AddScoped<ICRUDRepo<Dises>, MainRepository<Dises>>();
@@ -51,6 +54,8 @@ namespace Egyptian_association_of_cieliac_patients
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            app.UseEndpoints(endpoints => endpoints.MapRazorPages());  
 
             app.Run();
         }

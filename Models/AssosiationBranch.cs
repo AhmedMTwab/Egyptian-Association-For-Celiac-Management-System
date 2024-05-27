@@ -24,8 +24,6 @@ public partial class AssosiationBranch
     [Unicode(false)]
     public string Address { get; set; } = null!;
 
-    [InverseProperty("Assosiation")]
-    public virtual ICollection<MedicalAdmin> MedicalAdmins { get; set; } = new List<MedicalAdmin>();
 
     [InverseProperty("Assosiation")]
     public virtual ICollection<Patient> Patients { get; set; } = new List<Patient>();
@@ -45,12 +43,6 @@ public partial class AssosiationBranch
 
     [InverseProperty("Assosiation")]
     public virtual ICollection<AssosiationBranchPhone> PhoneNumbers { get; set; } = new List<AssosiationBranchPhone>();
-
-    [InverseProperty("Assosiation")]
-    public virtual ICollection<StoreAdmin> StoreAdmins { get; set; } = new List<StoreAdmin>();
-
-    [InverseProperty("Assosiation")]
-    public virtual ICollection<UserAdmin> UserAdmins { get; set; } = new List<UserAdmin>();
 
     [InverseProperty("Assosiation")]
     public virtual ICollection<AssosiationDisesFollow> Dises { get; set; } = new List<AssosiationDisesFollow>();

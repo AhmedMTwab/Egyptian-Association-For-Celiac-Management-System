@@ -50,9 +50,6 @@ public partial class Patient
     public virtual ICollection<PatientDisesHave>? Diseses { get; set; } = new List<PatientDisesHave>();
     [InverseProperty("Patient")]
     public virtual ICollection<Reservation>? clinics { get; set; } = new List<Reservation>();
-
-    [InverseProperty("Patient")]
-    public virtual ICollection<UseradminPatientControl>? Uadmins { get; set; } = new List<UseradminPatientControl>();
     [InverseProperty("Patient")]
     public virtual ICollection<MedicalRecord>? Medicalrecords { get; set; } = new List<MedicalRecord>();
 

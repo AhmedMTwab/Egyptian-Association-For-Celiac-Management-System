@@ -33,7 +33,4 @@ public partial class Product
 
     [InverseProperty("Product")]
     public virtual ICollection<PatientProductView> patients { get; set; } = new List<PatientProductView>();
-
-    [InverseProperty("Product")]
-    public virtual ICollection<StoreadminProductControl> Sadmins { get; set; } = new List<StoreadminProductControl>();
 }

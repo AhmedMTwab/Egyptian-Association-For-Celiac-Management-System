@@ -55,16 +55,11 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : IdentityDbCon
 
     public virtual DbSet<InsurancePhone> InsurancePhones { get; set; }
 
-    public virtual DbSet<MedicalAdmin> MedicalAdmins { get; set; }
-
     public virtual DbSet<MedicalRecord> MedicalRecords { get; set; }
 
     public virtual DbSet<MedicalRecordDrug> MedicalRecordDrugs { get; set; }
 
     public virtual DbSet<MedicalRecordTest> MedicalRecordTests { get; set; }
-
-    public virtual DbSet<MedicaladminClinicControl> MedicaladminClinicControls { get; set; }
-
 
     public virtual DbSet<Patient> Patients { get; set; }
 
@@ -92,39 +87,21 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : IdentityDbCon
 
     public virtual DbSet<Reservation> Reservations { get; set; }
 
-    public virtual DbSet<StoreAdmin> StoreAdmins { get; set; }
-
-    public virtual DbSet<UserAdmin> UserAdmins { get; set; }
-
-    public virtual DbSet<UseradminDoctorControl> UseradminDoctorControls { get; set; }
-
-    public virtual DbSet<UseradminMedicaladminControl> UseradminMedicaladminControls { get; set; }
-
-    public virtual DbSet<UseradminStoreadminControl> UseradminStoreadminControls { get; set; }
-
-    public virtual DbSet<StoreadminMaterialControl> StoreadminMaterialControls { get; set; }
-
-    public virtual DbSet<StoreadminProductControl> StoreadminProductControls { get; set; }
-
-    public virtual DbSet<UseradminPatientControl> UseradminPatientControls { get; set; }
     public virtual DbSet<Lab> Labs { get; set; }
     public virtual DbSet<LabPhone> LabPhones { get; set; }
     public virtual DbSet<LabAddress> LabAddresses { get; set; }
     public virtual DbSet<LabType> LabTypes { get; set; }
     public virtual DbSet<LabAssosiationDiscount> LabAssociationDiscounts { get; set; }
-    public virtual DbSet<MedicalAdminLabControl> MedicalAdminLabControls { get; set; }
     public virtual DbSet<LabInsuranceDiscount> LabInsuranceDiscounts { get; set; }
     public virtual DbSet<Pharmacy> Pharmacies { get; set; }
     public virtual DbSet<PharmacyPhone> PharmacyPhones { get; set; }
     public virtual DbSet<PharmacyAddress> PharmacyAddresses { get; set; }
     public virtual DbSet<PharmacyAssosiationDiscount> PharmacyAssociationDiscounts { get; set; }
-    public virtual DbSet<MedicalAdminPharmacyControl> MedicalAdminPharmacyControls { get; set; }
     public virtual DbSet<PharmacyInsuranceDiscount> PharmacyInsuranceDiscounts { get; set; }
     public virtual DbSet<Hospital> Hospitals { get; set; }
     public virtual DbSet<HospitalPhone> HospitalPhones { get; set; }
     public virtual DbSet<HospitalAddress> HospitalAddresses { get; set; }
     public virtual DbSet<HospitalType> HospitalTypes { get; set; }
-    public virtual DbSet<MedicalAdminHospitalControl> MedicalAdminHospitalControls { get; set; }
     public virtual DbSet<HospitalInsuranceDiscount> HospitalInsuranceDiscounts { get; set; }
 
 
@@ -283,15 +260,6 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : IdentityDbCon
                 .HasConstraintName("FK_insurance_phone_health_insurance");
         });
 
-        modelBuilder.Entity<MedicalAdmin>(entity =>
-        {
-            entity.Property(e => e.AdminId).ValueGeneratedOnAdd();
-
-            entity.HasOne(d => d.Assosiation).WithMany(p => p.MedicalAdmins)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_medical_admin_assosiation_branch");
-        });
-
         modelBuilder.Entity<MedicalRecord>(entity =>
         {
             entity.Property(e => e.RecordId).ValueGeneratedOnAdd();
@@ -310,17 +278,6 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : IdentityDbCon
             entity.HasOne(d => d.Record).WithMany(d => d.Tests)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_medical_record-test_medical_record");
-        });
-
-        modelBuilder.Entity<MedicaladminClinicControl>(entity =>
-        {
-            entity.HasOne(d => d.Admin).WithMany(d => d.clinics)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_medicaladmin_clinic_control_medical_admin");
-
-            entity.HasOne(d => d.Clinic).WithMany(d => d.admins)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_medicaladmin_clinic_control_clinic");
         });
 
         modelBuilder.Entity<Patient>(entity =>
@@ -409,83 +366,6 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : IdentityDbCon
             entity.Property(e => e.ReservationId).ValueGeneratedOnAdd();
         });
 
-        modelBuilder.Entity<StoreAdmin>(entity =>
-        {
-            entity.Property(e => e.AdminId).ValueGeneratedOnAdd();
-        });
-
-        modelBuilder.Entity<UserAdmin>(entity =>
-        {
-            entity.HasKey(e => e.AdminId).HasName("PK_ADMIN_table");
-
-            entity.Property(e => e.AdminId).ValueGeneratedOnAdd();
-        });
-
-        modelBuilder.Entity<UseradminDoctorControl>(entity =>
-        {
-            entity.HasOne(d => d.Uadmin).WithMany(d => d.doctors)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_useradmin_doctor_control_user_admin");
-
-            entity.HasOne(d => d.Doctor).WithMany(d => d.Uadmins)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_useradmin_doctor_control_doctor");
-        });
-
-        modelBuilder.Entity<UseradminMedicaladminControl>(entity =>
-        {
-            entity.HasOne(d => d.Madmin).WithMany(d => d.Uadmins)
-                .OnDelete(DeleteBehavior.ClientCascade)
-                .HasConstraintName("FK_useradmin_medicaladmin_control_medical_admin");
-
-            entity.HasOne(d => d.Uadmin).WithMany(d => d.Madmins)
-                .OnDelete(DeleteBehavior.ClientCascade)
-                .HasConstraintName("FK_useradmin_medicaladmin_control_user_admin");
-        });
-
-        modelBuilder.Entity<StoreadminMaterialControl>(entity =>
-        {
-            entity.HasOne(d => d.Sadmin).WithMany(d => d.Materials)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_storeadmin_material_control_store_admin");
-
-            entity.HasOne(d => d.Material).WithMany(d => d.Sadmins)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_storeadmin_material_control_raw_material");
-        });
-
-        modelBuilder.Entity<StoreadminProductControl>(entity =>
-        {
-            entity.HasOne(d => d.Sadmin).WithMany(d => d.Products)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_storeadmin_product_control_store_admin");
-
-            entity.HasOne(d => d.Product).WithMany(d => d.Sadmins)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_storeadmin_product_control_product");
-        });
-
-        modelBuilder.Entity<UseradminStoreadminControl>(entity =>
-        {
-            entity.HasOne(d => d.Sadmin).WithMany(d => d.Uadmins)
-                .OnDelete(DeleteBehavior.ClientCascade)
-                .HasConstraintName("FK_useradmin_storeadmin_control_store_admin");
-
-            entity.HasOne(d => d.Uadmin).WithMany(d => d.Sadmins)
-                .OnDelete(DeleteBehavior.ClientCascade)
-                .HasConstraintName("FK_useradmin_storeadmin_control_user_admin");
-        });
-
-        modelBuilder.Entity<UseradminPatientControl>(entity =>
-        {
-            entity.HasOne(d => d.Uadmin).WithMany(d => d.Patient)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_useradmin_patient_control_user_admin");
-
-            entity.HasOne(d => d.Patient).WithMany(d => d.Uadmins)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_useradmin_patient_control_patient");
-        });
 
         modelBuilder.Entity<Order>(entity =>
         {

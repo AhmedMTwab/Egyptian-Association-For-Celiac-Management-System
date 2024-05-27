@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using TestCoreApp.Repository;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using System.Drawing;
 
 namespace Egyptian_association_of_cieliac_patients.Controllers
 {
@@ -43,16 +44,21 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             if (ModelState.IsValid)
             {
                 var product = new Product();
-				if (NewProductData.Product_Image != null)
-                {
-                    string ImageFolder = Path.Combine(hosting.WebRootPath, "images");
-                    string ImagePath = Path.Combine(ImageFolder, NewProductData.Product_Image.FileName);
-                    NewProductData.Product_Image.CopyTo(new FileStream(ImagePath, FileMode.Create));
-                    ImagePath = NewProductData.Product_Image.FileName;
-                }
+				
+                    string imageFolder = Path.Combine(hosting.WebRootPath, "images");
+                    string imagePath = Path.Combine(imageFolder, NewProductData.Product_Image.FileName);
+                    NewProductData.Product_Image.CopyTo(new FileStream(imagePath, FileMode.Create));
+                    var Image = new ProductImage()
+                    {
+                        ImagePath = NewProductData.Product_Image.FileName
+                    };
+                
                 product.Name = NewProductData.Name;
                 product.Details = NewProductData.Details;
                 product.Price = NewProductData.Price;
+                var productImage = new ProductImage();
+                productImage.Product_Image.Add(Image);
+                productImage.ProductId = product.ProductId;
                 productrepo.AddOne(product);
                 return RedirectToAction("Index");
 

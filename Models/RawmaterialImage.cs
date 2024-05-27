@@ -12,7 +12,7 @@ public partial class RawMaterialImage
 {
     [Column("material_image")]
     [NotMapped]
-    public IFormFile Material_Image { get; set; } = null!;
+    public IFormFile Material_Image { get; set; }
 
     [Column("image_path")]
     public string ImagePath { get; set; }

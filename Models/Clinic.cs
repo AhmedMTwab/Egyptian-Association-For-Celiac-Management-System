@@ -35,7 +35,5 @@ public partial class Clinic
     public virtual ICollection<ClinicAssosiationDiscount> branches { get; set; } = new List<ClinicAssosiationDiscount>();
     [InverseProperty("Clinic")]
     public virtual ICollection<ClinicInsuranceDiscount> insurences { get; set; } = new List<ClinicInsuranceDiscount>();
-    [InverseProperty("Clinic")]
-    public virtual ICollection<MedicaladminClinicControl> admins { get; set; } = new List<MedicaladminClinicControl>();
 }
 

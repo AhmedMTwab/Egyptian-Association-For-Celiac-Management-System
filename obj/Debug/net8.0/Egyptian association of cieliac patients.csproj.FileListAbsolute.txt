@@ -1411,3 +1411,13 @@ D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Debug\
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian.9FD55F01.Up2Date
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Debug\net8.0\Egyptian association of cieliac patients.genruntimeconfig.cache
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Debug\net8.0\ref\Egyptian association of cieliac patients.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\obj\Debug\net8.0\Egyptian association of cieliac patients.MvcApplicationPartsAssemblyInfo.cs
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll

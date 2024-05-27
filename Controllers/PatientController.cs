@@ -23,14 +23,10 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         }
         public IActionResult Index()
         {
-            return View();
-        }
-        public IActionResult viewall()
-        {
             var patientsList = patientrepo.FindAll();
             return View(patientsList);
         }
-        public IActionResult viewone(int Id)
+        public IActionResult Details(int Id)
         {
             var patient = patientrepo.FindById(Id, "Addresses", "PhoneNumbers", "Diseses", "Medicalrecords");
             return View(patient);
@@ -110,7 +106,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
 				patient.Medicalrecords.Add(medicalrecord);
 				patient.Assosiation = assosiation_Crud.FindById(NewPatientData.assosiationId);
                 patientrepo.AddOne(patient);
-                return RedirectToAction("viewall");
+                return RedirectToAction("Index");
 
             }
 			return View("AddPatient",NewPatientData);
@@ -153,6 +149,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         {
             var patient = patientrepo.FindById(id);
             List<PatientAddress> newaddresses = new List<PatientAddress>();
+            patient.Addresses.Clear();
             foreach (var address in newdata.PatientAddress)
             {
                 var adress = new PatientAddress()
@@ -165,6 +162,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             patient.Addresses = newaddresses;
 
             List<PatientPhone> newphones = new List<PatientPhone>();
+            patient.PhoneNumbers.Clear();
             foreach (var Phone in newdata.PatientPhone)
             {
                 var phone = new PatientPhone()
@@ -183,7 +181,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             patient.Assosiation = assosiation_Crud.FindById(newdata.assosiationId);
             patientrepo.UpdateOne(patient);
 
-            return RedirectToAction("viewall");
+            return RedirectToAction("Index");
         }
         public IActionResult Deletepatient(int id)
         {
@@ -192,7 +190,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             string testpath = Path.Combine(recordFolder, patient.Medicalrecords.FirstOrDefault().Tests.FirstOrDefault().TestsPath);
             System.IO.File.Delete(testpath);
             patientrepo.DeleteOne(patient);
-            return RedirectToAction("viewall");
+            return RedirectToAction("Index");
         }
 
     }

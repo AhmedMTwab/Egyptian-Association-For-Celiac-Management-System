@@ -1187,11 +1187,11 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasColumnType("int")
                         .HasColumnName("product_id");
 
-                    b.Property<string>("Image")
+                    b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(450)")
-                        .HasColumnName("product_image");
+                        .HasColumnName("image_path");
 
-                    b.HasKey("ProductId", "Image");
+                    b.HasKey("ProductId", "ImagePath");
 
                     b.ToTable("product_image");
                 });
@@ -1224,17 +1224,17 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("raw_material");
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.RawmaterialImage", b =>
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.RawMaterialImage", b =>
                 {
-                    b.Property<string>("MaterialImage")
+                    b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(450)")
-                        .HasColumnName("material_image");
+                        .HasColumnName("image_path");
 
                     b.Property<int>("MaterialId")
                         .HasColumnType("int")
                         .HasColumnName("material_id");
 
-                    b.HasKey("MaterialImage", "MaterialId");
+                    b.HasKey("ImagePath", "MaterialId");
 
                     b.HasIndex("MaterialId");
 
@@ -1863,7 +1863,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .IsRequired();
 
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.Hospital", "Hospital")
-                        .WithMany("hospitals")
+                        .WithMany("Madmins")
                         .HasForeignKey("HospitalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -2173,7 +2173,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.RawmaterialImage", b =>
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.RawMaterialImage", b =>
                 {
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.RawMaterial", "Material")
                         .WithMany("Images")
@@ -2433,11 +2433,11 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Hospital", b =>
                 {
+                    b.Navigation("Madmins");
+
                     b.Navigation("PhoneNumbers");
 
                     b.Navigation("addresses");
-
-                    b.Navigation("hospitals");
 
                     b.Navigation("insurances");
 

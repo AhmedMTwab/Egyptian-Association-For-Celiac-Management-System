@@ -1,0 +1,47 @@
+﻿@model EditRawMaterialViewModel
+@{
+	<link rel="stylesheet" href="~/css/UserAdmin.css">
+	<title>Store Admin</title>
+	Layout = null;
+}
+<div class="patient-box" style="overflow-y:scroll; height:900px;">
+	<h2>RawMaterial</h2>
+	<form asp-action="EditMaterial" asp-route-Id="@Model.Id" method="post">
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<div>
+			<label style="color:white">RawMaterial Name</label>
+		</div>
+		<div class="user-box">
+			<input asp-for="Name" type="text" readonly />
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+
+		<div class="user-box date">
+			<input type="text" asp-for="Details" readonly>
+			<span asp-validation-for="Details" class="text-danger"></span>
+			<label>Details</label>
+		</div>
+
+
+		<div>
+			<label style="color:white">Price</label>
+		</div>
+		<div class="user-box">
+			<input type="number" asp-for="Price" readonly>
+			<span asp-validation-for="Price" class="text-danger"></span>
+		</div>
+
+		<div class="user-box">
+			<input type="file" asp-for="Material_Image" accept="image/*">
+			<span asp-validation-for="Material_Image" class="text-danger"></span>
+			<label>Product Image</label>
+		</div>
+
+		<button type="submit" id="patient">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span> Update RawMaterial
+		</button>
+	</form>
+</div>

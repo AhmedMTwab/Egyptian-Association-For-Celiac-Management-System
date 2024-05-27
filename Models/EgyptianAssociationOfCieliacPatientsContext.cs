@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
+public partial class EgyptianAssociationOfCieliacPatientsContext : IdentityDbContext<IdentityUser>
 {
     public EgyptianAssociationOfCieliacPatientsContext()
     {
@@ -86,7 +88,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
 
     public virtual DbSet<RawMaterial> RawMaterials { get; set; }
 
-    public virtual DbSet<RawmaterialImage> RawmaterialImages { get; set; }
+    public virtual DbSet<RawMaterialImage> RawMaterialImages { get; set; }
 
     public virtual DbSet<Reservation> Reservations { get; set; }
 
@@ -395,7 +397,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
         {
             entity.Property(e => e.MaterialId).ValueGeneratedOnAdd();
         });
-        modelBuilder.Entity<RawmaterialImage>(entity =>
+        modelBuilder.Entity<RawMaterialImage>(entity =>
         {
             entity.HasOne(d => d.Material).WithMany(d => d.Images)
                 .OnDelete(DeleteBehavior.Cascade)
@@ -493,6 +495,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : DbContext
                 .OnDelete(DeleteBehavior.ClientCascade)
                 .HasConstraintName("FK_order_patient");
         });
+        base.OnModelCreating(modelBuilder);
 
 
         OnModelCreatingPartial(modelBuilder);

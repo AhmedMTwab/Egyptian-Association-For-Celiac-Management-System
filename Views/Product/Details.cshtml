@@ -1,0 +1,51 @@
+﻿@model Product
+<div style="
+	 background: rgba(132, 134, 127, .5);
+	 box-sizing: border-box;
+	 box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+	 border-radius: 10px;">
+	<table class="table table-border">
+		<thead>
+			<tr itemscope="raw">
+				<th itemscope="col">Product Image</th>
+				<th itemscope="col">Product Id</th>
+				<th itemscope="col">Product Name</th>
+				<th itemscope="col">Details</th>
+				<th itemscope="col">Price</th>
+				<th itemscope="col">Edit</th>
+				<th itemscope="col">Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr itemscope="raw">
+				<td>
+					<img src="~/images/" width="70" class="img-thumbnail rounded-circle" />
+				</td>
+				<td>
+					@Model.ProductId
+				</td>
+
+				<td>
+					@Model.Name
+				</td>
+
+				<td>
+					@Model.Details
+				</td>
+
+				<td>
+					@Model.Price
+				</td>
+
+				<td>
+					<a asp-action="EditProduct" asp-controller="Product" asp-route-Id="@Model.ProductId">Edit</a>
+				</td>
+				<td>
+					<a asp-action="DeleteProduct" asp-controller="Product" asp-route-Id="@Model.ProductId">Delete</a>
+				</td>
+			</tr>
+
+
+		</tbody>
+	</table>
+</div>

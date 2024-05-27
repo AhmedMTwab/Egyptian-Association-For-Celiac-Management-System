@@ -20,14 +20,11 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         }
         public IActionResult Index()
         {
-            return View();
-        }
-        public IActionResult viewall()
-        {
-            var doctors=doctor_Crud.FindAll();
+            var doctors = doctor_Crud.FindAll();
             return View(doctors);
         }
-        public IActionResult viewone(int id)
+    
+        public IActionResult Details(int id)
         {
             var doctor = doctor_Crud.FindById(id, "DoctorPhones", "clinics");
 
@@ -93,7 +90,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
 
 
 
-            return RedirectToAction("viewall");
+            return RedirectToAction("Index");
         }
         [HttpGet]
         public IActionResult EditDoctor(int id)
@@ -166,7 +163,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             doctor.clinics = newclinic;
             doctor_Crud.UpdateOne(doctor);
 
-            return RedirectToAction("viewall");
+            return RedirectToAction("Index");
         }
 
         public IActionResult DeleteDoctor(int id)
@@ -176,7 +173,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             {
                 doctor_Crud.DeleteOne(doctor);
             }
-            return RedirectToAction("viewall");
+            return RedirectToAction("Index");
         }
 
     }

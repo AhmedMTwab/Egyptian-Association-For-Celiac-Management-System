@@ -21,16 +21,13 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             assosiationRepo = AssosiationRepo;
             insuranceRepo = InsuranceRepo;
         }
+
         public IActionResult Index()
-        {
-            return View();
-        }
-        public IActionResult viewall()
         {
             var labs = labRepo.FindAll();
             return View(labs);
         }
-        public IActionResult viewone(int id)
+        public IActionResult Details(int id)
         {
             var lab = labRepo.FindById(id, "PhoneNumbers", "addresses", "AssosiationBranches", "insurances", "types");
             return View(lab);
@@ -154,7 +151,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
 
                 labRepo.AddOne(lab);
             }
-            return RedirectToAction("viewall");
+            return RedirectToAction("Index");
 
         }
         [HttpGet]
@@ -301,13 +298,13 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 }
             }
 
-            return RedirectToAction("viewall");
+            return RedirectToAction("Index");
         }
         public IActionResult DeleteLab(int id)
         {
             var lab = labRepo.FindById(id);
             labRepo.DeleteOne(lab);
-            return RedirectToAction("viewall");
+            return RedirectToAction("Index");
         }
     }
 }

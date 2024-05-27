@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Product>
+<div style="
+	 background: rgba(132, 134, 127, .5);
+	 box-sizing: border-box;
+	 box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+	 border-radius: 10px;">
+
+	<div class="clo-6 text-end">
+		<a asp-controller="Product" asp-action="AddProduct" class="btn btn-primary">Add New Product</a>
+	</div>
+
+	<table class="table table-border">
+		<thead>
+			<tr itemscope="raw">
+				<th itemscope="col">Product Image</th>
+				<th itemscope="col">Product Id</th>
+				<th itemscope="col">Product Name</th>
+				<th itemscope="col">Details</th>
+				<th itemscope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr itemscope="raw">
+					<td>
+						<img src="~/images/@item.Images" width="100" class="img-thumbnail rounded-circle" />
+					</td>
+					<td>
+						@item.ProductId
+					</td>
+
+					<td>
+						@item.Name
+					</td>
+
+					<td>
+						@item.Details
+					</td>
+
+					<td>
+						@item.Price
+					</td>
+					<td>
+						<a asp-action="Details" asp-controller="Product" asp-route-Id="@item.ProductId">Details</a>
+					</td>
+
+					<td>
+						<a asp-action="EditProduct" asp-controller="Product" asp-route-Id="@item.ProductId">Edit</a>
+					</td>
+					<td>
+						<a asp-action="DeleteProduct" asp-controller="Product" asp-route-Id="@item.ProductId">Delete</a>
+					</td>
+				</tr>
+
+			}
+		</tbody>
+	</table>
+</div>

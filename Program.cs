@@ -25,6 +25,8 @@ namespace Egyptian_association_of_cieliac_patients
             builder.Services.AddScoped<ICRUDRepo<Pharmacy>, MainRepository<Pharmacy>>();
             builder.Services.AddScoped<ICRUDRepo<Lab>, MainRepository<Lab>>();
             builder.Services.AddScoped<ICRUDRepo<Hospital>, MainRepository<Hospital>>();
+            builder.Services.AddScoped<ICRUDRepo<Product>, MainRepository<Product>>();
+            builder.Services.AddScoped<ICRUDRepo<RawMaterial>, MainRepository<RawMaterial>>();
 
 
             // Add services to the container.
@@ -44,7 +46,6 @@ namespace Egyptian_association_of_cieliac_patients
             app.UseStaticFiles();
 
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.MapControllerRoute(

@@ -26,7 +26,7 @@ public partial class RawMaterial
 
 
     [InverseProperty("Material")]
-    public virtual ICollection<RawmaterialImage> Images { get; set; } = new List<RawmaterialImage>();
+    public virtual ICollection<RawMaterialImage> Images { get; set; } = new List<RawMaterialImage>();
 
     [InverseProperty("Material")]
     public virtual ICollection<DisesMaterialCatogrize> dises { get; set; } = new List<DisesMaterialCatogrize>();

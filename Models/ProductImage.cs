@@ -6,12 +6,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Egyptian_association_of_cieliac_patients.Models;
 
-[PrimaryKey("ProductId", "Image")]
+[PrimaryKey("ProductId", "ImagePath")]
 [Table("product_image")]
 public partial class ProductImage
 {
     [Column("product_image")]
-    public string Image { get; set; } = null!;
+    [NotMapped]
+    public IFormFile Product_Image { get; set; } = null!;
+
+    [Column("image_path")]
+    public string ImagePath { get; set; }
 
     [Column("product_id")]
     public int ProductId { get; set; }

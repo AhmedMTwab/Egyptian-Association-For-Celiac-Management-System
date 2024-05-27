@@ -20,16 +20,13 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
 			assosiationRepo = AssosiationRepo;
 			insuranceRepo = InsuranceRepo;
 		}
+      
         public IActionResult Index()
-        {
-            return View();
-        }
-        public IActionResult viewall()
         {
             var pharmacies=pharmacyRepo.FindAll();
             return View(pharmacies);
         }
-        public IActionResult viewone(int id)
+        public IActionResult Details(int id)
         {
             var pharmacy = pharmacyRepo.FindById(id, "PhoneNumbers", "addresses", "AssosiationBranches", "insurances");
             return View(pharmacy);
@@ -127,7 +124,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
 
                 pharmacyRepo.AddOne(pharmacy);
             }
-            return RedirectToAction("viewall");
+            return RedirectToAction("Index");
 
         }
         [HttpGet]
@@ -236,13 +233,13 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 }
             }
 
-            return RedirectToAction("viewall");
+            return RedirectToAction("Index");
         }
         public IActionResult DeletePharmacy(int id)
         {
             var pharmacy=pharmacyRepo.FindById(id);
             pharmacyRepo.DeleteOne(pharmacy);
-            return RedirectToAction("viewall");
+            return RedirectToAction("Index");
         }
     }
 }

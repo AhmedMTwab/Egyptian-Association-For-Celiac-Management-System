@@ -24,14 +24,11 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
 
 		public IActionResult Index()
 		{
-			return View();
-		}
-		public IActionResult viewall()
-		{
-			var clinic = clinicRepo.FindAll();
-			return View(clinic);
-		}
-		public IActionResult viewone(int id)
+            var clinic = clinicRepo.FindAll();
+            return View(clinic);
+        }
+
+		public IActionResult Details(int id)
 		{
 			var clinic = clinicRepo.FindById(id, "Doctors", "clinicphones", "clinicaddreses", "branches", "insurences");
 			return View(clinic);
@@ -130,7 +127,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
 
                 clinicRepo.AddOne(clinic);
             }
-                return RedirectToAction("viewall");
+                return RedirectToAction("Index");
             
           
 		}
@@ -239,13 +236,13 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 }
             }
 
-			return RedirectToAction("viewall");
+			return RedirectToAction("Index");
 		}
 		public IActionResult DeleteClinic(int id)
 		{
             var clinic=clinicRepo.FindById(id);
             clinicRepo.DeleteOne(clinic);
-			return RedirectToAction("viewall");
+			return RedirectToAction("Index");
 		}
 	}
 }

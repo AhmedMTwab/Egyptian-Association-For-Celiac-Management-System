@@ -6,7 +6,7 @@
 }
 <div class="patient-box" style="overflow-y:scroll; height:900px;">
     <h2>Patient</h2>
-    <form asp-action="Editpatient" asp-route-Id="@Model.PatientId" method="post">
+    <form asp-action="EditPatient" asp-route-Id="@Model.PatientId" method="post">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div>
             <label style="color:white">patientName</label>

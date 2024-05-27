@@ -1,0 +1,59 @@
+﻿@model IEnumerable<RawMaterial>
+<div style="
+	 background: rgba(132, 134, 127, .5);
+	 box-sizing: border-box;
+	 box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+	 border-radius: 10px;">
+
+	<div class="clo-6 text-end">
+		<a asp-controller="RawMaterial" asp-action="AddMaterial" class="btn btn-primary">Add New RawMaterial</a>
+	</div>
+
+	<table class="table table-border">
+		<thead>
+			<tr itemscope="raw">
+				<th itemscope="col">RawMaterial Image</th>
+				<th itemscope="col">RawMaterial Id</th>
+				<th itemscope="col">RawMaterial Name</th>
+				<th itemscope="col">Details</th>
+				<th itemscope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr itemscope="raw">
+					<td>
+						<img src="~/images/@item.Images" width="70" class="img-thumbnail rounded-circle" />
+					</td>
+					<td>
+						@item.MaterialId
+					</td>
+
+					<td>
+						@item.Name
+					</td>
+
+					<td>
+						@item.Details
+					</td>
+
+					<td>
+						@item.Price
+					</td>
+					<td>
+						<a asp-action="Details" asp-controller="RawMaterial" asp-route-Id="@item.MaterialId">Details</a>
+					</td>
+
+					<td>
+						<a asp-action="EditMaterial" asp-controller="RawMaterial" asp-route-Id="@item.MaterialId">Edit</a>
+					</td>
+					<td>
+						<a asp-action="DeleteMaterial" asp-controller="RawMaterial" asp-route-Id="@item.MaterialId">Delete</a>
+					</td>
+				</tr>
+
+			}
+		</tbody>
+	</table>
+</div>

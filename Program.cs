@@ -3,6 +3,9 @@ using Egyptian_association_of_cieliac_patients.Repositories;
 using Microsoft.EntityFrameworkCore;
 using TestCoreApp.Repository;
 using Microsoft.AspNetCore.Identity;
+using Egyptian_association_of_cieliac_patients.IdentityModels;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Castle.Core.Smtp;
 
 namespace Egyptian_association_of_cieliac_patients
 {
@@ -11,6 +14,13 @@ namespace Egyptian_association_of_cieliac_patients
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var configuration = builder.Configuration;
+
+            builder.Services.AddAuthentication().AddGoogle(googleOptions =>
+            {
+                googleOptions.ClientId = configuration["Authentication:Google:ClientId"];
+                googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
+            });
 
             var CS = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<EgyptianAssociationOfCieliacPatientsContext>(options =>
@@ -18,7 +28,13 @@ namespace Egyptian_association_of_cieliac_patients
                 options.UseLazyLoadingProxies().UseSqlServer(CS);
             });
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<EgyptianAssociationOfCieliacPatientsContext>();
+            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<EgyptianAssociationOfCieliacPatientsContext>();
+
+            //builder.Services.AddTransient<IEmailSender, EmailConfirm>();
+
+
             builder.Services.AddScoped<ICRUDRepo<Patient>,MainRepository<Patient>>();
             builder.Services.AddScoped<ICRUDRepo<AssosiationBranch>,MainRepository<AssosiationBranch>>();
             builder.Services.AddScoped<ICRUDRepo<Dises>, MainRepository<Dises>>();
@@ -35,6 +51,7 @@ namespace Egyptian_association_of_cieliac_patients
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -49,6 +66,7 @@ namespace Egyptian_association_of_cieliac_patients
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

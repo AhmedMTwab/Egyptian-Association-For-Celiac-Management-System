@@ -6,10 +6,13 @@ using System.Text.Json;
 using Egyptian_association_of_cieliac_patients.ViewModels;
 using System.Numerics;
 using NuGet.Packaging;
+using Microsoft.AspNetCore.Authorization;
+using Egyptian_association_of_cieliac_patients.IdentityModels;
 
 namespace Egyptian_association_of_cieliac_patients.Controllers
 {
-	public class ClinicController : Controller
+    [Authorize(Roles = $"{Roles.roleAdmin} , {Roles.roleMedical}")]
+    public class ClinicController : Controller
 	{
 		private readonly ICRUDRepo<Clinic> clinicRepo;
         private readonly ICRUDRepo<AssosiationBranch> assosiationRepo;

@@ -12,7 +12,7 @@
 	<table class="table table-border">
 		<thead>
 			<tr itemscope="raw">
-				<th itemscope="col">RawMaterial Image</th>
+				@* <th itemscope="col">RawMaterial Image</th> *@
 				<th itemscope="col">RawMaterial Id</th>
 				<th itemscope="col">RawMaterial Name</th>
 				<th itemscope="col">Details</th>
@@ -23,9 +23,9 @@
 			@foreach (var item in Model)
 			{
 				<tr itemscope="raw">
-					<td>
+					@* <td>
 						<img src="~/images/@item.Images" width="70" class="img-thumbnail rounded-circle" />
-					</td>
+					</td> *@
 					<td>
 						@item.MaterialId
 					</td>

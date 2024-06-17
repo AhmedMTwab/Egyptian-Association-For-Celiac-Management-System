@@ -3,14 +3,55 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Egyptian_association_of_cieliac_patients.Migrations
 {
     /// <inheritdoc />
-    public partial class last : Migration
+    public partial class normal : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "AspNetRoles",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetRoles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUsers",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "assosiation_branch",
                 columns: table => new
@@ -140,6 +181,112 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AspNetRoleClaims",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetRoleClaims", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserClaims",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserClaims", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AspNetUserClaims_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserLogins",
+                columns: table => new
+                {
+                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserLogins", x => new { x.LoginProvider, x.ProviderKey });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserLogins_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserRoles",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserRoles", x => new { x.UserId, x.RoleId });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserRoles_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AspNetUserRoles_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserTokens",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserTokens_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "assosiation_branch_phone",
                 columns: table => new
                 {
@@ -151,28 +298,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     table.PrimaryKey("PK_assosiation_branch_phone", x => new { x.phone_number, x.assosiation_id });
                     table.ForeignKey(
                         name: "FK_assosiation_branch_phone_assosiation_branch",
-                        column: x => x.assosiation_id,
-                        principalTable: "assosiation_branch",
-                        principalColumn: "assosiation_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "medical_admin",
-                columns: table => new
-                {
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    email = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    password = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    assosiation_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_medical_admin", x => x.admin_id);
-                    table.ForeignKey(
-                        name: "FK_medical_admin_assosiation_branch",
                         column: x => x.assosiation_id,
                         principalTable: "assosiation_branch",
                         principalColumn: "assosiation_id",
@@ -199,50 +324,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         column: x => x.assosiation_id,
                         principalTable: "assosiation_branch",
                         principalColumn: "assosiation_id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "store_admin",
-                columns: table => new
-                {
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    email = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    password = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    assosiation_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_store_admin", x => x.admin_id);
-                    table.ForeignKey(
-                        name: "FK_store_admin_assosiation_branch_assosiation_id",
-                        column: x => x.assosiation_id,
-                        principalTable: "assosiation_branch",
-                        principalColumn: "assosiation_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "user_admin",
-                columns: table => new
-                {
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    admin_name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    admin_email = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    admin_password = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    assosiation_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ADMIN_table", x => x.admin_id);
-                    table.ForeignKey(
-                        name: "FK_user_admin_assosiation_branch_assosiation_id",
-                        column: x => x.assosiation_id,
-                        principalTable: "assosiation_branch",
-                        principalColumn: "assosiation_id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -733,102 +814,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "medicaladmin_clinic_control",
-                columns: table => new
-                {
-                    clinic_id = table.Column<int>(type: "int", nullable: false),
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_medicaladmin_clinic_control", x => new { x.clinic_id, x.admin_id });
-                    table.ForeignKey(
-                        name: "FK_medicaladmin_clinic_control_clinic",
-                        column: x => x.clinic_id,
-                        principalTable: "clinic",
-                        principalColumn: "clinic_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_medicaladmin_clinic_control_medical_admin",
-                        column: x => x.admin_id,
-                        principalTable: "medical_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "medicaladmin_hospital_control",
-                columns: table => new
-                {
-                    hospital_id = table.Column<int>(type: "int", nullable: false),
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_medicaladmin_hospital_control", x => new { x.hospital_id, x.admin_id });
-                    table.ForeignKey(
-                        name: "FK_medicaladmin_hospital_control_hospital_hospital_id",
-                        column: x => x.hospital_id,
-                        principalTable: "hospital",
-                        principalColumn: "hospital_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_medicaladmin_hospital_control_medical_admin_admin_id",
-                        column: x => x.admin_id,
-                        principalTable: "medical_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "medicaladmin_lab_control",
-                columns: table => new
-                {
-                    lab_id = table.Column<int>(type: "int", nullable: false),
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_medicaladmin_lab_control", x => new { x.lab_id, x.admin_id });
-                    table.ForeignKey(
-                        name: "FK_medicaladmin_lab_control_lab_lab_id",
-                        column: x => x.lab_id,
-                        principalTable: "lab",
-                        principalColumn: "lab_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_medicaladmin_lab_control_medical_admin_admin_id",
-                        column: x => x.admin_id,
-                        principalTable: "medical_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "medicaladmin_pharmacy_control",
-                columns: table => new
-                {
-                    pharmacy_id = table.Column<int>(type: "int", nullable: false),
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_medicaladmin_pharmacy_control", x => new { x.pharmacy_id, x.admin_id });
-                    table.ForeignKey(
-                        name: "FK_medicaladmin_pharmacy_control_medical_admin_admin_id",
-                        column: x => x.admin_id,
-                        principalTable: "medical_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_medicaladmin_pharmacy_control_pharmacy_pharmacy_id",
-                        column: x => x.pharmacy_id,
-                        principalTable: "pharmacy",
-                        principalColumn: "pharmacy_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "medical_record",
                 columns: table => new
                 {
@@ -973,98 +958,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         principalTable: "patient",
                         principalColumn: "patient_id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "useradmin_doctor_control",
-                columns: table => new
-                {
-                    admin_id = table.Column<int>(type: "int", nullable: false),
-                    doctor_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_useradmin_doctor_control", x => new { x.admin_id, x.doctor_id });
-                    table.ForeignKey(
-                        name: "FK_useradmin_doctor_control_doctor",
-                        column: x => x.doctor_id,
-                        principalTable: "doctor",
-                        principalColumn: "doctor_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_useradmin_doctor_control_user_admin",
-                        column: x => x.admin_id,
-                        principalTable: "user_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "useradmin_medicaladmin_control",
-                columns: table => new
-                {
-                    Uadmin_id = table.Column<int>(type: "int", nullable: false),
-                    Madmin_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_useradmin_medicaladmin_control", x => new { x.Uadmin_id, x.Madmin_id });
-                    table.ForeignKey(
-                        name: "FK_useradmin_medicaladmin_control_medical_admin",
-                        column: x => x.Madmin_id,
-                        principalTable: "medical_admin",
-                        principalColumn: "admin_id");
-                    table.ForeignKey(
-                        name: "FK_useradmin_medicaladmin_control_user_admin",
-                        column: x => x.Uadmin_id,
-                        principalTable: "user_admin",
-                        principalColumn: "admin_id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "useradmin_patient_control",
-                columns: table => new
-                {
-                    admin_id = table.Column<int>(type: "int", nullable: false),
-                    patient_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_useradmin_patient_control", x => new { x.admin_id, x.patient_id });
-                    table.ForeignKey(
-                        name: "FK_useradmin_patient_control_patient",
-                        column: x => x.patient_id,
-                        principalTable: "patient",
-                        principalColumn: "patient_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_useradmin_patient_control_user_admin",
-                        column: x => x.admin_id,
-                        principalTable: "user_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "useradmin_storeadmin_control",
-                columns: table => new
-                {
-                    Uadmin_id = table.Column<int>(type: "int", nullable: false),
-                    Sadmin_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_useradmin_storeadmin_control", x => new { x.Uadmin_id, x.Sadmin_id });
-                    table.ForeignKey(
-                        name: "FK_useradmin_storeadmin_control_store_admin",
-                        column: x => x.Sadmin_id,
-                        principalTable: "store_admin",
-                        principalColumn: "admin_id");
-                    table.ForeignKey(
-                        name: "FK_useradmin_storeadmin_control_user_admin",
-                        column: x => x.Uadmin_id,
-                        principalTable: "user_admin",
-                        principalColumn: "admin_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1235,30 +1128,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "storeadmin_product_control",
-                columns: table => new
-                {
-                    product_id = table.Column<int>(type: "int", nullable: false),
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_storeadmin_product_control", x => new { x.product_id, x.admin_id });
-                    table.ForeignKey(
-                        name: "FK_storeadmin_product_control_product",
-                        column: x => x.product_id,
-                        principalTable: "product",
-                        principalColumn: "product_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_storeadmin_product_control_store_admin",
-                        column: x => x.admin_id,
-                        principalTable: "store_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "dises_material_catogrize",
                 columns: table => new
                 {
@@ -1325,29 +1194,55 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "storeadmin_material_control",
-                columns: table => new
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
                 {
-                    material_id = table.Column<int>(type: "int", nullable: false),
-                    admin_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_storeadmin_material_control", x => new { x.material_id, x.admin_id });
-                    table.ForeignKey(
-                        name: "FK_storeadmin_material_control_raw_material",
-                        column: x => x.material_id,
-                        principalTable: "raw_material",
-                        principalColumn: "material_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_storeadmin_material_control_store_admin",
-                        column: x => x.admin_id,
-                        principalTable: "store_admin",
-                        principalColumn: "admin_id",
-                        onDelete: ReferentialAction.Cascade);
+                    { "4ee71e1e-fac4-4f90-bb4e-ecf10520ba93", "e9cfdd28-3999-4bea-9805-bc25e080456e", "UserManager", "usermanager" },
+                    { "83ad64ea-0994-4b4c-a33e-ceaeb35205f0", "84a3ae2a-82eb-4b23-9cde-732aa72f605f", "StoreManager", "storemanager" },
+                    { "9a55597f-79c8-488f-91f1-a70f5c1046ba", "3be6a1e5-0be0-4f79-8d2f-61bc8faa9911", "MedicalManager", "medicalmanager" },
+                    { "a8743724-66ae-4fba-9862-f05a9ed3ccd4", "a28ff19d-7b69-4a8a-af04-cbbcd7160419", "Admin", "admin" }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetRoleClaims_RoleId",
+                table: "AspNetRoleClaims",
+                column: "RoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "RoleNameIndex",
+                table: "AspNetRoles",
+                column: "NormalizedName",
+                unique: true,
+                filter: "[NormalizedName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserClaims_UserId",
+                table: "AspNetUserClaims",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserLogins_UserId",
+                table: "AspNetUserLogins",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserRoles_RoleId",
+                table: "AspNetUserRoles",
+                column: "RoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "EmailIndex",
+                table: "AspNetUsers",
+                column: "NormalizedEmail");
+
+            migrationBuilder.CreateIndex(
+                name: "UserNameIndex",
+                table: "AspNetUsers",
+                column: "NormalizedUserName",
+                unique: true,
+                filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_assosiation_branch_phone_assosiation_id",
@@ -1465,11 +1360,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 column: "lab_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_medical_admin_assosiation_id",
-                table: "medical_admin",
-                column: "assosiation_id");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_medical_record_patient_id",
                 table: "medical_record",
                 column: "patient_id");
@@ -1478,26 +1368,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "IX_medical_record-drug_record_id",
                 table: "medical_record-drug",
                 column: "record_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_medicaladmin_clinic_control_admin_id",
-                table: "medicaladmin_clinic_control",
-                column: "admin_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_medicaladmin_hospital_control_admin_id",
-                table: "medicaladmin_hospital_control",
-                column: "admin_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_medicaladmin_lab_control_admin_id",
-                table: "medicaladmin_lab_control",
-                column: "admin_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_medicaladmin_pharmacy_control_admin_id",
-                table: "medicaladmin_pharmacy_control",
-                column: "admin_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_order_patient_id",
@@ -1573,51 +1443,26 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "IX_reservation_patient_id",
                 table: "reservation",
                 column: "patient_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_store_admin_assosiation_id",
-                table: "store_admin",
-                column: "assosiation_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_storeadmin_material_control_admin_id",
-                table: "storeadmin_material_control",
-                column: "admin_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_storeadmin_product_control_admin_id",
-                table: "storeadmin_product_control",
-                column: "admin_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_user_admin_assosiation_id",
-                table: "user_admin",
-                column: "assosiation_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_useradmin_doctor_control_doctor_id",
-                table: "useradmin_doctor_control",
-                column: "doctor_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_useradmin_medicaladmin_control_Madmin_id",
-                table: "useradmin_medicaladmin_control",
-                column: "Madmin_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_useradmin_patient_control_patient_id",
-                table: "useradmin_patient_control",
-                column: "patient_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_useradmin_storeadmin_control_Sadmin_id",
-                table: "useradmin_storeadmin_control",
-                column: "Sadmin_id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AspNetRoleClaims");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserClaims");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserLogins");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserRoles");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserTokens");
+
             migrationBuilder.DropTable(
                 name: "assosiation_branch_phone");
 
@@ -1694,18 +1539,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "medical_record-test");
 
             migrationBuilder.DropTable(
-                name: "medicaladmin_clinic_control");
-
-            migrationBuilder.DropTable(
-                name: "medicaladmin_hospital_control");
-
-            migrationBuilder.DropTable(
-                name: "medicaladmin_lab_control");
-
-            migrationBuilder.DropTable(
-                name: "medicaladmin_pharmacy_control");
-
-            migrationBuilder.DropTable(
                 name: "patient_address");
 
             migrationBuilder.DropTable(
@@ -1742,31 +1575,22 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "reservation");
 
             migrationBuilder.DropTable(
-                name: "storeadmin_material_control");
+                name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "storeadmin_product_control");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "useradmin_doctor_control");
-
-            migrationBuilder.DropTable(
-                name: "useradmin_medicaladmin_control");
-
-            migrationBuilder.DropTable(
-                name: "useradmin_patient_control");
-
-            migrationBuilder.DropTable(
-                name: "useradmin_storeadmin_control");
-
-            migrationBuilder.DropTable(
-                name: "medical_record");
+                name: "doctor");
 
             migrationBuilder.DropTable(
                 name: "hospital");
 
             migrationBuilder.DropTable(
                 name: "lab");
+
+            migrationBuilder.DropTable(
+                name: "medical_record");
 
             migrationBuilder.DropTable(
                 name: "dises");
@@ -1778,25 +1602,13 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "pharmacy");
 
             migrationBuilder.DropTable(
-                name: "clinic");
+                name: "product");
 
             migrationBuilder.DropTable(
                 name: "raw_material");
 
             migrationBuilder.DropTable(
-                name: "product");
-
-            migrationBuilder.DropTable(
-                name: "doctor");
-
-            migrationBuilder.DropTable(
-                name: "medical_admin");
-
-            migrationBuilder.DropTable(
-                name: "store_admin");
-
-            migrationBuilder.DropTable(
-                name: "user_admin");
+                name: "clinic");
 
             migrationBuilder.DropTable(
                 name: "order");

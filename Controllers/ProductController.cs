@@ -6,9 +6,12 @@ using TestCoreApp.Repository;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using System.Drawing;
+using Microsoft.AspNetCore.Authorization;
+using Egyptian_association_of_cieliac_patients.IdentityModels;
 
 namespace Egyptian_association_of_cieliac_patients.Controllers
 {
+    [Authorize(Roles = $"{Roles.roleAdmin} , {Roles.roleStore}")]
     public class ProductController : Controller
     {
         private readonly ICRUDRepo<Product> productrepo;
@@ -28,7 +31,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         }
         public IActionResult Details(int id)
         {
-            var product = productrepo.FindById(id, "ProductImage");
+            var product = productrepo.FindById(id, "Images");
             return View(product);
         }
         [HttpGet]
@@ -50,15 +53,14 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                     NewProductData.Product_Image.CopyTo(new FileStream(imagePath, FileMode.Create));
                     var Image = new ProductImage()
                     {
-                        ImagePath = NewProductData.Product_Image.FileName
+                        ImagePath = NewProductData.Product_Image.FileName,
+                        ProductId=product.ProductId
                     };
                 
                 product.Name = NewProductData.Name;
                 product.Details = NewProductData.Details;
                 product.Price = NewProductData.Price;
-                var productImage = new ProductImage();
-                productImage.Product_Image.Add(Image);
-                productImage.ProductId = product.ProductId;
+                product.Images.Add(Image);
                 productrepo.AddOne(product);
                 return RedirectToAction("Index");
 
@@ -71,7 +73,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         {
             ViewBag.assosiations = assosiation_Crud.FindAll().ToList();
             var product = productrepo.FindById(id);
-            AddProductViewModel ProductView = new AddProductViewModel();
+            EditProductViewModel ProductView = new EditProductViewModel();
             ProductView.Id = product.ProductId;
             ProductView.Name = product.Name;
             ProductView.Details = product.Details;

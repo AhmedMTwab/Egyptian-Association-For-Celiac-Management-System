@@ -4,9 +4,12 @@ using Egyptian_association_of_cieliac_patients.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using TestCoreApp.Repository;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
+using Egyptian_association_of_cieliac_patients.IdentityModels;
 
 namespace Egyptian_association_of_cieliac_patients.Controllers
 {
+    [Authorize(Roles = $"{Roles.roleAdmin} , {Roles.roleUser}")]
     public class PatientController : Controller
     {
         private readonly ICRUDRepo<Patient> patientrepo;

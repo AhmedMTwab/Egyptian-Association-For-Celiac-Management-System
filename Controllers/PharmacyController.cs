@@ -4,10 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using Egyptian_association_of_cieliac_patients.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Egyptian_association_of_cieliac_patients.IdentityModels;
 
 
 namespace Egyptian_association_of_cieliac_patients.Controllers
 {
+    [Authorize(Roles = $"{Roles.roleAdmin} , {Roles.roleMedical}")]
     public class PharmacyController : Controller
     {
         private readonly ICRUDRepo<Pharmacy> pharmacyRepo;

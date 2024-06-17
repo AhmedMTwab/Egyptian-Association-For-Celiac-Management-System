@@ -107,7 +107,36 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : IdentityDbCon
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-
+        modelBuilder.Entity<IdentityRole>().HasData(
+            new IdentityRole()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Admin",
+                NormalizedName = "admin",
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+            },
+            new IdentityRole()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "UserManager",
+                NormalizedName = "usermanager",
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+            },
+            new IdentityRole()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "StoreManager",
+                NormalizedName = "storemanager",
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+            },
+            new IdentityRole()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "MedicalManager",
+                NormalizedName = "medicalmanager",
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+            }
+        );
 
 
         modelBuilder.Entity<AssosiationBranch>(entity =>

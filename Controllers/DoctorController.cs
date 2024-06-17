@@ -5,9 +5,12 @@ using Egyptian_association_of_cieliac_patients.ViewModels;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Authorization;
+using Egyptian_association_of_cieliac_patients.IdentityModels;
 
 namespace Egyptian_association_of_cieliac_patients.Controllers
 {
+    [Authorize(Roles = $"{Roles.roleAdmin} , {Roles.roleUser}")]
     public class DoctorController : Controller
     {
         private readonly ICRUDRepo<Doctor> doctor_Crud;

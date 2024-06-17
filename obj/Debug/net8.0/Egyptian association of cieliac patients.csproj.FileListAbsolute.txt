@@ -1686,3 +1686,5 @@ D:\Ahmed Badawy\Programming\Egyptian-association-of-cieliac-patients\obj\Debug\n
 D:\Ahmed Badawy\Programming\Egyptian-association-of-cieliac-patients\obj\Debug\net8.0\Egyptian association of cieliac patients.pdb
 D:\Ahmed Badawy\Programming\Egyptian-association-of-cieliac-patients\obj\Debug\net8.0\Egyptian association of cieliac patients.genruntimeconfig.cache
 D:\Ahmed Badawy\Programming\Egyptian-association-of-cieliac-patients\obj\Debug\net8.0\ref\Egyptian association of cieliac patients.dll
+D:\Ahmed Badawy\Programming\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll

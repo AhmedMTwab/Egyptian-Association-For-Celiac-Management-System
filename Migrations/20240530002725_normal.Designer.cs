@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptian_association_of_cieliac_patients.Migrations
 {
     [DbContext(typeof(EgyptianAssociationOfCieliacPatientsContext))]
-    [Migration("20240527224456_lastedit")]
-    partial class lastedit
+    [Migration("20240530002725_normal")]
+    partial class normal
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1214,6 +1214,36 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "a8743724-66ae-4fba-9862-f05a9ed3ccd4",
+                            ConcurrencyStamp = "a28ff19d-7b69-4a8a-af04-cbbcd7160419",
+                            Name = "Admin",
+                            NormalizedName = "admin"
+                        },
+                        new
+                        {
+                            Id = "4ee71e1e-fac4-4f90-bb4e-ecf10520ba93",
+                            ConcurrencyStamp = "e9cfdd28-3999-4bea-9805-bc25e080456e",
+                            Name = "UserManager",
+                            NormalizedName = "usermanager"
+                        },
+                        new
+                        {
+                            Id = "83ad64ea-0994-4b4c-a33e-ceaeb35205f0",
+                            ConcurrencyStamp = "84a3ae2a-82eb-4b23-9cde-732aa72f605f",
+                            Name = "StoreManager",
+                            NormalizedName = "storemanager"
+                        },
+                        new
+                        {
+                            Id = "9a55597f-79c8-488f-91f1-a70f5c1046ba",
+                            ConcurrencyStamp = "3be6a1e5-0be0-4f79-8d2f-61bc8faa9911",
+                            Name = "MedicalManager",
+                            NormalizedName = "medicalmanager"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

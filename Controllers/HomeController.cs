@@ -1,9 +1,12 @@
+using Egyptian_association_of_cieliac_patients.IdentityModels;
 using Egyptian_association_of_cieliac_patients.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Egyptian_association_of_cieliac_patients.Controllers
 {
+    [Authorize(Roles = $"{Roles.roleAdmin}")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

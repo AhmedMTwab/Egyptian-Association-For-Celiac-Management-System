@@ -12,12 +12,12 @@
 			<label style="color:white">RawMaterial Name</label>
 		</div>
 		<div class="user-box">
-			<input asp-for="Name" type="text" readonly />
+			<input asp-for="Name" type="text" />
 			<span asp-validation-for="Name" class="text-danger"></span>
 		</div>
 
 		<div class="user-box date">
-			<input type="text" asp-for="Details" readonly>
+			<input type="text" asp-for="Details">
 			<span asp-validation-for="Details" class="text-danger"></span>
 			<label>Details</label>
 		</div>
@@ -27,15 +27,15 @@
 			<label style="color:white">Price</label>
 		</div>
 		<div class="user-box">
-			<input type="number" asp-for="Price" readonly>
+			<input type="number" asp-for="Price">
 			<span asp-validation-for="Price" class="text-danger"></span>
 		</div>
 
-		<div class="user-box">
+		@* <div class="user-box">
 			<input type="file" asp-for="Material_Image" accept="image/*">
 			<span asp-validation-for="Material_Image" class="text-danger"></span>
 			<label>Product Image</label>
-		</div>
+		</div> *@
 
 		<button type="submit" id="patient">
 			<span></span>

@@ -5,7 +5,7 @@ using NuGet.Versioning;
 using System;
 using System.Linq.Expressions;
 
-namespace TestCoreApp.Repository
+namespace Egyptian_association_of_cieliac_patients.Repositories
 {
     public class MainRepository<T> : ICRUDRepo<T> where T : class
     {

@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptian_association_of_cieliac_patients.Controllers
 {
-    [Authorize(Roles = Roles.roleAdmin)]
-	public class OrderController : Controller
+    [Authorize(Roles = $"{Roles.roleAdmin} , {Roles.roleStore}")]
+    public class OrderController : Controller
 	{
 		private readonly ICRUDRepo<Order> orderrepo;
 		private readonly ICRUDRepo<AssosiationBranch> assosiation_Crud;

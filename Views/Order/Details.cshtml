@@ -1,0 +1,66 @@
+﻿@model Order
+<div style="
+	 background: rgba(132, 134, 127, .5);
+	 box-sizing: border-box;
+	 box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+	 border-radius: 10px;">
+	<table class="table table-border">
+		<thead>
+			<tr itemscope="raw">
+				@* <th itemscope="col">Order Image</th> *@
+				<th itemscope="col">Order Id</th>
+				<th itemscope="col">Product Id</th>
+				<th itemscope="col">Material Id</th>
+				<th itemscope="col">Order Date</th>
+				<th itemscope="col">Details</th>
+				<th itemscope="col">Quantity</th>
+				<th itemscope="col">Price</th>
+				<th itemscope="col">Shipment Location</th>
+				<th itemscope="col">Shipment Time</th>
+				<th itemscope="col">Shipment Phone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr itemscope="raw">
+				@* <td>
+					<img src="~/images/" width="70" class="img-thumbnail rounded-circle" />
+				</td> *@
+				<td>
+					@Model.OrderId
+				</td>
+
+				<td>
+					@Model.ProductId
+				</td>
+				<td>
+					@Model.MaterialId
+				</td>
+
+				<td>
+					@Model.OrderDate
+				</td>
+
+				<td>
+					@Model.OrderDetails
+				</td>
+
+				<td>
+					@Model.Quantity
+				</td>
+				<td>
+					@Model.TotalCost
+				</td>
+				<td>
+					@Model.ShipmentLocation
+				</td>
+				<td>
+					@Model.ShipmentTime
+				</td>
+				<td>
+					@Model.ShipmentPhone
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>

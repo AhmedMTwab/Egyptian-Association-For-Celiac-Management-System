@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Egyptian_association_of_cieliac_patients.IdentityModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -61,7 +62,9 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : IdentityDbCon
 
     public virtual DbSet<MedicalRecordTest> MedicalRecordTests { get; set; }
 
-    public virtual DbSet<Patient> Patients { get; set; }
+	public virtual DbSet<Order> Orders { get; set; }
+
+	public virtual DbSet<Patient> Patients { get; set; }
 
     public virtual DbSet<PatientAddress> PatientAddresses { get; set; }
 

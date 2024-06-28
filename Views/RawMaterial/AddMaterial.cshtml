@@ -27,7 +27,8 @@
         </div>
 
         <div class="user-box">
-            <input type="file" asp-for="Material_Image" accept="image/*">
+            <input type="file" asp-for="Material_Image" onchange="loadFile(event)" accept="image /*" />
+            <img id="myImg" height="400" width="400" style="margin-left:100" />
             <span asp-validation-for="Material_Image" class="text-danger"></span>
             <label>Material Image</label>
         </div>
@@ -43,7 +44,20 @@
     </form>
 
 </div>
+
 <script>
+    var loadFile = function (event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var myImg = document.getElementById('myImg');
+            myImg.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+
+
+@* <script>
     document.addEventListener("DOMContentLoaded", function () {
         const AddressContainer = document.getElementById("addressContainer");
         const addAddressBtn = document.getElementById("addAddressBtn");
@@ -95,5 +109,5 @@
             phoneContainer.appendChild(phoneDiv);
         });
     });
-</script>
+</script> *@
 

@@ -25,7 +25,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             var _users = await _user.Users.ToListAsync();
             return View(_users);
         }
-
+        [HttpGet]
         public async Task<IActionResult> AddRoles(string userId)
         {
             var user = await _user.FindByIdAsync(userId);

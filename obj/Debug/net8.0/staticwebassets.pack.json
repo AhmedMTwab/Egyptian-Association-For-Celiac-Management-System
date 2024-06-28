@@ -1,327 +1,339 @@
 {
   "Files": [
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Egyptian association of cieliac patients.bundle.scp.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Egyptian association of cieliac patients.bundle.scp.css",
       "PackagePath": "staticwebassets\\Egyptian association of cieliac patients.bundle.scp.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\css\\UserAdmin.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\css\\UserAdmin.css",
       "PackagePath": "staticwebassets\\css\\UserAdmin.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\css\\site.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\favicon.ico",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\3.jpeg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\3.jpeg",
       "PackagePath": "staticwebassets\\images\\3.jpeg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\Football.jpg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\Football.jpg",
       "PackagePath": "staticwebassets\\images\\Football.jpg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\IMG20240510214948.jpg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\IMG20240510214948.jpg",
       "PackagePath": "staticwebassets\\images\\IMG20240510214948.jpg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\IMG_20221218_214723.jpg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\IMG_20221218_214723.jpg",
       "PackagePath": "staticwebassets\\images\\IMG_20221218_214723.jpg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\IMG_20221218_214736.jpg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\IMG_20221218_214736.jpg",
       "PackagePath": "staticwebassets\\images\\IMG_20221218_214736.jpg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\IMG_20221218_214829.jpg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\IMG_20221218_214829.jpg",
       "PackagePath": "staticwebassets\\images\\IMG_20221218_214829.jpg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\IMG_20221218_214851.jpg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\IMG_20221218_214851.jpg",
       "PackagePath": "staticwebassets\\images\\IMG_20221218_214851.jpg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\IMG_20221218_214900.jpg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\IMG_20221218_214900.jpg",
       "PackagePath": "staticwebassets\\images\\IMG_20221218_214900.jpg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\IMG_20221218_214911.jpg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\IMG_20221218_214911.jpg",
       "PackagePath": "staticwebassets\\images\\IMG_20221218_214911.jpg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\IMG_20221218_214920.jpg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\IMG_20221218_214920.jpg",
       "PackagePath": "staticwebassets\\images\\IMG_20221218_214920.jpg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\IMG_20221218_214932.jpg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\IMG_20221218_214932.jpg",
       "PackagePath": "staticwebassets\\images\\IMG_20221218_214932.jpg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\Screenshot (2).png",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\Screenshot (1).png",
+      "PackagePath": "staticwebassets\\images\\Screenshot (1).png"
+    },
+    {
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\Screenshot (2).png",
       "PackagePath": "staticwebassets\\images\\Screenshot (2).png"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\lasterd.png",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\Screenshot (3).png",
+      "PackagePath": "staticwebassets\\images\\Screenshot (3).png"
+    },
+    {
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\lasterd.png",
       "PackagePath": "staticwebassets\\images\\lasterd.png"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\lastschema.png",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\lastschema.png",
       "PackagePath": "staticwebassets\\images\\lastschema.png"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\lastusecase.png",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\images\\lastusecase.png",
       "PackagePath": "staticwebassets\\images\\lastusecase.png"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\js\\site.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\IMG_20221218_214920.jpg",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\IMG_20221218_214920.jpg",
       "PackagePath": "staticwebassets\\medical records\\IMG_20221218_214920.jpg"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\app.py",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\Screenshot (2).png",
+      "PackagePath": "staticwebassets\\medical records\\Screenshot (2).png"
+    },
+    {
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\app.py",
       "PackagePath": "staticwebassets\\medical records\\app.py"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\تحليل الشخصية.pdf",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\تحليل الشخصية.pdf",
       "PackagePath": "staticwebassets\\medical records\\تحليل الشخصية.pdf"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\نموذج ارشاد اكاديمي مقترح.pdf",
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\نموذج ارشاد اكاديمي مقترح.pdf",
       "PackagePath": "staticwebassets\\medical records\\نموذج ارشاد اكاديمي مقترح.pdf"
     },
     {

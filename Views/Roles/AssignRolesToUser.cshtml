@@ -1,0 +1,42 @@
+﻿@model AssignRolesToUserViewModel
+@{
+    ViewData["Title"] = "AddRoles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+}
+
+<h1>Assign Roles</h1>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+@if (Model != null)
+{
+    <h2>Assign Roles to @Model.UserName</h2>
+    <form asp-action="AssignRolesToUser" asp-route-userId="@Model.UserId" method="post">
+        <input type="hidden" asp-for="UserId" value="@Model.UserId" />
+        <div class="form-group">
+            <label asp-for="AllRoles">Roles:</label>
+            <select asp-for="RoleNames" multiple class="form-control">
+                @foreach (var role in Model.AllRoles)
+                {
+                    if(@Model.UserRole==role.Text){
+                        <option value="@role.Value" selected>@role.Text</option>
+                    }
+                    else
+                    {
+                        <option value="@role.Value")>@role.Text</option>
+                    }
+                }
+            </select>
+            <span asp-validation-for="RoleNames" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Save Roles</button>
+        </div>
+    </form>
+}

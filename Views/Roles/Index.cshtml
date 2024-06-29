@@ -2,7 +2,7 @@
 @model IEnumerable<IdentityUser>
 
 @{
-    ViewData["Title"] = "Users";
+    ViewData["Title"] = "RoleManagement";
 }
 
 <div class="container p-3">
@@ -38,7 +38,7 @@
                         @item.UserName
                     </td>
                     <td>
-                        <a asp-controller="Roles" asp-action="AddRoles" asp-route-userId="@item.Id" class="btn btn-sm btn-success">
+                        <a asp-controller="Roles" asp-action="AssignRolesToUser" asp-route-userId="@item.Id" class="btn btn-sm btn-success">
                             <i class="bi bi-pencil"></i>
                         </a>
                     </td>

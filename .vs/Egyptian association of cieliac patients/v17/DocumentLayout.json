@@ -7,6 +7,22 @@
       "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\identitymodels\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:identitymodels\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\views\\roles\\assignrolestouser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:views\\roles\\assignrolestouser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -23,14 +39,6 @@
       "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:viewmodels\\assignrolestouserviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\migrations\\20240629030651_nullable cart id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:migrations\\20240629030651_nullable cart id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -41,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,33 +94,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddRoles.cshtml",
-              "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Views\\Roles\\AddRoles.cshtml",
-              "RelativeDocumentMoniker": "Views\\Roles\\AddRoles.cshtml",
-              "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Views\\Roles\\AddRoles.cshtml",
-              "RelativeToolTip": "Views\\Roles\\AddRoles.cshtml",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAAAUAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-29T07:23:54.701Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Views\\Roles\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Roles\\Index.cshtml",
-              "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Views\\Roles\\Index.cshtml",
-              "RelativeToolTip": "Views\\Roles\\Index.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAQAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-29T07:04:32.341Z",
+              "Title": "Roles.cs",
+              "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\IdentityModels\\Roles.cs",
+              "RelativeDocumentMoniker": "IdentityModels\\Roles.cs",
+              "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\IdentityModels\\Roles.cs",
+              "RelativeToolTip": "IdentityModels\\Roles.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T08:13:21.865Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "AssignRolesToUser.cshtml",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Views\\Roles\\AssignRolesToUser.cshtml",
               "RelativeDocumentMoniker": "Views\\Roles\\AssignRolesToUser.cshtml",
@@ -124,12 +115,11 @@
               "RelativeToolTip": "Views\\Roles\\AssignRolesToUser.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-29T06:34:33.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T06:34:33.398Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "AssignRolesToUserViewModel.cs",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\ViewModels\\AssignRolesToUserViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\AssignRolesToUserViewModel.cs",
@@ -137,8 +127,7 @@
               "RelativeToolTip": "ViewModels\\AssignRolesToUserViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T06:22:37.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T06:22:37.057Z"
             },
             {
               "$type": "Document",
@@ -148,14 +137,14 @@
               "RelativeDocumentMoniker": "Controllers\\RolesController.cs",
               "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Controllers\\RolesController.cs",
               "RelativeToolTip": "Controllers\\RolesController.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAIwEcAAAAIAAAA",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAcwEcAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-29T06:16:57.956Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "20240629030651_nullable cart id.cs",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Migrations\\20240629030651_nullable cart id.cs",
               "RelativeDocumentMoniker": "Migrations\\20240629030651_nullable cart id.cs",
@@ -167,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "RawMaterial.cs",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Models\\RawMaterial.cs",
               "RelativeDocumentMoniker": "Models\\RawMaterial.cs",
@@ -179,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Models\\Product.cs",
@@ -191,45 +180,70 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAADAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAB2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-06-29T02:51:38.244Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-29T02:49:08.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AQIAAHMAAAAAAAAAAAAYwIMAAAA3AAAA",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAkwI0AAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-29T02:47:32.212Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Views\\Roles\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Roles\\Index.cshtml",
+              "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Views\\Roles\\Index.cshtml",
+              "RelativeToolTip": "Views\\Roles\\Index.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAQAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-29T02:49:08.601Z"
+              "WhenOpened": "2024-06-29T07:04:32.341Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
+              "Title": "AddRoles.cshtml",
+              "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Views\\Roles\\AddRoles.cshtml",
+              "RelativeDocumentMoniker": "Views\\Roles\\AddRoles.cshtml",
+              "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Views\\Roles\\AddRoles.cshtml",
+              "RelativeToolTip": "Views\\Roles\\AddRoles.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-29T07:23:54.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Models\\Order.cs",
               "RelativeDocumentMoniker": "Models\\Order.cs",
@@ -241,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ReservationController.cs",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Controllers\\ReservationController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReservationController.cs",
@@ -253,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
@@ -265,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Views\\Reservation\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Reservation\\Details.cshtml",
@@ -277,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Reservation.cs",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Models\\Reservation.cs",
               "RelativeDocumentMoniker": "Models\\Reservation.cs",
@@ -289,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "AddClinicViewModel.cs",
               "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\ViewModels\\AddClinicViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\AddClinicViewModel.cs",

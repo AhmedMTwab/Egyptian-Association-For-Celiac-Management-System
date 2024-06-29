@@ -1,10 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\",
+  "WorkspaceRootPath": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\graduation-project\\webpage\\egyptian association of cieliac diseses\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\ahmed badawy\\programming\\asp.net core\\egyptian-association-of-cieliac-patients\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\ahmed badawy\\programming\\asp.net core\\egyptian-association-of-cieliac-patients\\views\\reservation\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:views\\reservation\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\ahmed badawy\\programming\\asp.net core\\egyptian-association-of-cieliac-patients\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|d:\\ahmed badawy\\programming\\asp.net core\\egyptian-association-of-cieliac-patients\\viewmodels\\addclinicviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A87EDDED-884A-4E68-8737-BFA2F2CEF2CA}|Egyptian association of cieliac patients.csproj|solutionrelative:viewmodels\\addclinicviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,27 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RolesController.cs",
-              "DocumentMoniker": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Controllers\\RolesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RolesController.cs",
-              "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Controllers\\RolesController.cs",
-              "RelativeToolTip": "Controllers\\RolesController.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAwwDUAAAAIAAAA",
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAqwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T14:28:52.08Z",
+              "WhenOpened": "2024-06-29T00:46:22.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\Views\\Reservation\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservation\\Details.cshtml",
+              "ToolTip": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\Views\\Reservation\\Details.cshtml",
+              "RelativeToolTip": "Views\\Reservation\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-29T00:25:45.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\Models\\Reservation.cs",
+              "RelativeDocumentMoniker": "Models\\Reservation.cs",
+              "ToolTip": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\Models\\Reservation.cs",
+              "RelativeToolTip": "Models\\Reservation.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBQAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T00:19:51.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddClinicViewModel.cs",
+              "DocumentMoniker": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\ViewModels\\AddClinicViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\AddClinicViewModel.cs",
+              "ToolTip": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\ViewModels\\AddClinicViewModel.cs",
+              "RelativeToolTip": "ViewModels\\AddClinicViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T00:09:19.992Z",
               "EditorCaption": ""
             }
           ]

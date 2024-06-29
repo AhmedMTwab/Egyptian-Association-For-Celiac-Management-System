@@ -12,7 +12,7 @@
             <h2>Create a new account.</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            
+
             <div class="form-floating mb-3">
                 <input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" placeholder="" />
                 <label asp-for="Input.UserName">User Name</label>
@@ -28,8 +28,25 @@
                 <label asp-for="Input.ConfirmPassword">Confirm Password</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="username" aria-required="true" placeholder="" />
+                <label asp-for="Input.PhoneNumber">Registration Key</label>
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
             
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+
+            <div>
+                @* <p>
+                <a id="forgot-password" asp-page="./ForgotPassword" style="text-decoration:none">Forgot your password?</a>
+                </p> *@
+                <p>
+                    <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" class="w-100 btn btn-lg btn-primary" style="margin-top:5px">Login</a>
+                </p>
+                @* <p>
+                <a id="resend-confirmation" asp-page="./ResendEmailConfirmation" style="text-decoration:none">Resend email confirmation</a>
+                </p> *@
+            </div>
         </form>
     </div>
     @* <div class="col-md-6 col-md-offset-2">

@@ -29,6 +29,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="RawMaterial" asp-action="Index">RawMaterials</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">Orders</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Patient" asp-action="Index">Patients</a>
                         </li>
                         <li class="nav-item">
@@ -47,18 +50,16 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Lab" asp-action="Index">Labs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">Orders</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Index">Reservations</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Index">Roles</a>
                         </li>
-                        <li class="nav-item">
+                        @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        </li> *@
                     </ul>
-
                     <partial name="_LoginPartial"/>
-
                 </div>
             </div>
         </nav>

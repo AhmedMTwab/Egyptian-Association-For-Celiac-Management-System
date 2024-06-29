@@ -55,7 +55,9 @@
         reader.readAsDataURL(event.target.files[0]);
     }
 </script>
-
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
 
 @* <script>
     document.addEventListener("DOMContentLoaded", function () {

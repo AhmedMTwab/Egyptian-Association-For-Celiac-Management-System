@@ -46,6 +46,7 @@ namespace Egyptian_association_of_cieliac_patients
             builder.Services.AddScoped<ICRUDRepo<Product>, MainRepository<Product>>();
             builder.Services.AddScoped<ICRUDRepo<RawMaterial>, MainRepository<RawMaterial>>();
             builder.Services.AddScoped<ICRUDRepo<Order>, MainRepository<Order>>();
+            builder.Services.AddScoped<ICRUDRepo<Reservation>, MainRepository<Reservation>>();
 
 
             // Add services to the container.

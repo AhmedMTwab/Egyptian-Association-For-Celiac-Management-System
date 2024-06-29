@@ -13,7 +13,6 @@ namespace Egyptian_association_of_cieliac_patients.ViewModels
         [Required(ErrorMessage = "Please Enter Close Time")]
         public TimeSpan CloseTime { get; set; }
         [Required(ErrorMessage ="Mobile Phone Is Required")]
-        [Phone]
         public List<string> PhoneNumbers { get; set; }
         [Required(ErrorMessage ="Address Is Required")]
         public List<string> Addresses { get; set; }

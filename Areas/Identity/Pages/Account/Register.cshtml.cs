@@ -129,7 +129,7 @@ namespace Egyptian_association_of_cieliac_patients.Areas.Identity.Pages.Account
                 user.PhoneNumber = Input.PhoneNumber;
                 user.EmailConfirmed = true;
 
-                if (user.PhoneNumber == "01113170073")
+                if (user.PhoneNumber == "JUSTAdmins1234")
                 {
                     await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
                     //await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

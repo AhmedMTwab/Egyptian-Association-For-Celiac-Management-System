@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Egyptian_association_of_cieliac_patients.Migrations
 {
     /// <inheritdoc />
-    public partial class newstart : Migration
+    public partial class newdb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -65,6 +65,18 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_assosiation_branch", x => x.assosiation_id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Carts",
+                columns: table => new
+                {
+                    cart_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Carts", x => x.cart_id);
                 });
 
             migrationBuilder.CreateTable(
@@ -310,6 +322,50 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         column: x => x.assosiation_id,
                         principalTable: "assosiation_branch",
                         principalColumn: "assosiation_id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "product",
+                columns: table => new
+                {
+                    product_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    details = table.Column<string>(type: "text", nullable: false),
+                    price = table.Column<decimal>(type: "money", nullable: false),
+                    CartId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_product", x => x.product_id);
+                    table.ForeignKey(
+                        name: "FK_product_Carts_CartId",
+                        column: x => x.CartId,
+                        principalTable: "Carts",
+                        principalColumn: "cart_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "raw_material",
+                columns: table => new
+                {
+                    material_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    details = table.Column<string>(type: "text", nullable: false),
+                    price = table.Column<decimal>(type: "money", nullable: false),
+                    CartId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_raw_material", x => x.material_id);
+                    table.ForeignKey(
+                        name: "FK_raw_material_Carts_CartId",
+                        column: x => x.CartId,
+                        principalTable: "Carts",
+                        principalColumn: "cart_id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -833,11 +889,18 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     shipment_location = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     shipment_time = table.Column<TimeOnly>(type: "time", nullable: false),
                     shipment_phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    patient_id = table.Column<int>(type: "int", nullable: false)
+                    patient_id = table.Column<int>(type: "int", nullable: false),
+                    Cart_id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_order", x => x.order_id);
+                    table.ForeignKey(
+                        name: "FK_order_Carts_Cart_id",
+                        column: x => x.Cart_id,
+                        principalTable: "Carts",
+                        principalColumn: "cart_id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_order_patient",
                         column: x => x.patient_id,
@@ -912,9 +975,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     reservation_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     reservation_date = table.Column<DateOnly>(type: "date", nullable: false),
-                    status = table.Column<string>(type: "text", nullable: false),
                     reservation_time = table.Column<TimeOnly>(type: "time", nullable: false),
-                    appointment_type = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     book_date = table.Column<DateOnly>(type: "date", nullable: false),
                     book_time = table.Column<TimeOnly>(type: "time", nullable: false),
                     patient_id = table.Column<int>(type: "int", nullable: false),
@@ -935,129 +996,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         principalTable: "patient",
                         principalColumn: "patient_id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "doctor_medicalrecord_veiw",
-                columns: table => new
-                {
-                    record_id = table.Column<int>(type: "int", nullable: false),
-                    doctor_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_doctor_medicalrecord_veiw", x => new { x.record_id, x.doctor_id });
-                    table.ForeignKey(
-                        name: "FK_doctor_medicalrecord_veiw_doctor",
-                        column: x => x.doctor_id,
-                        principalTable: "doctor",
-                        principalColumn: "doctor_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_doctor_medicalrecord_veiw_medical_record",
-                        column: x => x.record_id,
-                        principalTable: "medical_record",
-                        principalColumn: "record_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "medical_record-drug",
-                columns: table => new
-                {
-                    drug = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    record_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_medical_record-drug", x => new { x.drug, x.record_id });
-                    table.ForeignKey(
-                        name: "FK_medical_record-drug_medical_record",
-                        column: x => x.record_id,
-                        principalTable: "medical_record",
-                        principalColumn: "record_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "medical_record-test",
-                columns: table => new
-                {
-                    test = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    record_id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_medical_record-test", x => new { x.record_id, x.test });
-                    table.ForeignKey(
-                        name: "FK_medical_record-test_medical_record",
-                        column: x => x.record_id,
-                        principalTable: "medical_record",
-                        principalColumn: "record_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "payment",
-                columns: table => new
-                {
-                    payment_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    payment_type = table.Column<string>(type: "nchar(10)", fixedLength: true, maxLength: 10, nullable: false),
-                    total_paid = table.Column<decimal>(type: "money", nullable: false),
-                    OrderId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_payment", x => x.payment_id);
-                    table.ForeignKey(
-                        name: "FK_payment_order_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "order",
-                        principalColumn: "order_id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "product",
-                columns: table => new
-                {
-                    product_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    details = table.Column<string>(type: "text", nullable: false),
-                    price = table.Column<decimal>(type: "money", nullable: false),
-                    orderid = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_product", x => x.product_id);
-                    table.ForeignKey(
-                        name: "FK_order_product",
-                        column: x => x.orderid,
-                        principalTable: "order",
-                        principalColumn: "order_id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "raw_material",
-                columns: table => new
-                {
-                    material_id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    details = table.Column<string>(type: "text", nullable: false),
-                    price = table.Column<decimal>(type: "money", nullable: false),
-                    orderid = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_raw_material", x => x.material_id);
-                    table.ForeignKey(
-                        name: "FK_order_rawmaterials",
-                        column: x => x.orderid,
-                        principalTable: "order",
-                        principalColumn: "order_id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1194,15 +1132,98 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "doctor_medicalrecord_veiw",
+                columns: table => new
+                {
+                    record_id = table.Column<int>(type: "int", nullable: false),
+                    doctor_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_doctor_medicalrecord_veiw", x => new { x.record_id, x.doctor_id });
+                    table.ForeignKey(
+                        name: "FK_doctor_medicalrecord_veiw_doctor",
+                        column: x => x.doctor_id,
+                        principalTable: "doctor",
+                        principalColumn: "doctor_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_doctor_medicalrecord_veiw_medical_record",
+                        column: x => x.record_id,
+                        principalTable: "medical_record",
+                        principalColumn: "record_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "medical_record-drug",
+                columns: table => new
+                {
+                    drug = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    record_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_medical_record-drug", x => new { x.drug, x.record_id });
+                    table.ForeignKey(
+                        name: "FK_medical_record-drug_medical_record",
+                        column: x => x.record_id,
+                        principalTable: "medical_record",
+                        principalColumn: "record_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "medical_record-test",
+                columns: table => new
+                {
+                    test = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    record_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_medical_record-test", x => new { x.record_id, x.test });
+                    table.ForeignKey(
+                        name: "FK_medical_record-test_medical_record",
+                        column: x => x.record_id,
+                        principalTable: "medical_record",
+                        principalColumn: "record_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "payment",
+                columns: table => new
+                {
+                    payment_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    payment_type = table.Column<string>(type: "nchar(10)", fixedLength: true, maxLength: 10, nullable: false),
+                    total_paid = table.Column<decimal>(type: "money", nullable: false),
+                    OrderId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_payment", x => x.payment_id);
+                    table.ForeignKey(
+                        name: "FK_payment_order_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "order",
+                        principalColumn: "order_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "6ac7d2f3-c4cc-49ae-8487-e289bd28f7e2", "fcb0c4fd-5e4b-48d9-bfbd-95390ae9cbdd", "MedicalManager", "medicalmanager" },
-                    { "8c6bcc17-b144-44ee-9413-d2f671427e9f", "ccd748eb-b69d-44d1-bd19-3b93f7a9fe6d", "Admin", "admin" },
-                    { "a702aee9-36e2-4389-be8f-07fe074d5374", "82fa19a8-bc53-461f-a641-b5c4d232d5f3", "UserManager", "usermanager" },
-                    { "ba73624c-1382-4b1e-a9c8-88b4b80eda14", "4ace3df9-7eaf-4d93-ab6e-efb10ea508b4", "StoreManager", "storemanager" }
+                    { "07c277cf-e131-451d-8ab9-c8e9c8ccb7aa", "4615f5df-6745-4f82-bda9-398cb9fc06e8", "UserManager", "usermanager" },
+                    { "6bcae34f-4f0f-4504-ba1b-5f48b27dc3dd", "af9ed102-3a2a-436a-95cb-b48183850688", "Admin", "admin" },
+                    { "6ff65ed8-01eb-4e8a-b044-a68dbacd3d4a", "455d62ad-a952-4ea7-88c8-18bce29a87da", "Doctor", "doctor" },
+                    { "77e8b0ab-072f-482f-a74d-ed0451a168e2", "13829279-6805-43be-b47c-8df2a32758dd", "StoreManager", "storemanager" },
+                    { "9b6d9be1-6eac-40cf-b69f-899910ff7997", "acd08230-b280-455a-80c1-d0c42fc30741", "MedicalManager", "medicalmanager" },
+                    { "c8d54bed-6f2f-40f6-a9ca-ef4c8450615a", "475ddf7b-8e58-4888-8ae7-780047ee9c80", "NormalUser", "normaluser" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -1370,6 +1391,11 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 column: "record_id");
 
             migrationBuilder.CreateIndex(
+                name: "IX_order_Cart_id",
+                table: "order",
+                column: "Cart_id");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_order_patient_id",
                 table: "order",
                 column: "patient_id");
@@ -1430,14 +1456,14 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 column: "pharmacy_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_product_orderid",
+                name: "IX_product_CartId",
                 table: "product",
-                column: "orderid");
+                column: "CartId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_raw_material_orderid",
+                name: "IX_raw_material_CartId",
                 table: "raw_material",
-                column: "orderid");
+                column: "CartId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_rawmaterial_image_material_id",
@@ -1609,6 +1635,9 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "dises");
 
             migrationBuilder.DropTable(
+                name: "order");
+
+            migrationBuilder.DropTable(
                 name: "health_insurance");
 
             migrationBuilder.DropTable(
@@ -1624,10 +1653,10 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                 name: "clinic");
 
             migrationBuilder.DropTable(
-                name: "order");
+                name: "patient");
 
             migrationBuilder.DropTable(
-                name: "patient");
+                name: "Carts");
 
             migrationBuilder.DropTable(
                 name: "assosiation_branch");

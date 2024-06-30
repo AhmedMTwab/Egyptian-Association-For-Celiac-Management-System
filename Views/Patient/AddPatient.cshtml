@@ -1,10 +1,10 @@
 ﻿@model AddPatientViewModel
 @{
-    <link rel="stylesheet" href="~/css/UserAdmin.css">
+    //<link rel="stylesheet" href="~/css/UserAdmin.css">
     <title>User Admin</title>
     Layout = null;
 }
-<div class="patient-box">
+@* <div class="patient-box">
     <h2>Patient</h2>
     <form asp-action="AddPatient" method="post" enctype="multipart/form-data">
         <div asp-validation-summary="All" class="text-danger"></div>
@@ -85,7 +85,70 @@
 
     </form>
 
-</div>
+</div> *@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="UserAdmin.css">
+    <title>User Admin</title>
+</head>
+
+<body>
+    <div class="patient-box">
+        <h2>Patient</h2>
+        <form>
+            <div class="user-box">
+                <input type="text" name="" required="">
+                <label>Name</label>
+            </div>
+            <div class="user-box date">
+                <input type="date" name="" required="">
+                <label>Date Of Birth</label>
+            </div>
+            <div class="user-box">
+                <input type="" name="" required="">
+                <label>Phone Number</label>
+            </div>
+            <div class="user-box">
+                <input type="" name="" required="">
+                <label>Address</label>
+            </div>
+            <div class="user-box">
+                <input type="" name="" required="">
+                <label>National Number</label>
+            </div>
+            <div class="user-box">
+                <input type="file" name="" required="">
+            </div>
+            <div class="user-box">
+                <label class="license">Blood Type</label>
+                <select>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                </select>
+            </div>
+            <a href="#" id="patient">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> Add A Patient
+            </a>
+        </form>
+    </div>
+</body>
+
+</html>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const AddressContainer = document.getElementById("addressContainer");
@@ -143,3 +206,229 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+
+            <style>
+                html {
+    height: 100%;
+}
+
+body {
+    background-image: url(5555.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.patient-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.delete-patient {
+    top: 20%;
+    left: 50%;
+    width: 280px;
+    padding: 40px;
+}
+
+.update-patient {
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    padding: 40px;
+}
+
+.doctor-box {
+    left: 50%;
+}
+
+.delete-doctor {
+    top: 20%;
+    left: 90%;
+    width: 280px;
+    padding: 40px;
+}
+
+.update-doctor {
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    padding: 40px;
+}
+
+.patient-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.patient-box .user-box {
+    position: relative;
+}
+
+.patient-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.patient-box .date input {
+    width: 100%;
+    padding: 30px 0 10px 0px;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.patient-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.patient-box .user-box select {
+    margin-top: 35px;
+    width: 50px;
+    background-color: #eee;
+}
+
+.patient-box .user-box input:focus~label,
+.patient-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+.patient-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 5px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 10px;
+    letter-spacing: 4px
+}
+
+.patient-box p {
+    position: relative;
+    display: block;
+    margin-left: 70px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 4px
+}
+
+.patient-box form #patient {
+    margin-left: 70px;
+}
+
+.delete-patient form #delete {
+    margin-left: 50px;
+}
+
+.update-patient form #update {
+    margin-left: 50px;
+}
+
+.doctor-box form #doctor {
+    margin-left: 70px;
+}
+
+.delete-doctor form #delete {
+    margin-left: 50px;
+}
+
+.update-doctor form #update {
+    margin-left: 50px;
+}
+
+.patient-box a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+.patient-box a span {
+    position: absolute;
+    display: block;
+}
+
+.patient-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+
+
+.patient-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s
+}
+
+
+
+.patient-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s
+}
+
+
+
+.patient-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s
+}
+            </style>

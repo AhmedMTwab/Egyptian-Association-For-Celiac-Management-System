@@ -64,7 +64,7 @@
               "RelativeDocumentMoniker": "Controllers\\HospitalController.cs",
               "ToolTip": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Controllers\\HospitalController.cs",
               "RelativeToolTip": "Controllers\\HospitalController.cs",
-              "ViewState": "AQIAAFIAAAAAAAAAAAAcwAAAAAAAAAAA",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAcwGYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T08:50:46.699Z",
               "EditorCaption": ""
@@ -79,8 +79,7 @@
               "RelativeToolTip": "Controllers\\DoctorController.cs",
               "ViewState": "AQIAAEMAAAAAAAAAAAAcwEoAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T08:42:15.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T08:42:15.555Z"
             },
             {
               "$type": "Document",
@@ -92,8 +91,7 @@
               "RelativeToolTip": "Models\\EgyptianAssociationOfCieliacPatientsContext.cs",
               "ViewState": "AQIAAFIBAAAAoJmZmZnzvyAAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T08:21:24.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T08:21:24.014Z"
             },
             {
               "$type": "Document",
@@ -105,8 +103,7 @@
               "RelativeToolTip": "Models\\DoctorClinicWork.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T08:01:28.854Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T08:01:28.854Z"
             },
             {
               "$type": "Document",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "Models\\RawMaterial.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAA1wBoAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T08:09:39.496Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T08:09:39.496Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "Models\\CartMaterialHave.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T08:16:28.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T08:16:28.327Z"
             },
             {
               "$type": "Document",
@@ -144,8 +139,7 @@
               "RelativeToolTip": "Models\\Cart.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABpAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T07:59:50.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T07:59:50.382Z"
             },
             {
               "$type": "Document",
@@ -157,8 +151,7 @@
               "RelativeToolTip": "Models\\CartProductHave.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T08:00:19.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T08:00:19.34Z"
             },
             {
               "$type": "Document",
@@ -170,8 +163,7 @@
               "RelativeToolTip": "Models\\Product.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAA1wBoAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T07:59:44.485Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T07:59:44.485Z"
             }
           ]
         }

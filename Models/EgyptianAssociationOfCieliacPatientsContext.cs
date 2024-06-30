@@ -433,6 +433,7 @@ public partial class EgyptianAssociationOfCieliacPatientsContext : IdentityDbCon
 
             entity.HasMany(d => d.RawMaterials).WithOne(p => p.Cart).OnDelete(DeleteBehavior.Cascade);
             entity.HasMany(d => d.Products).WithOne(p => p.Cart).OnDelete(DeleteBehavior.Cascade);
+            entity.HasOne(d=>d.Patient).WithOne(p=>p.Cart).OnDelete(DeleteBehavior.ClientCascade);
 
         });
         base.OnModelCreating(modelBuilder);

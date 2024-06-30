@@ -12,13 +12,15 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
     public class PatientController : Controller
     {
         private readonly ICRUDRepo<Patient> patientrepo;
+        private readonly ICRUDRepo<Cart> cartrepo;
         private readonly ICRUDRepo<AssosiationBranch> assosiation_Crud;
 		private readonly ICRUDRepo<Dises> dises_Crud;
 		private readonly IWebHostEnvironment hosting;
 
-        public PatientController(ICRUDRepo<Patient> patientrepo,ICRUDRepo<AssosiationBranch> assosiation_crud,ICRUDRepo<Dises> dises_crud,IWebHostEnvironment hosting)
+        public PatientController(ICRUDRepo<Patient> patientrepo, ICRUDRepo<Cart> cartrepo, ICRUDRepo<AssosiationBranch> assosiation_crud,ICRUDRepo<Dises> dises_crud,IWebHostEnvironment hosting)
         {
             this.patientrepo = patientrepo;
+            this.cartrepo = cartrepo;
             assosiation_Crud = assosiation_crud;
 			dises_Crud = dises_crud;
 			this.hosting = hosting;
@@ -93,7 +95,11 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 {
                     TestsPath = NewPatientData.medicaltest.FileName
                 };
-               
+                var cart=new Cart()
+                {
+                    PatientId= patient.PatientId,
+                };
+                cartrepo.AddOne(cart);
                 patient.PatientName=NewPatientData.PatientName;
                 patient.PatientBloodtype = NewPatientData.PatientBloodType;
                 DateTime dob=DateTime.Parse(NewPatientData.Dob);

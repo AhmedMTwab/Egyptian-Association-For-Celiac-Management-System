@@ -4,6 +4,7 @@ using Egyptian_association_of_cieliac_patients.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptian_association_of_cieliac_patients.Migrations
 {
     [DbContext(typeof(EgyptianAssociationOfCieliacPatientsContext))]
-    partial class EgyptianAssociationOfCieliacPatientsContextModelSnapshot : ModelSnapshot
+    [Migration("20240630000603_cart-patient relation")]
+    partial class cartpatientrelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +54,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasKey("AssosiationId");
 
-                    b.ToTable("assosiation_branch", (string)null);
+                    b.ToTable("assosiation_branch");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.AssosiationBranchPhone", b =>
@@ -68,7 +71,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("AssosiationId");
 
-                    b.ToTable("assosiation_branch_phone", (string)null);
+                    b.ToTable("assosiation_branch_phone");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.AssosiationDisesFollow", b =>
@@ -85,7 +88,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("AssosiationId");
 
-                    b.ToTable("assosiation_dises_follow", (string)null);
+                    b.ToTable("assosiation_dises_follow");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.AssosiationInsuranceProvide", b =>
@@ -110,7 +113,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("InsuranceId");
 
-                    b.ToTable("assosiation_insurance_provide", (string)null);
+                    b.ToTable("assosiation_insurance_provide");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Cart", b =>
@@ -130,7 +133,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasIndex("PatientId")
                         .IsUnique();
 
-                    b.ToTable("Carts", (string)null);
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Clinic", b =>
@@ -159,7 +162,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasKey("ClinicId");
 
-                    b.ToTable("clinic", (string)null);
+                    b.ToTable("clinic");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.ClinicAddress", b =>
@@ -176,7 +179,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("ClinicId");
 
-                    b.ToTable("clinic_address", (string)null);
+                    b.ToTable("clinic_address");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.ClinicAssosiationDiscount", b =>
@@ -197,7 +200,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("AssosiationId");
 
-                    b.ToTable("clinic_assosiation_discount", (string)null);
+                    b.ToTable("clinic_assosiation_discount");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.ClinicInsuranceDiscount", b =>
@@ -218,7 +221,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("InsuranceId");
 
-                    b.ToTable("clinic_insurance_discount", (string)null);
+                    b.ToTable("clinic_insurance_discount");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.ClinicPhone", b =>
@@ -235,7 +238,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("ClinicId");
 
-                    b.ToTable("clinic_phone", (string)null);
+                    b.ToTable("clinic_phone");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Dises", b =>
@@ -256,7 +259,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasKey("DisesId");
 
-                    b.ToTable("dises", (string)null);
+                    b.ToTable("dises");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.DisesMaterialCatogrize", b =>
@@ -280,7 +283,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("MaterialId");
 
-                    b.ToTable("dises_material_catogrize", (string)null);
+                    b.ToTable("dises_material_catogrize");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.DisesProductCatogrize", b =>
@@ -304,7 +307,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("dises_product_catogrize", (string)null);
+                    b.ToTable("dises_product_catogrize");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Doctor", b =>
@@ -332,7 +335,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasKey("DoctorId");
 
-                    b.ToTable("doctor", (string)null);
+                    b.ToTable("doctor");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.DoctorClinicWork", b =>
@@ -357,7 +360,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("doctor_clinic_work", (string)null);
+                    b.ToTable("doctor_clinic_work");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.DoctorMedicalrecordVeiw", b =>
@@ -374,7 +377,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("doctor_medicalrecord_veiw", (string)null);
+                    b.ToTable("doctor_medicalrecord_veiw");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.DoctorPhone", b =>
@@ -391,7 +394,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("doctor_phone", (string)null);
+                    b.ToTable("doctor_phone");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HealthInsurance", b =>
@@ -415,7 +418,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasKey("InsuranceId");
 
-                    b.ToTable("health_insurance", (string)null);
+                    b.ToTable("health_insurance");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Hospital", b =>
@@ -436,7 +439,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasKey("HospitalId");
 
-                    b.ToTable("hospital", (string)null);
+                    b.ToTable("hospital");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalAddress", b =>
@@ -456,7 +459,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("hospitalId");
 
-                    b.ToTable("hospital_address", (string)null);
+                    b.ToTable("hospital_address");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalInsuranceDiscount", b =>
@@ -477,7 +480,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("InsuranceId");
 
-                    b.ToTable("hospital_insurance_discount", (string)null);
+                    b.ToTable("hospital_insurance_discount");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalPhone", b =>
@@ -494,7 +497,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("HospitalId");
 
-                    b.ToTable("hospital_phone", (string)null);
+                    b.ToTable("hospital_phone");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.HospitalType", b =>
@@ -511,7 +514,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("HospitalId");
 
-                    b.ToTable("hospital_type", (string)null);
+                    b.ToTable("hospital_type");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.InsuranceAddress", b =>
@@ -530,7 +533,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("InsuranceId");
 
-                    b.ToTable("insurance_address", (string)null);
+                    b.ToTable("insurance_address");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.InsurancePhone", b =>
@@ -547,7 +550,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("InsuranceId");
 
-                    b.ToTable("insurance_phone", (string)null);
+                    b.ToTable("insurance_phone");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Lab", b =>
@@ -576,7 +579,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasKey("LabId");
 
-                    b.ToTable("lab", (string)null);
+                    b.ToTable("lab");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabAddress", b =>
@@ -596,7 +599,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("labId");
 
-                    b.ToTable("lab_address", (string)null);
+                    b.ToTable("lab_address");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabAssosiationDiscount", b =>
@@ -617,7 +620,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("AssosiationId");
 
-                    b.ToTable("lab_assosiation_discount", (string)null);
+                    b.ToTable("lab_assosiation_discount");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabInsuranceDiscount", b =>
@@ -638,7 +641,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("InsuranceId");
 
-                    b.ToTable("lab_insurance_discount", (string)null);
+                    b.ToTable("lab_insurance_discount");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabPhone", b =>
@@ -655,7 +658,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("LabId");
 
-                    b.ToTable("lab_phone", (string)null);
+                    b.ToTable("lab_phone");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.LabType", b =>
@@ -672,7 +675,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("LabId");
 
-                    b.ToTable("lab_type", (string)null);
+                    b.ToTable("lab_type");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalRecord", b =>
@@ -700,7 +703,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("medical_record", (string)null);
+                    b.ToTable("medical_record");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalRecordDrug", b =>
@@ -719,7 +722,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("RecordId");
 
-                    b.ToTable("medical_record-drug", (string)null);
+                    b.ToTable("medical_record-drug");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.MedicalRecordTest", b =>
@@ -735,7 +738,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasKey("RecordId", "TestsPath");
 
-                    b.ToTable("medical_record-test", (string)null);
+                    b.ToTable("medical_record-test");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Order", b =>
@@ -794,7 +797,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("order", (string)null);
+                    b.ToTable("order");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Patient", b =>
@@ -836,7 +839,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("assosiationid");
 
-                    b.ToTable("patient", (string)null);
+                    b.ToTable("patient");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientAddress", b =>
@@ -855,7 +858,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("patient_address", (string)null);
+                    b.ToTable("patient_address");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientDisesHave", b =>
@@ -872,7 +875,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("DisesId");
 
-                    b.ToTable("patient_dises-have", (string)null);
+                    b.ToTable("patient_dises-have");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientPhone", b =>
@@ -889,7 +892,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("patient_phone", (string)null);
+                    b.ToTable("patient_phone");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientProductView", b =>
@@ -906,7 +909,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("patient_product_view", (string)null);
+                    b.ToTable("patient_product_view");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PatientRawmaterialVeiw", b =>
@@ -923,7 +926,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("MaterialId");
 
-                    b.ToTable("patient_rawmaterial_veiw", (string)null);
+                    b.ToTable("patient_rawmaterial_veiw");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Payment", b =>
@@ -953,7 +956,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("payment", (string)null);
+                    b.ToTable("payment");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Pharmacy", b =>
@@ -982,7 +985,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasKey("pharmacyId");
 
-                    b.ToTable("pharmacy", (string)null);
+                    b.ToTable("pharmacy");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyAddress", b =>
@@ -999,7 +1002,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("PharmacyId");
 
-                    b.ToTable("pharmacy_address", (string)null);
+                    b.ToTable("pharmacy_address");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyAssosiationDiscount", b =>
@@ -1020,7 +1023,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("AssosiationId");
 
-                    b.ToTable("pharmacy_assosiation_discount", (string)null);
+                    b.ToTable("pharmacy_assosiation_discount");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyInsuranceDiscount", b =>
@@ -1041,7 +1044,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("InsuranceId");
 
-                    b.ToTable("pharmacy_insurance_discount", (string)null);
+                    b.ToTable("pharmacy_insurance_discount");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.PharmacyPhone", b =>
@@ -1058,7 +1061,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("PharmacyId");
 
-                    b.ToTable("pharmacy_phone", (string)null);
+                    b.ToTable("pharmacy_phone");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Product", b =>
@@ -1094,7 +1097,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("CartId");
 
-                    b.ToTable("product", (string)null);
+                    b.ToTable("product");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.ProductImage", b =>
@@ -1109,7 +1112,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasKey("ProductId", "ImagePath");
 
-                    b.ToTable("product_image", (string)null);
+                    b.ToTable("product_image");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.RawMaterial", b =>
@@ -1145,7 +1148,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("CartId");
 
-                    b.ToTable("raw_material", (string)null);
+                    b.ToTable("raw_material");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.RawMaterialImage", b =>
@@ -1162,7 +1165,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("MaterialId");
 
-                    b.ToTable("rawmaterial_image", (string)null);
+                    b.ToTable("rawmaterial_image");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Reservation", b =>
@@ -1204,7 +1207,7 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("reservation", (string)null);
+                    b.ToTable("reservation");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

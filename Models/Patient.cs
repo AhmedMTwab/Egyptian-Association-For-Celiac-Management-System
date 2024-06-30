@@ -30,6 +30,9 @@ public partial class Patient
     [Column("assosiation_id")]
     public int? assosiationid { get; set; }
 
+    //[Column("cart_id")]
+    //public int CartId { get; set; }
+
     [ForeignKey("assosiationid")]
     public virtual AssosiationBranch? Assosiation { get; set; } = new AssosiationBranch();
 
@@ -52,6 +55,9 @@ public partial class Patient
     public virtual ICollection<Reservation>? clinics { get; set; } = new List<Reservation>();
     [InverseProperty("Patient")]
     public virtual ICollection<MedicalRecord>? Medicalrecords { get; set; } = new List<MedicalRecord>();
+    //[ForeignKey("CartId")]
+    [InverseProperty("Patient")]
+    public virtual Cart Cart { get; set; }
 
 
 }

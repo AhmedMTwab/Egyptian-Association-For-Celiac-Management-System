@@ -357,6 +357,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\543496.jpg",
+      "PackagePath": "staticwebassets\\medical records\\543496.jpg"
+    },
+    {
+      "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\606500.jpg",
+      "PackagePath": "staticwebassets\\medical records\\606500.jpg"
+    },
+    {
       "Id": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\wwwroot\\medical records\\IMG_20221218_214920.jpg",
       "PackagePath": "staticwebassets\\medical records\\IMG_20221218_214920.jpg"
     },

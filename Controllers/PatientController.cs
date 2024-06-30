@@ -95,11 +95,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 {
                     TestsPath = NewPatientData.medicaltest.FileName
                 };
-                var cart=new Cart()
-                {
-                    PatientId= patient.PatientId,
-                };
-                cartrepo.AddOne(cart);
+                
                 patient.PatientName=NewPatientData.PatientName;
                 patient.PatientBloodtype = NewPatientData.PatientBloodType;
                 DateTime dob=DateTime.Parse(NewPatientData.Dob);
@@ -114,6 +110,11 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
 				patient.Medicalrecords.Add(medicalrecord);
 				patient.Assosiation = assosiation_Crud.FindById(NewPatientData.assosiationId);
                 patientrepo.AddOne(patient);
+                var cart = new Cart()
+                {
+                    PatientId = patient.PatientId,
+                };
+                cartrepo.AddOne(cart);
                 return RedirectToAction("Index");
 
             }

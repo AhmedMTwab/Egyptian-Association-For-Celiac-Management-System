@@ -55,13 +55,13 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             doc.Major = doctor.DoctorMajor;
 
             List<DoctorClinicWork> newclinic = new List<DoctorClinicWork>();
-            var addedClinics = new HashSet<int>(); // To track ClinicIds already added
+            var addedClinics = new HashSet<int>(); 
             int i = 0;
             foreach (var clinicName in doctor.ClinicNames)
             {
                 var existingClinic = clinicRepo.FindAll().FirstOrDefault(c => c.Name == clinicName);
 
-                if (existingClinic != null && !addedClinics.Contains(existingClinic.ClinicId)) // Check if already added
+                if (existingClinic != null && !addedClinics.Contains(existingClinic.ClinicId)) 
                 {
                     var clinic = new DoctorClinicWork()
                     {
@@ -72,7 +72,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                     };
 
                     newclinic.Add(clinic);
-                    addedClinics.Add(existingClinic.ClinicId);  // Add the ClinicId to the set
+                    addedClinics.Add(existingClinic.ClinicId);  
                 }
 
                 i++;

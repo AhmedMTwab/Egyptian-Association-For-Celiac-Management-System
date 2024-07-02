@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Egyptian_association_of_cieliac_patients.IdentityModels;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Castle.Core.Smtp;
+using System.Text.Json;
 
 namespace Egyptian_association_of_cieliac_patients
 {
@@ -48,6 +49,8 @@ namespace Egyptian_association_of_cieliac_patients
             builder.Services.AddScoped<ICRUDRepo<Order>, MainRepository<Order>>();
             builder.Services.AddScoped<ICRUDRepo<Reservation>, MainRepository<Reservation>>();
             builder.Services.AddScoped<ICRUDRepo<Cart>, MainRepository<Cart>>();
+            builder.Services.AddScoped<ISftpService, SftpService>();
+
 
 
 

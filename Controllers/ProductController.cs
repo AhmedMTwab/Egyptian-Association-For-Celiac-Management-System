@@ -16,12 +16,14 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         private readonly ICRUDRepo<Product> productrepo;
         private readonly ICRUDRepo<AssosiationBranch> assosiation_Crud;
         private readonly IWebHostEnvironment hosting;
+        private readonly ISftpService sftpService;
 
-        public ProductController(ICRUDRepo<Product> productrepo, ICRUDRepo<AssosiationBranch> assosiation_crud, IWebHostEnvironment hosting)
+        public ProductController(ICRUDRepo<Product> productrepo, ICRUDRepo<AssosiationBranch> assosiation_crud, IWebHostEnvironment hosting,ISftpService sftpService)
         {
             this.productrepo = productrepo;
             assosiation_Crud = assosiation_crud;
             this.hosting = hosting;
+            this.sftpService = sftpService;
         }
         public IActionResult Index()
         {
@@ -46,23 +48,30 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             if (ModelState.IsValid)
             {
                 var product = new Product();
-				
-                    string imageFolder = Path.Combine(hosting.WebRootPath, "images");
-                    string imagePath = Path.Combine(imageFolder, NewProductData.Product_Image.FileName);
-                    NewProductData.Product_Image.CopyTo(new FileStream(imagePath, FileMode.Create));
-                    var Image = new ProductImage()
-                    {
-                        ImagePath = NewProductData.Product_Image.FileName,
-                        ProductId=product.ProductId
-                    };
-                
+
+                //string imageFolder = Path.Combine(hosting.WebRootPath, "images");
+                //string imagePath = Path.Combine(imageFolder, NewProductData.Product_Image.FileName);
+                //NewProductData.Product_Image.CopyTo(new FileStream(imagePath, FileMode.Create));
+                //var Image = new ProductImage()
+                //{
+                //    ImagePath = NewProductData.Product_Image.FileName,
+                //    ProductId=product.ProductId
+                //};
+              
+                var filename = Guid.NewGuid().ToString() + Path.GetExtension(NewProductData.Product_Image.FileName);
+                sftpService.UploadFile("/wwwroot/wwwroot/images", filename, NewProductData.Product_Image.OpenReadStream());
+                var Image = new ProductImage()
+                {
+                    ImagePath = Path.Combine(filename),
+                    ProductId = product.ProductId
+                };
+
                 product.Name = NewProductData.Name;
                 product.Details = NewProductData.Details;
                 product.Price = NewProductData.Price;
                 product.Images.Add(Image);
                 productrepo.AddOne(product);
                 return RedirectToAction("Index");
-
             }
             return View("AddProduct",NewProductData);
         }

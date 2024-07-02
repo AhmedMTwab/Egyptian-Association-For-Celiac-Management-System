@@ -839,6 +839,48 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.ToTable("order");
                 });
 
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.OrderMaterial", b =>
+                {
+                    b.Property<int>("MaterialId")
+                        .HasColumnType("int")
+                        .HasColumnName("Material_id");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int")
+                        .HasColumnName("order_id");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int")
+                        .HasColumnName("Quantity");
+
+                    b.HasKey("MaterialId", "OrderId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("order_material");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.OrderProduct", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int")
+                        .HasColumnName("product_id");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int")
+                        .HasColumnName("order_id");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int")
+                        .HasColumnName("Quantity");
+
+                    b.HasKey("ProductId", "OrderId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("order_product");
+                });
+
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Patient", b =>
                 {
                     b.Property<int>("PatientId")
@@ -1274,43 +1316,43 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "67fa9acc-084e-4128-9d32-f3eb8c0a4b33",
-                            ConcurrencyStamp = "db185365-2fbd-4a3a-88b0-4fd45d559651",
+                            Id = "b01103c1-d5f4-443b-8676-e16f5c103a7f",
+                            ConcurrencyStamp = "776423dd-dd9b-495b-8264-949f028cb460",
                             Name = "Admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "da5e9425-b071-494f-8c93-3896a1f6480d",
-                            ConcurrencyStamp = "5f05c00d-9176-446f-8c52-c247d046b69f",
+                            Id = "d23e5e74-6163-45bf-97be-2e0e07fd16b1",
+                            ConcurrencyStamp = "a99f18fc-89c5-4a79-8593-613b58956ad0",
                             Name = "UserManager",
                             NormalizedName = "usermanager"
                         },
                         new
                         {
-                            Id = "61c7a80e-c44a-456f-b6a5-c330fd054bc7",
-                            ConcurrencyStamp = "bf632cca-d2d0-4283-84ba-30f654e2970f",
+                            Id = "8d984a1c-bc84-47d9-865a-af5a4c80d0ad",
+                            ConcurrencyStamp = "d3dce088-cd21-48cc-93f0-b1146a22ccb2",
                             Name = "StoreManager",
                             NormalizedName = "storemanager"
                         },
                         new
                         {
-                            Id = "d135894b-b5b3-4570-ab03-1197ce178a84",
-                            ConcurrencyStamp = "c954aec5-7052-4571-91e9-bff91a91e387",
+                            Id = "8fbe34d8-cc82-4dc1-a5a0-3a2987b1a0ae",
+                            ConcurrencyStamp = "0d633a93-b476-42e3-97a4-005c93823915",
                             Name = "MedicalManager",
                             NormalizedName = "medicalmanager"
                         },
                         new
                         {
-                            Id = "99564f7a-d72c-44ad-b24a-02d671db31cc",
-                            ConcurrencyStamp = "538e4fcc-d488-4f50-a636-c4081071adeb",
+                            Id = "22684772-8e3a-415a-b7be-bd6a01736e74",
+                            ConcurrencyStamp = "303e245a-c576-47f2-b96e-02b6beff1575",
                             Name = "Doctor",
                             NormalizedName = "doctor"
                         },
                         new
                         {
-                            Id = "c46fff74-dc89-4cfe-905c-db3883a06ee8",
-                            ConcurrencyStamp = "94b2d192-bcfd-4cef-a253-bd7bff360d04",
+                            Id = "dff860eb-01e8-44ca-ba69-b197067878fd",
+                            ConcurrencyStamp = "f77da2b6-52c8-493b-9dfe-1a60c60672a5",
                             Name = "NormalUser",
                             NormalizedName = "normaluser"
                         });
@@ -1957,6 +1999,44 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Navigation("Patient");
                 });
 
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.OrderMaterial", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.RawMaterial", "Material")
+                        .WithMany("Orders")
+                        .HasForeignKey("MaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Order", "Order")
+                        .WithMany("OrderedMaterials")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Material");
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.OrderProduct", b =>
+                {
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Order", "Order")
+                        .WithMany("OrderedProducts")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Product", "Product")
+                        .WithMany("Orders")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Patient", b =>
                 {
                     b.HasOne("Egyptian_association_of_cieliac_patients.Models.AssosiationBranch", "Assosiation")
@@ -2327,6 +2407,13 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Navigation("Tests");
                 });
 
+            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Order", b =>
+                {
+                    b.Navigation("OrderedMaterials");
+
+                    b.Navigation("OrderedProducts");
+                });
+
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Patient", b =>
                 {
                     b.Navigation("Addresses");
@@ -2366,6 +2453,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
 
                     b.Navigation("Images");
 
+                    b.Navigation("Orders");
+
                     b.Navigation("dises");
 
                     b.Navigation("patients");
@@ -2376,6 +2465,8 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Navigation("Carts");
 
                     b.Navigation("Images");
+
+                    b.Navigation("Orders");
 
                     b.Navigation("dises");
 

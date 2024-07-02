@@ -13,12 +13,14 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         private readonly ICRUDRepo<RawMaterial> materialrepo;
         private readonly ICRUDRepo<AssosiationBranch> assosiation_Crud;
         private readonly IWebHostEnvironment hosting;
+        private readonly ISftpService sftpService;
 
-        public RawMaterialController(ICRUDRepo<RawMaterial> materialrepo, ICRUDRepo<AssosiationBranch> assosiation_crud, IWebHostEnvironment hosting)
+        public RawMaterialController(ICRUDRepo<RawMaterial> materialrepo, ICRUDRepo<AssosiationBranch> assosiation_crud, IWebHostEnvironment hosting,ISftpService sftpService)
         {
             this.materialrepo = materialrepo;
             assosiation_Crud = assosiation_crud;
             this.hosting = hosting;
+            this.sftpService = sftpService;
         }
        
 
@@ -46,15 +48,14 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             if (ModelState.IsValid)
             {
                 var material = new RawMaterial();
-                
-					string ImageFolder = Path.Combine(hosting.WebRootPath, "images");
-					string ImagePath = Path.Combine(ImageFolder, NewMaterialData.Material_Image.FileName);
-					NewMaterialData.Material_Image.CopyTo(new FileStream(ImagePath, FileMode.Create));
-                    var Image = new RawMaterialImage()
-                    {
-                        ImagePath = NewMaterialData.Material_Image.FileName,
-                        MaterialId = material.MaterialId
-                    };
+
+                var filename = Guid.NewGuid().ToString() + Path.GetExtension(NewMaterialData.Material_Image.FileName);
+                sftpService.UploadFile("/wwwroot/wwwroot/images", filename, NewMaterialData.Material_Image.OpenReadStream());
+                var Image = new RawMaterialImage()
+                {
+                    ImagePath = Path.Combine(filename),
+                    MaterialId = material.MaterialId
+                };
                 material.Name = NewMaterialData.Name;
                 material.Details = NewMaterialData.Details;
                 material.Price = NewMaterialData.Price;

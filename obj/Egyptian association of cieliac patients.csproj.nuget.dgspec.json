@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FirebaseStorage.net": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
               "version": "[8.0.6, )"
@@ -93,6 +97,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "SSH.NET": {
+              "target": "Package",
+              "version": "[2024.1.0, )"
+            },
+            "System.Net.FtpClient": {
+              "target": "Package",
+              "version": "[1.0.5824.34026, )"
             }
           },
           "imports": [

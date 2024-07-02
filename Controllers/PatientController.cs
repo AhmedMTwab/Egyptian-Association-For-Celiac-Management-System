@@ -17,13 +17,14 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
 		private readonly ICRUDRepo<Dises> dises_Crud;
 		private readonly IWebHostEnvironment hosting;
 
-        public PatientController(ICRUDRepo<Patient> patientrepo, ICRUDRepo<Cart> cartrepo, ICRUDRepo<AssosiationBranch> assosiation_crud,ICRUDRepo<Dises> dises_crud,IWebHostEnvironment hosting)
+
+        public PatientController(ICRUDRepo<Patient> patientrepo, ICRUDRepo<Cart> cartrepo, ICRUDRepo<AssosiationBranch> assosiation_crud, ICRUDRepo<Dises> dises_crud, IWebHostEnvironment hosting)
         {
             this.patientrepo = patientrepo;
             this.cartrepo = cartrepo;
             assosiation_Crud = assosiation_crud;
-			dises_Crud = dises_crud;
-			this.hosting = hosting;
+            dises_Crud = dises_crud;
+            this.hosting = hosting;
         }
         public IActionResult Index()
         {
@@ -44,8 +45,8 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-		public IActionResult Addpatient(AddPatientViewModel NewPatientData)
-		{
+        public IActionResult Addpatient(AddPatientViewModel NewPatientData)
+        {
             if (ModelState.IsValid)
             {
                 var patient = new Patient();
@@ -60,7 +61,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
 
                 }
 
-                
+
                 foreach (var phone in NewPatientData.PatientPhone)
                 {
                     var phonenumber = new PatientPhone()
@@ -78,7 +79,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                     var dises = dises_Crud.FindById(disess);
                     patient_disses.Add(dises);
                 }
-                foreach(var disess in patient_disses)
+                foreach (var disess in patient_disses)
                 {
                     var patientdises = new PatientDisesHave()
                     {
@@ -95,20 +96,20 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 {
                     TestsPath = NewPatientData.medicaltest.FileName
                 };
-                
-                patient.PatientName=NewPatientData.PatientName;
+
+                patient.PatientName = NewPatientData.PatientName;
                 patient.PatientBloodtype = NewPatientData.PatientBloodType;
-                DateTime dob=DateTime.Parse(NewPatientData.Dob);
+                DateTime dob = DateTime.Parse(NewPatientData.Dob);
                 patient.Dob = DateOnly.FromDateTime(dob);
                 patient.Ssn = NewPatientData.Ssn;
                 patient.assosiationid = NewPatientData.assosiationId;
-				var medicalrecord = new MedicalRecord();
-				medicalrecord.Tests.Add(medicalrecordtest);
-				medicalrecord.PatientId = patient.PatientId;
-				medicalrecord.DisesId = patient.Diseses.FirstOrDefault().DisesId;
+                var medicalrecord = new MedicalRecord();
+                medicalrecord.Tests.Add(medicalrecordtest);
+                medicalrecord.PatientId = patient.PatientId;
+                medicalrecord.DisesId = patient.Diseses.FirstOrDefault().DisesId;
                 medicalrecord.Date = DateOnly.FromDateTime(DateTime.Now);
-				patient.Medicalrecords.Add(medicalrecord);
-				patient.Assosiation = assosiation_Crud.FindById(NewPatientData.assosiationId);
+                patient.Medicalrecords.Add(medicalrecord);
+                patient.Assosiation = assosiation_Crud.FindById(NewPatientData.assosiationId);
                 patientrepo.AddOne(patient);
                 var cart = new Cart()
                 {
@@ -118,9 +119,9 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 return RedirectToAction("Index");
 
             }
-			return View("AddPatient",NewPatientData);
-		}
-        [HttpGet]
+            return View("AddPatient", NewPatientData);
+        }
+            [HttpGet]
         public IActionResult Editpatient(int id)
         {
             ViewBag.assosiations = assosiation_Crud.FindAll().ToList();

@@ -1699,3 +1699,6 @@ D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Debug\
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Debug\net8.0\scopedcss\bundle\Egyptian association of cieliac patients.styles.css
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Debug\net8.0\scopedcss\projectbundle\Egyptian association of cieliac patients.bundle.scp.css
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\bin\Debug\net8.0\Renci.SshNet.dll
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\bin\Debug\net8.0\System.Net.FtpClient.dll
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\bin\Debug\net8.0\Firebase.Storage.dll

@@ -38,7 +38,10 @@ public partial class Order
    
     [Column("patient_id")]
     public int PatientId { get; set; }
-
+    [InverseProperty("Order")]
+    public virtual List<OrderProduct> OrderedProducts { get; set; }
+    [InverseProperty("Order")]
+    public virtual List<OrderMaterial> OrderedMaterials { get; set; }
 
 
     [Column("Cart_id")]

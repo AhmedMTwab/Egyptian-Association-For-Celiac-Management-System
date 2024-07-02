@@ -1702,3 +1702,6 @@ D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Debug\
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\bin\Debug\net8.0\Renci.SshNet.dll
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\bin\Debug\net8.0\System.Net.FtpClient.dll
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\bin\Debug\net8.0\Firebase.Storage.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Firebase.Storage.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\Renci.SshNet.dll
+D:\Ahmed Badawy\Programming\Asp.Net Core\Egyptian-association-of-cieliac-patients\bin\Debug\net8.0\System.Net.FtpClient.dll

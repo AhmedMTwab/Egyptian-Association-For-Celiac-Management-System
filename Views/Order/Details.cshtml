@@ -9,8 +9,12 @@
 			<tr itemscope="raw">
 				@* <th itemscope="col">Order Image</th> *@
 				<th itemscope="col">Order Id</th>
-				@* <th itemscope="col">Product Id</th>
-				<th itemscope="col">Material Id</th> *@
+				<th itemscope="col">Product Name</th>
+				<th itemscope="col">Product Quantity</th>
+				<th itemscope="col">Total Price</th>
+				<th itemscope="col">RawMaterial Name</th>
+				<th itemscope="col">RawMaterial Quantity</th>
+				<th itemscope="col">Total Price</th>
 				<th itemscope="col">Order Date</th>
 				<th itemscope="col">Details</th>
 				<th itemscope="col">Quantity</th>
@@ -28,14 +32,42 @@
 				<td>
 					@Model.OrderId
 				</td>
-
-			@* 	<td>
-					@Model.ProductId
+				<td>
+					@foreach (var product in @Model.OrderedProducts)
+					{
+						@product.Product.Name <br />
+					}
 				</td>
 				<td>
-					@Model.MaterialId
-				</td> *@
-
+					@foreach (var product in @Model.OrderedProducts)
+					{
+						@product.Quantity <br />
+					}
+				</td>
+				<td>
+					@foreach (var product in @Model.OrderedProducts)
+					{
+						@(product.Product.Price * product.Quantity) <br />
+					}
+				</td>
+				<td>
+					@foreach (var product in @Model.OrderedMaterials)
+					{
+						@product.Material.Name <br />
+					}
+				</td>
+				<td>
+					@foreach (var product in @Model.OrderedMaterials)
+					{
+						@product.Quantity <br />
+					}
+				</td>
+				<td>
+					@foreach (var product in @Model.OrderedMaterials)
+					{
+						@(product.Material.Price * product.Quantity) <br />
+					}
+				</td>
 				<td>
 					@Model.OrderDate
 				</td>

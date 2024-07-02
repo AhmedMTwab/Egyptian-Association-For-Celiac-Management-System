@@ -202,6 +202,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Dises/AddDises.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzZXNcQWRkRGlzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Dises/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Dises/EditDises.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzZXNcRWRpdERpc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Dises/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Doctor/AddDoctor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEFkZERvY3Rvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -240,6 +256,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Hospital/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Insurance/AddInsurance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdXJhbmNlXEFkZEluc3VyYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Insurance/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdXJhbmNlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Insurance/EditInsurance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdXJhbmNlXEVkaXRJbnN1cmFuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Insurance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdXJhbmNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Ahmed Badawy/Programming/Asp.Net Core/Egyptian-association-of-cieliac-patients/Views/Lab/AddLab.cshtml]

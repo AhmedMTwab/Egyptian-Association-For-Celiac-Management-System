@@ -82,7 +82,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Editproduct(int id, AddProductViewModel newdata)
+        public IActionResult Editproduct(int id, EditProductViewModel newdata)
         {
             var product = productrepo.FindById(id);
 

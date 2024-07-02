@@ -124,7 +124,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         public IActionResult Editpatient(int id)
         {
             ViewBag.assosiations = assosiation_Crud.FindAll().ToList();
-            var patient=patientrepo.FindById(id);
+            var patient = patientrepo.FindById(id);
             EditPatientViewModel patientView = new EditPatientViewModel();
             patientView.PatientId = id;
             patientView.PatientName = patient.PatientName;

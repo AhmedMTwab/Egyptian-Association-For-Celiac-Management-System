@@ -2,9 +2,18 @@
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    Layout = null;
 }
+<style>
+    .col-md-4{
+        margin: auto;
+        width: 30%;
+        margin-top:100px;
+    }
+</style>
 
-<h1>@ViewData["Title"]</h1>
+@* <h1>@ViewData["Title"]</h1> *@
 
 <div class="row">
     <div class="col-md-4">

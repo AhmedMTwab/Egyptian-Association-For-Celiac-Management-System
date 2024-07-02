@@ -5,14 +5,6 @@
       "PackagePath": "staticwebassets\\Egyptian association of cieliac patients.bundle.scp.css"
     },
     {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\css\\5555.jpg",
-      "PackagePath": "staticwebassets\\css\\5555.jpg"
-    },
-    {
-      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\css\\Forms.css",
-      "PackagePath": "staticwebassets\\css\\Forms.css"
-    },
-    {
       "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\css\\UserAdmin.css",
       "PackagePath": "staticwebassets\\css\\UserAdmin.css"
     },
@@ -51,6 +43,10 @@
     {
       "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\746199.jpg",
       "PackagePath": "staticwebassets\\images\\746199.jpg"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\Background.jpeg",
+      "PackagePath": "staticwebassets\\images\\Background.jpeg"
     },
     {
       "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\Football.jpg",
@@ -135,6 +131,26 @@
     {
       "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\play station5.jpg",
       "PackagePath": "staticwebassets\\images\\play station5.jpg"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\product1.jpg",
+      "PackagePath": "staticwebassets\\images\\product1.jpg"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\product2.jpg",
+      "PackagePath": "staticwebassets\\images\\product2.jpg"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\product3.jpg",
+      "PackagePath": "staticwebassets\\images\\product3.jpg"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\product4.jpg",
+      "PackagePath": "staticwebassets\\images\\product4.jpg"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\images\\product5.jpg",
+      "PackagePath": "staticwebassets\\images\\product5.jpg"
     },
     {
       "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\js\\site.js",
@@ -377,8 +393,36 @@
       "PackagePath": "staticwebassets\\medical records\\606500.jpg"
     },
     {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\ASS 3.pdf",
+      "PackagePath": "staticwebassets\\medical records\\ASS 3.pdf"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\Ahmed Mohamed Ali Badawy....Assignment 1....5C-T3.pdf",
+      "PackagePath": "staticwebassets\\medical records\\Ahmed Mohamed Ali Badawy....Assignment 1....5C-T3.pdf"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\Assignment 1.pdf",
+      "PackagePath": "staticwebassets\\medical records\\Assignment 1.pdf"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\Assignment 2.pdf",
+      "PackagePath": "staticwebassets\\medical records\\Assignment 2.pdf"
+    },
+    {
       "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\IMG_20221218_214920.jpg",
       "PackagePath": "staticwebassets\\medical records\\IMG_20221218_214920.jpg"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\Img-Final.pdf",
+      "PackagePath": "staticwebassets\\medical records\\Img-Final.pdf"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\Lab1.pdf",
+      "PackagePath": "staticwebassets\\medical records\\Lab1.pdf"
+    },
+    {
+      "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\Lab8.pdf",
+      "PackagePath": "staticwebassets\\medical records\\Lab8.pdf"
     },
     {
       "Id": "D:\\Ahmed Badawy\\Programming\\Asp.Net Core\\Egyptian-association-of-cieliac-patients\\wwwroot\\medical records\\Screenshot (2).png",

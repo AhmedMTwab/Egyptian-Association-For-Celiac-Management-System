@@ -96,9 +96,11 @@
                             <a asp-area="" asp-controller="Clinic" asp-action="Index">Clinics</a>
                             <a asp-area="" asp-controller="Pharmacy" asp-action="Index">Pharmacies</a>
                             <a asp-area="" asp-controller="Lab" asp-action="Index">Labs</a>
-                            <a asp-controller="Reservation" asp-action="Index">Reservations</a>
+                            <a asp-area="" asp-controller="Insurance" asp-action="Index">Insurance</a>
+                            <a asp-area="" asp-controller="Reservation" asp-action="Index">Reservations</a>
                         </div>
                     </li>
+                    <li><a asp-area="" asp-controller="Dises" asp-action="Index">Disease</a></li>
                     <li><a asp-area="" asp-controller="Roles" asp-action="Index">Roles</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
@@ -113,11 +115,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    @* <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2024 - Egyptian_association_of_cieliac_patients - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

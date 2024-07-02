@@ -1,0 +1,30 @@
+﻿@model EditDisesViewModel
+@{
+	<link rel="stylesheet" href="~/css/UserAdmin.css">
+	<title>Doctor</title>
+	Layout = null;
+}
+<div class="patient-box" style="overflow-y:scroll; height:900px;">
+	<h2>Disease</h2>
+	<form asp-action="Editdises" asp-route-Id="@Model.DisesId" method="post">
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<div>
+			<label style="color:white">Disease Name</label>
+		</div>
+		<div class="user-box">
+			<input asp-for="Name" type="text" />
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+
+		<button type="submit" id="patient">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span> Update Disease
+		</button>
+	</form>
+</div>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}

@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace Egyptian_association_of_cieliac_patients.Controllers
 {
-    [Authorize(Roles = $"{Roles.roleAdmin}")]
+    [Authorize(Roles = $"{Roles.roleAdmin} , {Roles.roleNormal}")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

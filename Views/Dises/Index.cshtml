@@ -1,0 +1,163 @@
+﻿@model IEnumerable<Dises>
+<div style="
+	 background: rgba(132, 134, 127, .5);
+	 box-sizing: border-box;
+	 box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+	 border-radius: 10px;">
+
+	<div class="clo-6 text-end">
+        <a asp-controller="Dises" asp-action="Adddises" class="btn btn-primary">Add New Disease</a>
+	</div>
+
+	<table class="table table-border">
+		<thead>
+			<tr itemscope="raw">
+				@* <th itemscope="col">Product Image</th> *@
+                <th itemscope="col">Disease Id</th>
+                <th itemscope="col">Disease Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr itemscope="raw">
+					<td>
+						@item.DisesId
+					</td>
+
+					<td>
+						@item.Name
+					</td>
+					<td>
+						<a asp-action="Details" asp-controller="Dises" asp-route-Id="@item.DisesId">Details</a>
+					</td>
+
+					<td>
+						<a asp-action="Editdises" asp-controller="Dises" asp-route-Id="@item.DisesId">Edit</a>
+					</td>
+					<td>
+						<a asp-action="Deletedises" asp-controller="Dises" asp-route-Id="@item.DisesId">Delete</a>
+					</td>
+				</tr>
+
+			}
+		</tbody>
+	</table>
+</div>
+
+<style>
+    /* styles.css */
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    header {
+        background-color: #2c3e50;
+        padding: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-bar {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        background-color: #34495e;
+    }
+
+        .nav-bar li {
+            position: relative;
+        }
+
+        .nav-bar a {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+            .nav-bar a:hover {
+                background-color: #1abc9c;
+            }
+
+    .dropdown .dropbtn {
+        cursor: pointer;
+        background-color: #34495e;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #34495e;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 0 0 4px 4px;
+    }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+            .dropdown-content a:hover {
+                background-color: #1abc9c;
+            }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ecf0f1;
+        text-align: center;
+    }
+
+    .hero {
+        max-width: 600px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin: 20px 0;
+        }
+
+    .cta-button {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #1abc9c;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+        .cta-button:hover {
+            background-color: #16a085;
+        }
+
+</style>

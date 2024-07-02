@@ -1,0 +1,95 @@
+﻿@model AddDisesViewModel
+@{
+    <link rel="stylesheet" href="~/css/UserAdmin.css">
+    <title>Doctor</title>
+    Layout = null;
+}
+<div class="patient-box">
+    <h2>Disease</h2>
+    <form asp-action="Adddises" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="user-box">
+            <input asp-for="Name" type="text" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <label>Disease Name</label>
+        </div>
+        
+        
+        <button type="submit" id="patient">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Add A Disease
+        </button>
+
+    </form>
+
+</div>
+
+<script>
+    var loadFile = function (event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var myImg = document.getElementById('myImg');
+            myImg.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+@* <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const AddressContainer = document.getElementById("addressContainer");
+        const addAddressBtn = document.getElementById("addAddressBtn");
+        const phoneContainer = document.getElementById("phoneContainer");
+        const addPhoneBtn = document.getElementById("addPhoneBtn");
+
+        addAddressBtn.addEventListener("click", function () {
+            const addressDiv = document.createElement("div");
+            addressDiv.className = "address-container";
+
+            const addressNameInput = document.createElement("input");
+            addressNameInput.type = "text";
+            addressNameInput.name = "PatientAddress";
+            addressNameInput.required = true;
+
+            const removeAddressBtn = document.createElement("button");
+            removeAddressBtn.type = "button";
+            removeAddressBtn.textContent = "Remove Address";
+            removeAddressBtn.addEventListener("click", function () {
+                addressContainer.removeChild(addressDiv);
+            });
+
+            addressDiv.appendChild(addressNameInput);
+            addressDiv.appendChild(removeAddressBtn);
+
+
+            addressContainer.appendChild(addressDiv);
+        });
+
+        addPhoneBtn.addEventListener("click", function () {
+            const phoneDiv = document.createElement("div");
+            phoneDiv.className = "phone-container";
+
+            const phoneInput = document.createElement("input");
+            phoneInput.type = "tel";
+            phoneInput.name = "PatientPhone";
+            phoneInput.required = true;
+
+            const removePhoneBtn = document.createElement("button");
+            removePhoneBtn.type = "button";
+            removePhoneBtn.textContent = "Remove Phone Number";
+            removePhoneBtn.addEventListener("click", function () {
+                phoneContainer.removeChild(phoneDiv);
+            });
+
+            phoneDiv.appendChild(phoneInput);
+            phoneDiv.appendChild(removePhoneBtn);
+
+            phoneContainer.appendChild(phoneDiv);
+        });
+    });
+</script> *@

@@ -57,8 +57,8 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 //    ImagePath = NewProductData.Product_Image.FileName,
                 //    ProductId=product.ProductId
                 //};
-              
-                var filename = Guid.NewGuid().ToString() + Path.GetExtension(NewProductData.Product_Image.FileName);
+
+               var filename = Guid.NewGuid().ToString() + Path.GetExtension(NewProductData.Product_Image.FileName);
                 sftpService.UploadFile("/wwwroot/wwwroot/images", filename, NewProductData.Product_Image.OpenReadStream());
                 var Image = new ProductImage()
                 {

@@ -4,6 +4,7 @@ using Egyptian_association_of_cieliac_patients.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptian_association_of_cieliac_patients.Migrations
 {
     [DbContext(typeof(EgyptianAssociationOfCieliacPatientsContext))]
-    partial class EgyptianAssociationOfCieliacPatientsContextModelSnapshot : ModelSnapshot
+    [Migration("20240702215429_orderpayment")]
+    partial class orderpayment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -806,10 +809,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .HasColumnType("int")
                         .HasColumnName("patient_id");
 
-                    b.Property<int>("PaymentId")
-                        .HasColumnType("int")
-                        .HasColumnName("Payment_id");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int")
                         .HasColumnName("quantity");
@@ -839,8 +838,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasIndex("CartId");
 
                     b.HasIndex("PatientId");
-
-                    b.HasIndex("PaymentId");
 
                     b.ToTable("order");
                 });
@@ -1313,43 +1310,43 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a0510c45-0b4b-4101-afc1-4f5089250e07",
-                            ConcurrencyStamp = "c29e2fd7-0a05-4500-a165-bd371d64c645",
+                            Id = "1ca39fdd-4060-4313-af95-fff742145602",
+                            ConcurrencyStamp = "c29bbf6d-f434-4838-a9f0-4a4e4a3cf2be",
                             Name = "Admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "b1579663-985e-45eb-9f53-994d861e26c0",
-                            ConcurrencyStamp = "2de95d0f-3d43-4230-b20c-415308c1ae38",
+                            Id = "e5ae6baf-fdd1-4a73-80c2-4632c2d11be7",
+                            ConcurrencyStamp = "6b041bf8-2a2b-44da-bb2e-f6d36b747d38",
                             Name = "UserManager",
                             NormalizedName = "usermanager"
                         },
                         new
                         {
-                            Id = "267a8ca8-aeda-4a6f-ab21-4e917082e4f0",
-                            ConcurrencyStamp = "8cbe32a0-6c16-4c02-87c8-be9ec59deea3",
+                            Id = "732fd563-5ec1-4be8-9988-fc3686c35550",
+                            ConcurrencyStamp = "6ab54bff-2288-4688-b5a9-c673e92e4588",
                             Name = "StoreManager",
                             NormalizedName = "storemanager"
                         },
                         new
                         {
-                            Id = "5385811b-9207-41da-8dd7-c81329b7569b",
-                            ConcurrencyStamp = "49ac20e5-5043-437a-a1e4-db26a320e900",
+                            Id = "748ed33b-fdf5-48b6-8ab7-bff5f4d3ff94",
+                            ConcurrencyStamp = "2c9bf9b8-ebee-464f-973c-899ae3bb3efc",
                             Name = "MedicalManager",
                             NormalizedName = "medicalmanager"
                         },
                         new
                         {
-                            Id = "8d6ba35f-3637-4b2e-8ded-6682851628c1",
-                            ConcurrencyStamp = "bd8a0204-04f8-48f1-a7cd-34beec85fdbe",
+                            Id = "2c30a9e7-b971-4531-bb54-4a6abcb8fcd8",
+                            ConcurrencyStamp = "80516a83-bcb7-4fe9-8327-ae5f8cdb56cc",
                             Name = "Doctor",
                             NormalizedName = "doctor"
                         },
                         new
                         {
-                            Id = "586ff84d-a08e-4ecd-941c-ed12230f619a",
-                            ConcurrencyStamp = "5cef69f4-208a-4e9b-8da1-b0a5a4a65ffd",
+                            Id = "afcc3663-a6b9-49a7-b1c5-c5827b9eeca9",
+                            ConcurrencyStamp = "e984edfd-3a30-4264-825e-ee8bf159fa80",
                             Name = "NormalUser",
                             NormalizedName = "normaluser"
                         });
@@ -1991,17 +1988,9 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_order_patient");
 
-                    b.HasOne("Egyptian_association_of_cieliac_patients.Models.Payment", "Payment")
-                        .WithMany("Orders")
-                        .HasForeignKey("PaymentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Cart");
 
                     b.Navigation("Patient");
-
-                    b.Navigation("Payment");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.OrderMaterial", b =>
@@ -2428,11 +2417,6 @@ namespace Egyptian_association_of_cieliac_patients.Migrations
                     b.Navigation("clinics");
 
                     b.Navigation("products");
-                });
-
-            modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Payment", b =>
-                {
-                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Egyptian_association_of_cieliac_patients.Models.Pharmacy", b =>

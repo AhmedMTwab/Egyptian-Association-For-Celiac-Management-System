@@ -199,6 +199,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
             string recordFolder = Path.Combine(hosting.WebRootPath, "medical records");
             string testpath = Path.Combine(recordFolder, patient.Medicalrecords.FirstOrDefault().Tests.FirstOrDefault().TestsPath);
             System.IO.File.Delete(testpath);
+            cartrepo.DeleteOne(patient.Cart);
             patientrepo.DeleteOne(patient);
             return RedirectToAction("Index");
         }

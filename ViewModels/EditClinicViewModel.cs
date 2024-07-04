@@ -4,7 +4,6 @@ namespace Egyptian_association_of_cieliac_patients.ViewModels
 {
     public class EditClinicViewModel
     {
-        [Key]
         public int clinicid { get; set; }
         [Required(ErrorMessage = "Clinic Name Is Required")]
         public string ClinicName { get; set; }
@@ -13,7 +12,6 @@ namespace Egyptian_association_of_cieliac_patients.ViewModels
         [Required(ErrorMessage = "Please Enter Close Time")]
         public TimeSpan CloseTime { get; set; }
         [Required(ErrorMessage = "Mobile Phone Is Required")]
-        [Phone]
         public List<string> PhoneNumbers { get; set; }=new List<string>();
         [Required(ErrorMessage = "Address Is Required")]
         public List<string> Addresses { get; set; } = new List<string>();

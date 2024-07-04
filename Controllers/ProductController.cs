@@ -93,14 +93,18 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Editproduct(int id, EditProductViewModel newdata)
         {
-            var product = productrepo.FindById(id);
+            if (ModelState.IsValid)
+            {
+                var product = productrepo.FindById(id);
 
-            product.Name = newdata.Name;
-            product.Details = newdata.Details;
-            product.Price = newdata.Price;
-            productrepo.UpdateOne(product);
+                product.Name = newdata.Name;
+                product.Details = newdata.Details;
+                product.Price = newdata.Price;
+                productrepo.UpdateOne(product);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            return View("EditProduct", newdata);
         }
         public IActionResult Deleteproduct(int id)
         {

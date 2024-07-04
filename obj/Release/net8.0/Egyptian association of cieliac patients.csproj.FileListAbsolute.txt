@@ -253,3 +253,17 @@ D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Releas
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\Egyptian association of cieliac patients.pdb
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\Egyptian association of cieliac patients.genruntimeconfig.cache
 D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\ref\Egyptian association of cieliac patients.dll
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\bin\Release\net8.0\Egyptian association of cieliac patients.staticwebassets.runtime.json
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\bin\Release\net8.0\Firebase.Storage.dll
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\bin\Release\net8.0\Renci.SshNet.dll
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\bin\Release\net8.0\System.Net.FtpClient.dll
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\staticwebassets.build.json
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\staticwebassets.development.json
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\staticwebassets\msbuild.Egyptian association of cieliac patients.Microsoft.AspNetCore.StaticWebAssets.props
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\staticwebassets\msbuild.build.Egyptian association of cieliac patients.props
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\staticwebassets\msbuild.buildMultiTargeting.Egyptian association of cieliac patients.props
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\staticwebassets\msbuild.buildTransitive.Egyptian association of cieliac patients.props
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\staticwebassets.pack.json
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\scopedcss\bundle\Egyptian association of cieliac patients.styles.css
+D:\graduation-project\webpage\Egyptian association of cieliac Diseses\obj\Release\net8.0\scopedcss\projectbundle\Egyptian association of cieliac patients.bundle.scp.css

@@ -70,6 +70,7 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         [HttpGet]
         public IActionResult EditMaterial(int id)
         {
+
             ViewBag.assosiations = assosiation_Crud.FindAll().ToList();
             var material = materialrepo.FindById(id);
             EditRawMaterialViewModel MaterialView = new EditRawMaterialViewModel();
@@ -82,16 +83,21 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult EditMaterial(int id, AddRawMaterialViewModel newdata)
+        public IActionResult EditMaterial(int id, EditRawMaterialViewModel newdata)
         {
-            var material = materialrepo.FindById(id);
+            if (ModelState.IsValid)
+            {
+                var material = materialrepo.FindById(id);
 
-            material.Name = newdata.Name;
-            material.Details = newdata.Details;
-            material.Price = newdata.Price;
-            materialrepo.UpdateOne(material);
+                material.Name = newdata.Name;
+                material.Details = newdata.Details;
+                material.Price = newdata.Price;
+                materialrepo.UpdateOne(material);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            return View("EditMaterial", newdata);
+
         }
         public IActionResult DeleteMaterial(int id)
         {

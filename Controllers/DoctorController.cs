@@ -50,50 +50,54 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult AddDoctor(AddDoctorViewModel doctor)
         {
-            Doctor doc =new Doctor();
-            doc.Name = doctor.DoctorName;
-            doc.Major = doctor.DoctorMajor;
-
-            List<DoctorClinicWork> newclinic = new List<DoctorClinicWork>();
-            var addedClinics = new HashSet<int>(); 
-            int i = 0;
-            foreach (var clinicName in doctor.ClinicNames)
+            if (ModelState.IsValid)
             {
-                var existingClinic = clinicRepo.FindAll().FirstOrDefault(c => c.Name == clinicName);
+                Doctor doc = new Doctor();
+                doc.Name = doctor.DoctorName;
+                doc.Major = doctor.DoctorMajor;
 
-                if (existingClinic != null && !addedClinics.Contains(existingClinic.ClinicId)) 
+                List<DoctorClinicWork> newclinic = new List<DoctorClinicWork>();
+                var addedClinics = new HashSet<int>();
+                int i = 0;
+                foreach (var clinicName in doctor.ClinicNames)
                 {
-                    var clinic = new DoctorClinicWork()
-                    {
-                        Clinic = existingClinic,
-                        DoctorId = doctor.doctorid,
-                        ArriveTime = TimeOnly.FromTimeSpan(doctor.ClinicArrivalTimes[i]),
-                        LeaveTime = TimeOnly.FromTimeSpan(doctor.ClinicLeaveTimes[i]),
-                    };
+                    var existingClinic = clinicRepo.FindAll().FirstOrDefault(c => c.Name == clinicName);
 
-                    newclinic.Add(clinic);
-                    addedClinics.Add(existingClinic.ClinicId);  
+                    if (existingClinic != null && !addedClinics.Contains(existingClinic.ClinicId))
+                    {
+                        var clinic = new DoctorClinicWork()
+                        {
+                            Clinic = existingClinic,
+                            DoctorId = doctor.doctorid,
+                            ArriveTime = TimeOnly.FromTimeSpan(doctor.ClinicArrivalTimes[i]),
+                            LeaveTime = TimeOnly.FromTimeSpan(doctor.ClinicLeaveTimes[i]),
+                        };
+
+                        newclinic.Add(clinic);
+                        addedClinics.Add(existingClinic.ClinicId);
+                    }
+
+                    i++;
                 }
 
-                i++;
-            }
-
-            doc.clinics = newclinic;
-            foreach (var phone in doctor.PhoneNumbers)
-            {
-                var phonenumber = new DoctorPhone()
+                doc.clinics = newclinic;
+                foreach (var phone in doctor.PhoneNumbers)
                 {
-                    PhoneNumber = phone,
-                    DoctorId = doc.DoctorId
-                };
-                doc.DoctorPhones.Add(phonenumber);
+                    var phonenumber = new DoctorPhone()
+                    {
+                        PhoneNumber = phone,
+                        DoctorId = doc.DoctorId
+                    };
+                    doc.DoctorPhones.Add(phonenumber);
 
+                }
+                doctor_Crud.AddOne(doc);
+
+
+
+                return RedirectToAction("Index");
             }
-            doctor_Crud.AddOne(doc);
-
-
-
-            return RedirectToAction("Index");
+            return View("AddDoctor",doctor);
         }
         [HttpGet]
         public IActionResult EditDoctor(int id)

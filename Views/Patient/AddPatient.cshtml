@@ -1,7 +1,7 @@
 ﻿@model AddPatientViewModel
 @{
-    <link rel="stylesheet" href="~/css/UserAdmin.css">
-    <title>User Admin</title>
+            <link rel="stylesheet" href="~/css/UserAdmin.css">
+            <title>User Admin</title>
     Layout = null;
 }
 <div class="patient-box">
@@ -9,12 +9,12 @@
     <form asp-action="AddPatient" method="post" enctype="multipart/form-data">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="user-box">
-            <input asp-for="PatientName" type="text" />
+            <input asp-for="PatientName" type="text" required />
             <span asp-validation-for="PatientName" class="text-danger"></span>
             <label>patientName</label>
         </div>
         <div class="user-box date">
-            <input type="date"  asp-for="Dob">
+            <input type="date"  asp-for="Dob" required>
             <span asp-validation-for="Dob" class="text-danger"></span>
             <label>Date Of Birth</label>
 
@@ -43,7 +43,7 @@
 
         </div>
         <div class="user-box">
-            <input type="" asp-for="Ssn">
+            <input type="text" asp-for="Ssn" required maxlength="14" >
             <span asp-validation-for="Ssn" class="text-danger"></span>
             <label>National Number</label>
         </div>
@@ -126,6 +126,8 @@
             phoneInput.type = "tel";
             phoneInput.name = "PatientPhone";
             phoneInput.required = true;
+            phoneInput.minLength = 11;
+            phoneInput.maxLength = 11;
 
             const removePhoneBtn = document.createElement("button");
             removePhoneBtn.type = "button";
@@ -141,6 +143,8 @@
         });
     });
 </script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

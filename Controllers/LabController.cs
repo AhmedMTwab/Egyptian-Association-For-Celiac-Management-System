@@ -153,11 +153,13 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 }
 
                 labRepo.AddOne(lab);
-            }
-            return RedirectToAction("Index");
+				return RedirectToAction("Index");
+			}
 
-        }
-        [HttpGet]
+			return View("AddLab",newlab);
+
+		}
+		[HttpGet]
         public IActionResult EditLab(int id)
         {
             var lab = labRepo.FindById(id);

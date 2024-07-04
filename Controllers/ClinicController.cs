@@ -129,11 +129,10 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                 }
 
                 clinicRepo.AddOne(clinic);
-            }
                 return RedirectToAction("Index");
-            
-          
-		}
+            }
+                return View("AddClinic",newclinic);
+        }
 		[HttpGet]
 		public IActionResult EditClinic(int id)
 		{
@@ -236,12 +235,13 @@ namespace Egyptian_association_of_cieliac_patients.Controllers
                     }
 
                     clinicRepo.UpdateOne(clinic);
+                    return RedirectToAction("Index");
                 }
             }
+            return View("EditClinic", NewClinic);
 
-			return RedirectToAction("Index");
-		}
-		public IActionResult DeleteClinic(int id)
+        }
+        public IActionResult DeleteClinic(int id)
 		{
             var clinic=clinicRepo.FindById(id);
             clinicRepo.DeleteOne(clinic);

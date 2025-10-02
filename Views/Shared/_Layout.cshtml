@@ -1,13 +1,19 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@ViewData["Title"] - Egyptian_association_of_cieliac_patients</title>
+    <title>@ViewData["Title"] - Egyptian Association of Celiac Patients</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-   @*  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
+
 <body>
     @* <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -66,45 +72,52 @@
     </header> *@
 
     <header>
-        <nav class="navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" style="background-color: #34495e;">
-                <ul class="nav-bar" style="margin-left:500px">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Store</a>
-                        <div class="dropdown-content">
-                            <a asp-area="" asp-controller="Product" asp-action="Index">Products</a>
-                            <a asp-area="" asp-controller="RawMaterial" asp-action="Index">Raw Materials</a>
-                            <a asp-area="" asp-controller="Order" asp-action="Index">Orders</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Users</a>
-                        <div class="dropdown-content">
-                            <a asp-area="" asp-controller="Patient" asp-action="Index">Patients</a>
-                            <a asp-area="" asp-controller="Doctor" asp-action="Index">Doctors</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Medical</a>
-                        <div class="dropdown-content">
-                            <a asp-area="" asp-controller="Hospital" asp-action="Index">Hospitals</a>
-                            <a asp-area="" asp-controller="Clinic" asp-action="Index">Clinics</a>
-                            <a asp-area="" asp-controller="Pharmacy" asp-action="Index">Pharmacies</a>
-                            <a asp-area="" asp-controller="Lab" asp-action="Index">Labs</a>
-                            <a asp-area="" asp-controller="Insurance" asp-action="Index">Insurance</a>
-                            <a asp-area="" asp-controller="Reservation" asp-action="Index">Reservations</a>
-                        </div>
-                    </li>
-                    <li><a asp-area="" asp-controller="Dises" asp-action="Index">Disease</a></li>
-                    <li><a asp-area="" asp-controller="Roles" asp-action="Index">Roles</a></li>
-                </ul>
-                <partial name="_LoginPartial" />
-            </div>
+        <nav class="navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom">
+            <div class="container">
+                <div class="logo-container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="~/images/3.jpeg" alt="Egyptian Association of Celiac Patients Logo" class="logo-img" />
+                        <span class="logo-text">Egyptian Association of Celiac Patients</span>
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="nav-bar">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Store</a>
+                            <div class="dropdown-content">
+                                <a asp-area="" asp-controller="Product" asp-action="Index">Products</a>
+                                <a asp-area="" asp-controller="RawMaterial" asp-action="Index">Raw Materials</a>
+                                <a asp-area="" asp-controller="Order" asp-action="Index">Orders</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Users</a>
+                            <div class="dropdown-content">
+                                <a asp-area="" asp-controller="Patient" asp-action="Index">Patients</a>
+                                <a asp-area="" asp-controller="Doctor" asp-action="Index">Doctors</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">Medical</a>
+                            <div class="dropdown-content">
+                                <a asp-area="" asp-controller="Hospital" asp-action="Index">Hospitals</a>
+                                <a asp-area="" asp-controller="Clinic" asp-action="Index">Clinics</a>
+                                <a asp-area="" asp-controller="Pharmacy" asp-action="Index">Pharmacies</a>
+                                <a asp-area="" asp-controller="Lab" asp-action="Index">Labs</a>
+                                <a asp-area="" asp-controller="Insurance" asp-action="Index">Insurance</a>
+                                <a asp-area="" asp-controller="Reservation" asp-action="Index">Reservations</a>
+                            </div>
+                        </li>
+                        <li><a asp-area="" asp-controller="Dises" asp-action="Index">Disease</a></li>
+                        <li><a asp-area="" asp-controller="Roles" asp-action="Index">Roles</a></li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
         </nav>
     </header>
 
@@ -125,21 +138,94 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
 
 <style>
-    /* styles.css */
-    body {
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
+    :root {
+        --primary-color: #008000;
+        --secondary-color: #8b4513;
+        --accent-color: #006400;
+        --text-color: #1f2937;
+        --bg-color: #f8fafc;
+        --nav-bg: #ffffff;
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
     }
 
-    header {
-        background-color: #2c3e50;
+    .logo-container {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+        min-height: 40px;
+        position: relative;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 600;
+    }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        border-radius: 4px;
+        transition: transform 0.2s ease;
+    }
+
+    .navbar-brand:hover .logo-img {
+        transform: scale(1.1);
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+
+    @@media (max-width: 768px) {
+        .logo-text {
+            display: none;
+        }
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
         padding: 0;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        position: relative;
+    }
+
+
+
+    header {
+        background-color: var(--nav-bg);
+        padding: 0.5rem 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-shadow: var(--shadow-sm);
+        will-change: transform;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    header:hover {
+        box-shadow: var(--shadow-md);
     }
 
     .nav-bar {
@@ -148,98 +234,164 @@
         padding: 0;
         display: flex;
         justify-content: center;
-        background-color: #34495e;
+        align-items: center;
+        background-color: transparent;
+        gap: 1rem;
     }
 
-        .nav-bar li {
-            position: relative;
-        }
+    .nav-bar li {
+        position: relative;
+    }
 
-        .nav-bar a {
-            display: block;
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
+    .nav-bar a {
+        display: flex;
+        align-items: center;
+        color: var(--text-color);
+        padding: 0.75rem 1.25rem;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        border-radius: 0.5rem;
+        transition: var(--transition);
+    }
 
-            .nav-bar a:hover {
-                background-color: #1abc9c;
-            }
+    .nav-bar a:hover {
+        background-color: var(--accent-color);
+        color: white;
+        transform: translateY(-1px);
+    }
 
     .dropdown .dropbtn {
         cursor: pointer;
-        background-color: #34495e;
+        background: none;
+        border: none;
+        font-family: inherit;
     }
 
     .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #34495e;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 0 0 4px 4px;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: var(--shadow-md);
+        border-radius: 0.5rem;
+        overflow: hidden;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: var(--transition);
     }
 
-        .dropdown-content a {
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            color: white;
-            transition: background-color 0.3s ease;
-        }
+    .dropdown-content a {
+        padding: 0.75rem 1.25rem;
+        color: var(--text-color);
+        font-weight: 400;
+        border-radius: 0;
+    }
 
-            .dropdown-content a:hover {
-                background-color: #1abc9c;
-            }
+    .dropdown-content a:hover {
+        background-color: var(--accent-color);
+        color: white;
+        transform: none;
+    }
 
     .dropdown:hover .dropdown-content {
         display: block;
+        opacity: 1;
+        transform: translateY(0);
     }
 
     main {
+        min-height: calc(100vh - 150px);
+        padding: 2rem 0;
+        background-color: var(--bg-color);
+        margin-top: 65px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    /* Responsive Design */
+    @@media (max-width: 768px) {
+        .nav-bar {
+            flex-direction: column;
+            align-items: stretch;
+            padding: 1rem;
+        }
+
+        .dropdown-content {
+            position: static;
+            box-shadow: none;
+            border-radius: 0;
+            background-color: #f8fafc;
+        }
+
+        .nav-bar a {
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    /* Animation for dropdown items */
+    @@keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .dropdown-content a {
+        animation: fadeIn 0.2s ease-out forwards;
+    }
+
+    /* Improve login partial styling */
+    .navbar-nav {
         display: flex;
-        justify-content: center;
         align-items: center;
-        height: 100vh;
-        background-color: #ecf0f1;
-        text-align: center;
+        gap: 1rem;
     }
 
-    .hero {
-        max-width: 600px;
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            margin: 20px 0;
-        }
-
-    .cta-button {
-        display: inline-block;
-        padding: 12px 24px;
-        background-color: #1abc9c;
-        color: white;
+    .navbar-nav a {
+        color: var(--text-color);
         text-decoration: none;
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
-        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: var(--transition);
     }
 
-        .cta-button:hover {
-            background-color: #16a085;
-        }
+    .navbar-nav a:hover {
+        background-color: var(--accent-color);
+        color: white;
+    }
 
+    /* Add icons to nav items */
+    .nav-bar a::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        margin-right: 0.5rem;
+    }
+
+    .nav-bar a[asp-controller="Home"]::before {
+        content: "\f015";
+    }
+
+    .nav-bar .dropbtn[href="#"]::before {
+        content: "\f0c9";
+    }
+
+    .nav-bar a[asp-controller="Dises"]::before {
+        content: "\f469";
+    }
+
+    .nav-bar a[asp-controller="Roles"]::before {
+        content: "\f509";
+    }
 </style>

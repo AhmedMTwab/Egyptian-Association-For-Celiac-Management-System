@@ -1,13 +1,84 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "الجمعية المصرية لمرضى السيلياك";
 }
 
-<div class="text-center">
-    <h1 class="display-4">الجمعية المصرية لمرضى السيلياك</h1>
-</div>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">الجمعية المصرية لمرضى السيلياك</h1>
+        <h2 class="hero-subtitle">معاً نحو حياة صحية خالية من الجلوتين</h2>
+        <p class="hero-text">نحن هنا لدعم مرضى السيلياك وتوفير المعلومات والموارد اللازمة للعيش حياة صحية</p>
+        <div class="hero-buttons">
+            <a href="#services" class="cta-button primary">خدماتنا</a>
+            <a href="#contact" class="cta-button secondary">تواصل معنا</a>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="~/images/3.jpeg" alt="Celiac Association Logo" class="floating-image">
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <h2 class="section-title">خدماتنا</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <i class="fas fa-hospital"></i>
+            <h3>المستشفيات والعيادات</h3>
+            <p>شبكة واسعة من المستشفيات والعيادات المتخصصة</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-shopping-basket"></i>
+            <h3>منتجات خالية من الجلوتين</h3>
+            <p>توفير منتجات آمنة ومعتمدة خالية من الجلوتين</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-user-md"></i>
+            <h3>استشارات طبية</h3>
+            <p>فريق من الأطباء المتخصصين لتقديم الاستشارات</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-flask"></i>
+            <h3>المختبرات</h3>
+            <p>خدمات تحليل وفحص متخصصة</p>
+        </div>
+    </div>
+</section>
+
+<!-- Info Section -->
+<section class="info-section">
+    <div class="info-content">
+        <h2 class="section-title">عن مرض السيلياك</h2>
+        <p>مرض السيلياك هو اضطراب مناعي يؤثر على الأمعاء الدقيقة عند تناول الجلوتين. نحن نقدم الدعم والمعلومات اللازمة للتعايش مع المرض بشكل صحي.</p>
+        <a href="#learn-more" class="learn-more-link">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+    <div class="contact-content">
+        <h2 class="section-title">تواصل معنا</h2>
+        <div class="contact-cards">
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h3>اتصل بنا</h3>
+                <p>متاحون على مدار الساعة</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>راسلنا</h3>
+                <p>سنرد عليك في أقرب وقت</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>زورنا</h3>
+                <p>فروعنا في جميع المحافظات</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <style>
-    /* styles.css */
     body {
         font-family: 'Roboto', sans-serif;
         margin: 0;
@@ -123,18 +194,296 @@
 
 </style>
 <style>
-    /* styles.css */
-    body {
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
+    :root {
+        --primary-color: #008000;
+        --secondary-color: #8b4513;
+        --text-color: #2c3e50;
+        --bg-light: #f8fafc;
+        --bg-white: #ffffff;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
-    header {
-        background-color: #2c3e50;
-        padding: 0;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Hero Section */
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+        min-height: 80vh;
+        direction: rtl;
+    }
+
+    .hero-content {
+        max-width: 600px;
+        padding: 2rem;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+        color: var(--secondary-color);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+        color: var(--text-color);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .floating-image {
+        width: 400px;
+        height: 400px;
+        object-fit: contain;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @@keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+    }
+
+    /* Features Section */
+    .features {
+        padding: 4rem 2rem;
+        background-color: var(--bg-white);
+        text-align: center;
+        direction: rtl;
+    }
+
+    .section-title {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 3px;
+        background-color: var(--secondary-color);
+        border-radius: 2px;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .feature-card {
+        padding: 2rem;
+        background-color: var(--bg-light);
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .feature-card i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+        color: var(--text-color);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .feature-card p {
+        color: var(--text-color);
+        opacity: 0.8;
+    }
+
+    /* Info Section */
+    .info-section {
+        padding: 4rem 2rem;
+        background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        text-align: center;
+        direction: rtl;
+    }
+
+    .info-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .info-section .section-title {
+        color: white;
+    }
+
+    .info-section p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    .learn-more-link {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .learn-more-link:hover {
+        transform: translateX(-5px);
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding: 4rem 2rem;
+        background-color: var(--bg-light);
+        direction: rtl;
+    }
+
+    .contact-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .contact-card {
+        padding: 2rem;
+        background-color: var(--bg-white);
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .contact-card i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .contact-card h3 {
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-card p {
+        color: var(--text-color);
+        opacity: 0.8;
+    }
+
+    /* Buttons */
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-button.primary {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .cta-button.secondary {
+        background-color: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Design */
+    @@media (max-width: 992px) {
+        .hero {
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .hero-content {
+            padding: 1rem;
+        }
+
+        .floating-image {
+            width: 300px;
+            height: 300px;
+            margin-top: 2rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .features-grid,
+        .contact-cards {
+            grid-template-columns: 1fr;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .nav-bar {

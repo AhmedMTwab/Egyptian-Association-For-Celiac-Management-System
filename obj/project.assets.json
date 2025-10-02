@@ -12694,27 +12694,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ahmed\\.nuget\\packages\\": {}
+    "/home/eltwab/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Egyptian association of cieliac patients.csproj",
+      "projectUniqueName": "/mnt/0A84046D84045D97/programming/graduation-project/webpage/Egyptian association of cieliac Diseses/Egyptian association of cieliac patients.csproj",
       "projectName": "Egyptian association of cieliac patients",
-      "projectPath": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Egyptian association of cieliac patients.csproj",
-      "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-      "outputPath": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\obj\\",
+      "projectPath": "/mnt/0A84046D84045D97/programming/graduation-project/webpage/Egyptian association of cieliac Diseses/Egyptian association of cieliac patients.csproj",
+      "packagesPath": "/home/eltwab/.nuget/packages/",
+      "outputPath": "/mnt/0A84046D84045D97/programming/graduation-project/webpage/Egyptian association of cieliac Diseses/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/eltwab/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12727,11 +12724,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -12818,7 +12810,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.120/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

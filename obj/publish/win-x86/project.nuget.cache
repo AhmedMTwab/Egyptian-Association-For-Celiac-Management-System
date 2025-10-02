@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w1+ysOG7GRo=",
+  "dgSpecHash": "exx+1/XhwK4=",
   "success": true,
-  "projectFilePath": "D:\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Egyptian association of cieliac patients.csproj",
+  "projectFilePath": "D:\\programming\\graduation-project\\webpage\\Egyptian association of cieliac Diseses\\Egyptian association of cieliac patients.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ahmed\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\ahmed\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

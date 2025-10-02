@@ -1,0 +1,110 @@
+wwwroot\css\site.css
+wwwroot\css\UserAdmin.css
+wwwroot\favicon.ico
+wwwroot\images\3.jpeg
+wwwroot\images\325117.jpg
+wwwroot\images\475635.jpg
+wwwroot\images\61Qzy+kHYpL._AC_UF894,1000_QL80_.jpg
+wwwroot\images\61XJDvCztBL.jpg
+wwwroot\images\675483.jpg
+wwwroot\images\746199.jpg
+wwwroot\images\Background.jpeg
+wwwroot\images\download.jpeg
+wwwroot\images\Football.jpg
+wwwroot\images\images (1)0000.jpeg
+wwwroot\images\images.jpeg
+wwwroot\images\IMG_20221218_214723.jpg
+wwwroot\images\IMG_20221218_214736.jpg
+wwwroot\images\IMG_20221218_214829.jpg
+wwwroot\images\IMG_20221218_214851.jpg
+wwwroot\images\IMG_20221218_214900.jpg
+wwwroot\images\IMG_20221218_214911.jpg
+wwwroot\images\IMG_20221218_214920.jpg
+wwwroot\images\IMG_20221218_214932.jpg
+wwwroot\images\IMG20240510214948.jpg
+wwwroot\images\lasterd.png
+wwwroot\images\lastschema.png
+wwwroot\images\lastusecase.png
+wwwroot\images\play station5.jpg
+wwwroot\images\product1.jpg
+wwwroot\images\product2.jpg
+wwwroot\images\product3.jpg
+wwwroot\images\product4.jpg
+wwwroot\images\product5.jpg
+wwwroot\images\Screenshot (1).png
+wwwroot\images\Screenshot (2).png
+wwwroot\images\Screenshot (3).png
+wwwroot\images\WhatsApp Image 2024-06-23 at 21.43.36_5063ccc3.jpg
+wwwroot\js\site.js
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\jquery\dist\jquery.js
+wwwroot\lib\jquery\dist\jquery.min.js
+wwwroot\lib\jquery\dist\jquery.min.map
+wwwroot\lib\jquery\LICENSE.txt
+wwwroot\lib\jquery-validation\dist\additional-methods.js
+wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
+wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\medical records\543496.jpg
+wwwroot\medical records\606500.jpg
+wwwroot\medical records\Ahmed Mohamed Ali Badawy....Assignment 1....5C-T3.pdf
+wwwroot\medical records\app.py
+wwwroot\medical records\ASS 3.pdf
+wwwroot\medical records\Assignment 1.pdf
+wwwroot\medical records\Assignment 2.pdf
+wwwroot\medical records\ccna1 traning Report.pdf
+wwwroot\medical records\IMG_20221218_214920.jpg
+wwwroot\medical records\Img-Final.pdf
+wwwroot\medical records\Lab1.pdf
+wwwroot\medical records\Lab8.pdf
+wwwroot\medical records\Screenshot (2).png
+wwwroot\medical records\تحليل الشخصية.pdf
+wwwroot\medical records\نموذج ارشاد اكاديمي مقترح.pdf
